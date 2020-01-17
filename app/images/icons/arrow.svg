@@ -1,0 +1,13 @@
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="job-preferences" transform="translate(-500.000000, -998.000000)">
+            <g id="Send-Copy" transform="translate(387.000000, 984.000000)">
+                <g id="Arrow" transform="translate(121.000000, 20.500000) scale(-1, 1) translate(-121.000000, -20.500000) translate(113.000000, 14.000000)">
+                    <rect id="menu" x="0" y="5" width="16" height="2" rx="1"></rect>
+                    <rect id="Path" transform="translate(3.535534, 8.535534) rotate(45.000000) translate(-3.535534, -8.535534) " x="-0.464466094" y="7.53553391" width="8" height="2" rx="1"></rect>
+                    <rect id="Path" transform="translate(3.535534, 3.535534) rotate(-45.000000) translate(-3.535534, -3.535534) " x="-0.464466094" y="2.53553391" width="8" height="2" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

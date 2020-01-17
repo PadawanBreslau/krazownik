@@ -1,0 +1,55 @@
+$brand-light: #ebedf6;
+$brand-dark: #252c42;
+$brand-medium: #ced4e2;
+$brand-blue: #4880ff;
+$primary: #4580fb;
+
+$stats-section-grey-bg: #f9f9fa;
+$stats-section-grey-darker-bg: #e0e4f0;
+
+$danger-bg: #f8dfe6;
+$primary-bg: #d8eafd;
+$secondary-bg: #dad9f6;
+
+$text-primary: #2e2e46;
+$text-secondary: #6561c6;
+$text-light: #9fa8be;
+$text-danger: #e05e8c;
+$text-primary-button: #3573f3;
+
+$text-error: #f44336;
+$form-border-color: #b9bdcc;
+$form-focus-border-color: #93aaff;
+$form-hint-color: #686871;
+$form-disabled-color: rgba(84, 84, 84, .6);
+$form-success-color: #28ae81;
+$form-footer-bg: #f9faff;
+$border-color: #e2e6f1;
+$popup-overlay-bg: rgba(28, 34, 55, .6);
+
+$qualified-color: #38ca99;
+
+$secodnary-btn-bg: #c4cde7;
+$secodnary-btn-color: #686899;
+
+// signup form
+$signup-form-border: #d5d4d6;
+$signup-ghost-btn-color: #4e4e4e;
+
+$star-button-bg: #f7f9fd;
+
+$candidates-active-color: #cff4ec;
+$search-placeholder-color: #8d9ab9;
+
+:export {
+  borderColor: $border-color;
+  formFocusBorderColor: $form-focus-border-color;
+  formBorderColor: $form-border-color;
+  formHintColor: $form-hint-color;
+  textLight: $text-light;
+  brandMedium: $brand-medium;
+  brandLight: $brand-light;
+  textPrimary: $text-primary;
+  textError: $text-error;
+  primary: $primary;
+}

@@ -1,0 +1,87 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+$_error-page-bg: #F5F6FA;
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $brand-dark;
+  width: 100%;
+  color: #fff;
+  height: $topbar-height;
+}
+
+.logo {
+  color: #fff;
+  width: 10.625rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.container {
+  background-color: $_error-page-bg;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.header {
+  font-family: $base-font;
+  font-weight: $base-font-regular;
+  font-size: 1.875rem;
+  letter-spacing: .0131rem;
+  margin-top: 2rem;
+}
+
+.headerPadded {
+  margin-top: -1.25rem
+}
+
+.text {
+  font-family: $base-font;
+  font-weight: $base-font-regular;
+  font-size: 1.1875rem;
+  letter-spacing: .0088rem;
+
+  a {
+    font-size: 1.1875rem;
+    letter-spacing: .0088rem;
+    color: $primary;
+  }
+}
+
+.headerImg {
+  width: 19.0625rem;
+}
+
+.headerImgPadded {
+  margin-left: 6rem;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+.button {
+  font-size: .9375rem;
+  width: 10.3125rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:first-child {
+    margin-right: 1rem;
+  }
+}

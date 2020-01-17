@@ -1,0 +1,14 @@
+<svg width="24px" height="26px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icons/LightBulb" transform="translate(0.000000, 1.000000)" stroke="#4880FF" stroke-width="2">
+            <g transform="translate(1.000000, 0.000000)" id="Path">
+                <path d="M11.25,0.75 L11.25,3.75"></path>
+                <path d="M2.7645,4.2645 L4.8855,6.3855"></path>
+                <path d="M19.7355,4.2645 L17.6145,6.3855"></path>
+                <path d="M17.2500692,12.75 C17.2639028,9.83468027 15.1801994,7.33127085 12.3107635,6.81588736 C9.44132758,6.30050387 6.61668669,7.92231852 5.61519976,10.6602569 C4.61371282,13.3981952 5.72524948,16.4597904 8.25,17.9175 L8.25,23.25 L14.25,23.25 L14.25,17.9175 C16.1016203,16.854902 17.2453362,14.8848514 17.2500692,12.75 L17.2500692,12.75 Z"></path>
+                <path d="M20.25,12.75 L21.75,12.75"></path>
+                <path d="M0.75,12.75 L2.25,12.75"></path>
+            </g>
+        </g>
+    </g>
+</svg>

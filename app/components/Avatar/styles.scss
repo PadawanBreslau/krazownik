@@ -1,0 +1,77 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+$_big-size: 9.688rem;
+$_regular-size: 7rem;
+
+.avatar {
+  width: $avatar-size;
+  height: $avatar-size;
+  position: absolute;
+  pointer-events: none;
+}
+
+.avatar--big {
+  width: $avatar-size-big;
+  height: $avatar-size-big;
+}
+
+.avatar--small {
+  width: $avatar-size-small;
+  height: $avatar-size-small;
+}
+
+.avatar--loading {
+  width: $avatar-size-small;
+  height: $avatar-size-small;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picture--old {
+  filter: grayscale(1);
+}
+
+.placeholder {
+  height: 7rem;
+  background-color: $brand-light;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $brand-medium;
+}
+
+.placeholder--big {
+  height: 9.688rem;
+}
+
+.placeholder--small {
+  height: $avatar-size-small;
+}
+
+.placeholder--loading {
+  height: $avatar-size-small;
+  color: $brand-light;
+  :global {
+    animation: $loading-placeholder-animation;
+  }
+}
+
+.tag {
+  padding: .3125rem .3125rem .25rem;
+  border-radius: 4px;
+  font-weight: $base-font-semibold;
+  font-size: .8125rem;
+  display: inline-block;
+  background-color: #fff;
+  color: $text-primary-button;
+  position: absolute;
+  bottom: .3125rem;
+  left: .3125rem;
+  line-height: .8125rem;
+}

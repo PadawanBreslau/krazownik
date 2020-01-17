@@ -1,0 +1,11 @@
+export const LOAD_PAGEDATA_REQUEST = 'risehigh-frontend/api/LOAD_PAGEDATA';
+export const LOAD_PAGEDATA_SUCCESS = 'risehigh-frontend/api/LOAD_PAGEDATA_SUCCESS';
+export const LOAD_PAGEDATA_ERROR = 'risehigh-frontend/api/LOAD_PAGEDATA_ERROR';
+export const SUMBIT_FILE_REQUEST = 'risehigh-frontend/api/SUMBIT_FILE_REQUEST';
+export const SUBMIT_FILE_SUCCESS = 'risehigh-frontend/api/SUBMIT_FILE_SUCCESS';
+export const SUBMIT_FILE_ERROR = 'risehigh-frontend/api/SUBMIT_FILE_ERROR';
+export const SUBMIT_PAGEDATA_REQUEST = 'risehigh-frontend/api/SUBMIT_PAGEDATA';
+export const SUBMIT_PAGEDATA_SUCCESS = 'risehigh-frontend/api/SUBMIT_PAGEDATA_SUCCESS';
+export const SUBMIT_PAGEDATA_ERROR = 'risehigh-frontend/api/SUBMIT_PAGEDATA_ERROR';
+export const UPDATE_DATA_RECORD = 'risehigh-frontend/api/UPDATE_DATA_RECORD';
+export const UPDATE_RELATION_RECORD = 'risehigh-frontend/api/UPDATE_RELATION_RECORD';

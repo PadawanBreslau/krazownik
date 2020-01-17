@@ -1,0 +1,48 @@
+@import '../../styles/shared/colors';
+
+.overlay {
+  height: 100vh;
+  background-color: $popup-overlay-bg;
+  animation: showModal .2s linear forwards;
+  z-index: 101;
+}
+
+.starred {
+  color: $primary;
+  text-align: center;
+}
+
+.unstarred {
+  color: $brand-medium;
+  text-align: center;
+}
+
+.star {
+  width: 1.25rem;
+  height: auto;
+  margin-bottom: .2rem;
+  margin-right: .5rem;
+}
+
+.starLabel {
+  font-size: .9063rem;
+}
+
+.starArea {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.starButton {
+  cursor: pointer;
+}

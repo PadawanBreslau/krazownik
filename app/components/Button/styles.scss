@@ -1,0 +1,67 @@
+@import '../../styles/shared/variables';
+
+$_button-box-shadow: 0 2px 24px 0 rgba(72, 128, 255, .2);
+$_button-box-shadow-hover: 0 2px 24px 0 rgba(72, 128, 255, .4);
+
+.button {
+  min-width: 13.75rem;
+  max-width: 13.75rem;
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  button,
+  a {
+    background: #30ca9a;
+    width: 100%;
+    display: block;
+    box-shadow: $_button-box-shadow;
+    border-radius: 6.25rem;
+    text-align: center;
+    color: #fff;
+    font-size: .875rem;
+    letter-spacing: .1437rem;
+    padding: .9375rem;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+  }
+  button[disabled] {
+    opacity: .5;
+  }
+}
+
+.button--icon {
+  display: inline-flex;
+  min-width: 9.375rem;
+  padding: .5625rem .9375rem;
+  @media (max-width: $breakpoint-sm) {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+      svg {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.button:hover {
+  button,
+  a {
+    box-shadow: $_button-box-shadow-hover;
+  }
+}

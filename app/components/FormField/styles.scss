@@ -1,0 +1,97 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+.label {
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: .875rem;
+  margin-bottom: .625rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 1px solid $form-border-color;
+  border-radius: 4px;
+  font-size: .875rem;
+  padding: .625rem;
+  transition: all .3s ease-in-out;
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1rem;
+  }
+
+  &[disabled] {
+    color: $form-disabled-color;
+    cursor: not-allowed;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: $input-box-shadow;
+    border-color: $form-focus-border-color;
+    outline: none;
+  }
+  &.hasIcon {
+    padding-left: 1.5625rem;
+  }
+}
+.inputIcon {
+  position: absolute;
+  margin-top: .67rem;
+  font-size: .875rem;
+  margin-left: .625rem;
+  opacity: .4;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.input {
+  margin-bottom: 2.5rem;
+  @media (max-width: $breakpoint-sm) {
+    margin-bottom: 1rem;
+  }
+}
+
+.textareaWrapper {
+  width: 100%;
+}
+
+.textarea {
+  composes: input;
+  height: 4.6875rem;
+}
+
+.icon {
+  color: $brand-blue;
+  margin-left: .625rem;
+  @media (max-width: $breakpoint-sm) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.tooltip {
+  display: inline-flex !important;
+}
+
+.fieldError {
+  position: relative;
+  top: -1.875rem;
+  font-size: .625rem;
+  color: $text-error;
+  display: block;
+}
+
+.fieldError.fieldErrorFilter {
+  top: .4rem;
+}
+
+.fieldWarning {
+  position: relative;
+  top: -.625rem;
+  font-size: .9375rem;
+  color: $text-danger;
+  display: block;
+}
+
+.inputError {
+  border-color: $text-error !important;
+}

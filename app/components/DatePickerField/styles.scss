@@ -1,0 +1,60 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+.label {
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: .875rem;
+  margin-bottom: .625rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 1px solid $form-border-color;
+  border-radius: 4px;
+  font-size: .875rem;
+  padding: .625rem;
+  transition: all .3s ease-in-out;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: $input-box-shadow;
+    border-color: $form-focus-border-color;
+    outline: none;
+  }
+}
+
+.input-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: .5rem;
+  color: $brand-blue;
+  pointer-events: none;
+}
+
+.tooltip {
+  display: inline-flex !important;
+}
+
+.infoIcon {
+  color: $brand-blue;
+  margin-left: .625rem;
+  @media (max-width: $breakpoint-sm) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

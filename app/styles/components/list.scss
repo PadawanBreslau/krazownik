@@ -1,0 +1,40 @@
+@import '../../styles/shared/colors';
+
+:global {
+  .list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .list-item {
+    list-style-type: none;
+    margin: 0 0 .625rem;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 1.25rem;
+    width: 100%;
+    font-weight: 200;
+
+    .list-item-name {
+      flex: 1 1 auto;
+      background: none;
+      font-size: 1.3rem;
+    }
+
+    .btnEdit,
+    .btnDelete {
+      flex: 0 0 auto;
+      width: 7.25rem;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .list-icon {
+      height: .75rem;
+      width: .75rem;
+    }
+  }
+}

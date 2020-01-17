@@ -1,0 +1,13 @@
+$_password-reminder-color: #31313F;
+$_password-reminder-bg: #b4d6b6;
+
+.holder {
+  display: block;
+  padding: .9375rem 1.25rem;
+  text-align: left;
+  box-sizing: border-box;
+  width: 50%;
+  font-size: .8125rem;
+  background: $_password-reminder-bg;
+  color: $_password-reminder-color;
+}

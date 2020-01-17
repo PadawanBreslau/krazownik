@@ -1,0 +1,74 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+$_heading-color: #9299b1;
+$_border-color: #48506b;
+$_count-circle-size: 1.563rem;
+
+.wrapper {
+  font-family: $base-font;
+  font-weight: $base-font-light;
+  margin-top: 10rem;
+}
+
+.heading {
+  font-size: 1.688rem;
+  color: $_heading-color;
+  font-weight: $base-font-light;
+}
+
+.label {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1.875rem;
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 2px;
+    background-color: #fff;
+    height: 100%;
+    position: absolute;
+    right: -2px;
+  }
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  height: 100%;
+  color: #fff;
+  margin-left: -1.875rem;
+
+  li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      font-family: $base-font;
+      font-weight: $base-font-semibold;
+      font-size: 1.125rem;
+      color: #fff;
+      height: 100%;
+      align-items: center;
+      padding: .75rem 0;
+
+      &.active {
+        background-color: #EEF2FE;
+        color: $text-primary;
+
+        .label:after {
+          background-color: transparent;
+        }
+      }
+    }
+    &:last-child .label:after {
+      background-color: transparent;
+    }
+  }
+}

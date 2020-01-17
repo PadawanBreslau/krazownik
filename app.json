@@ -1,0 +1,16 @@
+{
+  "name": "krazownik-frontend",
+  "description": "Frontend for Krazownik app",
+  "scripts": {},
+  "env": {
+    "NODE_ENV": "production",
+    "NPM_CONFIG_PRODUCTION": "false",
+  },
+  "formation": {},
+  "addons": ["rollbar"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

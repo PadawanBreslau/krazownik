@@ -1,0 +1,37 @@
+$sidebar-width: 17.5rem;
+$topbar-height: 5.313rem;
+
+$base-font: 'Nunito', sans-serif;
+$base-font-light: 300;
+$base-font-regular: 400;
+$base-font-semibold: 600;
+$base-font-bold: 700;
+
+$avatar-size: 7rem;
+$avatar-size-big: 9.688rem;
+$avatar-size-small: 4.375rem;
+
+$wrapper-horizontal-padding: 6.5625rem;
+$wrapper-vertical-padding: 2.8125rem;
+
+$wrapper-horizontal-padding-small: 2.8125rem;
+$wrapper-vertical-padding-small: 1.875rem;
+
+$input-box-shadow: 0 2px 4px 0 rgba(181, 180, 180, .50);
+$popup-box-shadow: -5px 0 10px -5px #aaaaaa;
+
+$filters-header-height: 7rem;
+
+$loading-placeholder-animation: pulse 1s infinite ease-in-out;
+
+// breakpoints
+
+$breakpoint-xs: 450px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 991px;
+$breakpoint-lg: 1199px;
+
+:export {
+  inputBoxShadow: $input-box-shadow;
+  baseFont: $base-font;
+}

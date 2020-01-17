@@ -1,0 +1,83 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+$_checkbox-size: .875rem;
+
+.input-wrapper {
+  margin-bottom: .5rem;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.input {
+  position: absolute;
+  left: -9999px;
+}
+
+.label {
+  position: relative;
+  padding-left: 1.5625rem;
+  padding-top: .0625rem;
+  cursor: pointer;
+  line-height: $_checkbox-size;
+  display: inline-block;
+  font-family: $base-font;
+  font-weight: $base-font-light;
+  font-size: .875rem;
+  color: $text-light;
+  transition: opacity .2s ease;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $_checkbox-size;
+    height: $_checkbox-size;
+  }
+
+  &:before {
+    content: '';
+    border: 1px solid $text-light;
+    background-color: transparent;
+  }
+
+  &:after {
+    content: url(./check.svg);
+    color: #fff;
+    background: $primary;
+    transition: transform .2s ease;
+    transform: scale(0);
+    text-align: center;
+    padding-top: .125rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.input:checked + label:after {
+  transform: scale(1);
+}
+
+.input:disabled + label {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+.fieldError .label:before {
+  border-color: $text-error;
+}
+
+.fieldError span {
+  position: relative;
+  top: 0;
+  font-size: .625rem;
+  color: $text-error;
+  display: block;
+}
+
+.inputError span {
+  border-color: $text-error !important;
+}

@@ -1,0 +1,9 @@
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icons/Action/URL/Active" stroke="#252C42">
+            <path d="M4.66666667,11.3333333 L11.3333333,4.66666667" id="Path"></path>
+            <path d="M6.66666667,4 L8.896,1.77066667 C10.368934,0.298329042 12.7563993,0.298329042 14.2293333,1.77066667 L14.2293333,1.77066667 C15.701671,3.24360065 15.701671,5.63106602 14.2293333,7.104 L12,9.33333333" id="Path"></path>
+            <path d="M4,6.66666667 L1.77066667,8.896 C0.298329042,10.368934 0.298329042,12.7563993 1.77066667,14.2293333 L1.77066667,14.2293333 C3.24360065,15.701671 5.63106602,15.701671 7.104,14.2293333 L9.33333333,12" id="Path"></path>
+        </g>
+    </g>
+</svg>

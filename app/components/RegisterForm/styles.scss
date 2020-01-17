@@ -1,0 +1,48 @@
+$_login-form-bg-color: #f5f6fa;
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $_login-form-bg-color;
+}
+
+.header {
+  font-weight: normal;
+  margin-bottom: 3rem;
+}
+
+.form-wrapper {
+  max-width: 18.75rem;
+  width: 100%;
+}
+
+.button {
+  max-width: 100%;
+  margin-top: 3rem;
+}
+
+.logo {
+  width: 10.63rem;
+  position: absolute;
+  top: 3.438rem;
+  right: 4.375rem;
+}
+
+.field input {
+  margin-bottom: 1rem;
+}
+
+.returnLink {
+  text-align: center;
+  display: block;
+  margin-top: 3.125rem;
+}
+
+.validable {
+  span {
+    top: -.7rem;
+  }
+}

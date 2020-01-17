@@ -1,0 +1,10 @@
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icon/Ticked-Section" stroke="#4880FF" stroke-width="2">
+            <g transform="translate(1.000000, 0.000000)" id="Path">
+                <polyline points="6 9 12 15 22 1"></polyline>
+                <path d="M15,1.75 C10.3324131,-0.0715965605 5.02358841,1.49123406 2.08744921,5.55124246 C-0.848689992,9.61125087 -0.670166363,15.1424522 2.52166875,19.0046757 C5.71350387,22.8668992 11.1120574,24.0841412 15.6524654,21.9653498 C20.1928734,19.8465584 22.7277515,14.9271629 21.818,10"></path>
+            </g>
+        </g>
+    </g>
+</svg>

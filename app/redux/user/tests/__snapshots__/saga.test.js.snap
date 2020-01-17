@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User: Login Saga should call the LogInError action if the response errors 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/SHOW_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Login Saga should call the LogInError action if the response errors 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/endpoint",
+      Object {},
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`User: Login Saga should dispatch the LogInSuccess action if it requests the data successfully 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/SHOW_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Login Saga should dispatch the LogInSuccess action if it requests the data successfully 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/endpoint",
+      Object {},
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`User: Login Saga should do the callback 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/SHOW_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Login Saga should do the callback 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/endpoint",
+      Object {},
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`User: Login Saga should do the callback 3`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/HIDE_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Logout Saga should call the LogOutError action if the response errors 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/SHOW_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Logout Saga should call the LogOutError action if the response errors 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/endpoint",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`User: Logout Saga should dispatch the LogOutSuccess action if it requests the data successfully 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "app/Messages/SHOW_LOADING",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`User: Logout Saga should dispatch the LogOutSuccess action if it requests the data successfully 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/endpoint",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;

@@ -1,0 +1,26 @@
+@import '../../styles/shared/colors';
+
+.overlay {
+  height: 100vh;
+  background-color: $popup-overlay-bg;
+  animation: showModal .2s linear forwards;
+  z-index: 101;
+}
+.wrapper {
+  padding: 3.75rem 2.5rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
