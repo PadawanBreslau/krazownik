@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Challenge from './Challenge'
+import Challenge from './ChallengeShort'
 
 const ChallengeList = ({ data }) =>
   (
     <div>
       {data.map((item) => (
-        <Challenge data={item} />
+        <Challenge data={item} key={item.id} />
       ))}
   </div>
   )
