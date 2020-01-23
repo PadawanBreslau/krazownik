@@ -9,6 +9,8 @@ import Login from 'containers/Login';
 import Register from 'containers/Register';
 import Challenges from 'containers/Challenges'
 import Challenge from 'containers/Challenge'
+import Riddles from 'containers/Riddles'
+import Riddle from 'containers/Riddle'
 
 
 import PublicRoute from './PublicRoute';
@@ -27,6 +29,8 @@ const Routes = () => (
     <PublicRoute exact path="/login" component={Login} />
     <PublicRoute exect path='/challenges/:id' component={Challenge} />
     <PublicRoute exect path='/challenges' component={Challenges} />
+    <PublicRoute exect path='/riddles/:id' component={Riddle} />
+    <PublicRoute exect path='/riddles' component={Riddles} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );
