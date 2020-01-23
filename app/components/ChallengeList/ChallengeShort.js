@@ -9,7 +9,7 @@ const Challenge = ({ data }) =>
       <div className={styles.challengeBox}>
         <h2>{data.title}</h2>
         <span className={styles.description}>{data.description}</span>
-        <h4>Points: {data.points}</h4>
+        <h4>Punkty: {data.points}</h4>
       </div>
     </Link>
   )

@@ -16,11 +16,6 @@ import generateActions from 'redux/api/actions';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
 import RegisterForm from 'components/RegisterForm';
-import { FIELD_NAMES } from 'components/RegisterForm/constants';
-import { fromJS } from 'immutable';
-import { randomPassword } from 'utils/randomPassword';
-import { ROLES } from '../../rolesConstants';
-
 @withLayout({ type: 'simplified' })
 @withAuthentication()
 @withApiWrite({
@@ -29,27 +24,13 @@ import { ROLES } from '../../rolesConstants';
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('registerForm');
-      let fieldsToSkip;
-      if (payload.get(FIELD_NAMES.role.fieldName) === ROLES.company) {
-        fieldsToSkip = !payload.get(FIELD_NAMES.skipEmail.fieldName)
-          ? [FIELD_NAMES.password.fieldName, FIELD_NAMES.skipEmail.fieldName]
-          : (fieldsToSkip = [FIELD_NAMES.skipEmail.fieldName]);
-      } else {
-        const onlyCompanyFields = _.pickBy(FIELD_NAMES, (x) => x.companyOnly);
-        fieldsToSkip = Object.keys(onlyCompanyFields).map(
-          (key) => onlyCompanyFields[key].fieldName,
-        );
-      }
-      const formattedPayload = payload.filterNot((__, key) => fieldsToSkip.includes(key)).toJS();
-
-      const formattedEndpoint = prepareEndpoint('/users', props);
-
+      const formattedPayload = payload.toJS();
+      const formattedEndpoint = prepareEndpoint('/auth/sign_up', props);
       const successCallbackAction = [showUiSuccess('User was successfully registered')];
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackAction));
     },
   },
   api: {},
-  initialize: () => fromJS({ password: randomPassword(), role: ROLES.company }),
 })
 class Register extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
@@ -60,7 +41,6 @@ class Register extends React.PureComponent {
         {...this.props}
         handleSubmit={handleSubmit}
         reloadCallbackActions={this.props.reloadCallbackActions}
-        formValues={this.props.formValues}
       />
     );
   }
@@ -69,7 +49,6 @@ class Register extends React.PureComponent {
 Register.propTypes = {
   handleSubmit: PropTypes.func,
   reloadCallbackActions: PropTypes.func,
-  formValues: PropTypes.object,
 };
 
 export default connect((state) => ({

@@ -6,6 +6,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PasswordSet from 'containers/PasswordSet';
 import PasswordForgot from 'containers/PasswordForgot';
 import Login from 'containers/Login';
+import Register from 'containers/Register';
 import Challenges from 'containers/Challenges'
 import Challenge from 'containers/Challenge'
 
@@ -22,6 +23,7 @@ const Routes = () => (
     />
     <PublicRoute exact path="/set_password" component={PasswordSet} />
     <PublicRoute exact path="/reset_password" component={PasswordForgot} />
+    <PublicRoute exact path="/register" component={Register} /> 
     <PublicRoute exact path="/login" component={Login} />
     <PublicRoute exect path='/challenges/:id' component={Challenge} />
     <PublicRoute exect path='/challenges' component={Challenges} />

@@ -44,7 +44,9 @@ export default class Login extends React.PureComponent {
   componentDidUpdate(prevProps) {
     const nextPayload = this.props.data.payload;
     const prevPayload = prevProps.data.payload;
-    if (prevPayload.role !== nextPayload.role) {
+
+    console.log('!!!?')
+    if (prevPayload.name !== nextPayload.name) {
       setToStorage('name', nextPayload.name);
 
       this.props.dispatch(push('/'));

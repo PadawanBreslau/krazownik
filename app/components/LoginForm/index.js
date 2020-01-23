@@ -35,11 +35,11 @@ function LoginForm(props) {
           <FormField label="Email" type="text" fieldName="email" className="form-field" />
         </div>
         <div className="form-row form-row--full">
-          <FormField label="Password" type="password" fieldName="password" className="form-field" />
+          <FormField label="Hasło" type="password" fieldName="password" className="form-field" />
         </div>
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
-            Login
+            Zaloguj
           </button>
         </Button>
 

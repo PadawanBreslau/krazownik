@@ -8,11 +8,11 @@ const ChallengeView = ({ data }) =>
     <div className={styles.challenge}>
       <h1>{data.title}</h1>
       <span className={styles.description}>{data.description}</span>
-      <h4>Points: {data.points}</h4>
+      <h4>Punkty: {data.points}</h4>
 
       { data.challengeConditions !== undefined && data.challengeConditions.length > 0 &&
       <>
-      <h2>Conditions:</h2>
+      <h2>Warunki:</h2>
       <ul>
         {data.challengeConditions.map((item) => (
           <li>{item.content}</li>
