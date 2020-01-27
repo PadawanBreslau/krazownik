@@ -7,7 +7,7 @@ function LayoutSignup(props) {
   return (
     <div className={`${styles.candidateWrapper} ${styles.signupWrapper}`}>
       <nav className={styles.candidateNav}>
-        <a href="https://www.kandidate.com/">
+        <a href="https://www.krazownik.pl/">
           <LogoIcon className={styles.candidateLogo} />
         </a>
       </nav>

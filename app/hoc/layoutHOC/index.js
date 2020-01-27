@@ -4,7 +4,6 @@ import Modal from 'components/Modal';
 import ConfirmationModal from 'components/ConfirmationModal';
 import Layout from 'components/Layout/Layout';
 import LayoutSimplified from 'components/Layout/LayoutSimplified';
-import LayoutCandidate from 'components/Layout/LayoutCandidate';
 import LayoutNavbar from 'components/Layout/LayoutNavbar';
 import LayoutSignup from 'components/Layout/LayoutSignup';
 import withUI from 'hoc/uiHOC';
@@ -16,12 +15,6 @@ export default function withLayout({ navigation, type, url }) {
       render() {
         const { ui } = this.props;
         switch (type) {
-          case 'candidate':
-            return (
-              <LayoutCandidate {...this.props}>
-                <PageComponent {...this.props} />
-              </LayoutCandidate>
-            );
           case 'simplified':
             return (
               <LayoutSimplified {...this.props}>

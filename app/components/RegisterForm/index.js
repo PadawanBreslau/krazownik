@@ -42,7 +42,7 @@ function RegisterForm(props) {
           <div className="form-row form-row--full">
             <FormField
               label="Password"
-              type="text"
+              type="password"
               fieldName='password'
               className={`form-field ${styles.validable}`}
             />
@@ -50,7 +50,7 @@ function RegisterForm(props) {
           <div className="form-row form-row--full">
             <FormField
               label="Password confirmation"
-              type="text"
+              type="password"
               fieldName='password_confirmation'
               className={`form-field ${styles.validable}`}
             />

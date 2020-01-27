@@ -11,6 +11,7 @@ import Challenges from 'containers/Challenges'
 import Challenge from 'containers/Challenge'
 import Riddles from 'containers/Riddles'
 import Riddle from 'containers/Riddle'
+import UserPanel from 'containers/UserPanel'
 
 
 import PublicRoute from './PublicRoute';
@@ -31,6 +32,7 @@ const Routes = () => (
     <PublicRoute exect path='/challenges' component={Challenges} />
     <PublicRoute exect path='/riddles/:id' component={Riddle} />
     <PublicRoute exect path='/riddles' component={Riddles} />
+    <PrivateRoute exect path='/panel' component={UserPanel} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );

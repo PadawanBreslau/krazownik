@@ -8,7 +8,7 @@ function LayoutSimplified(props) {
   return (
     <div className={styles.simpleWrapper}>
       {props.ui.loading && <Loader />}
-      <a href="https://www.kandidate.com/">
+      <a href="https://www.krazownik.pl/">
         <img src={logo} className={styles.simpleLogo}/>
       </a>
       {props.children}

@@ -27,7 +27,7 @@ export default class NotFound extends React.PureComponent {
         }}
         actionButton={{
           title: 'Contact us',
-          href: 'mailto:team@kandidate.com',
+          href: 'mailto:st.zawadzki@gmail.com',
         }}
         padded
       />

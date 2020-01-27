@@ -1,4 +1,5 @@
-$_login-form-bg-color: #f5f6fa;
+$_login-form-bg-color: #d6d6d3;
+$_login-form-button-color: #35661e;
 
 .wrapper {
   display: flex;
@@ -21,11 +22,12 @@ $_login-form-bg-color: #f5f6fa;
 
 .button {
   max-width: 100%;
-  margin-top: 3rem;
+  margin-top: 5rem;
+  background-color: $_login-form-button-color;
 }
 
 .logo {
-  width: 10.63rem;
+  width: 20.63rem;
   position: absolute;
   top: 3.438rem;
   right: 4.375rem;
