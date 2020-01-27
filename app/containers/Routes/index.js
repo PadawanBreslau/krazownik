@@ -12,6 +12,8 @@ import Challenge from 'containers/Challenge'
 import Riddles from 'containers/Riddles'
 import Riddle from 'containers/Riddle'
 import UserPanel from 'containers/UserPanel'
+import Teams from 'containers/Teams'
+import Team from 'containers/Team'
 
 
 import PublicRoute from './PublicRoute';
@@ -33,6 +35,8 @@ const Routes = () => (
     <PublicRoute exect path='/riddles/:id' component={Riddle} />
     <PublicRoute exect path='/riddles' component={Riddles} />
     <PrivateRoute exect path='/panel' component={UserPanel} />
+    <PrivateRoute exect path='/teams/:id' component={Team} />
+    <PrivateRoute exect path='/teams' component={Teams} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );
