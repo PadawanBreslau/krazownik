@@ -12,6 +12,7 @@ import Challenge from 'containers/Challenge'
 import Riddles from 'containers/Riddles'
 import Riddle from 'containers/Riddle'
 import UserPanel from 'containers/UserPanel'
+import Participation from 'containers/Participation'
 import Teams from 'containers/Teams'
 import Team from 'containers/Team'
 import BonusPoints from 'containers/BonusPoints'
@@ -37,6 +38,7 @@ const Routes = () => (
     <PublicRoute exect path='/riddles/:id' component={Riddle} />
     <PublicRoute exect path='/riddles' component={Riddles} />
     <PrivateRoute exect path='/panel' component={UserPanel} />
+    <PrivateRoute exect path='/participations/:id' component={Participation} />
     <PrivateRoute exect path='/teams/:id' component={Team} />
     <PrivateRoute exect path='/teams' component={Teams} />
     <PublicRoute exect path='/bonus_points/:id' component={BonusPointMap} />

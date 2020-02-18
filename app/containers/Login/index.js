@@ -45,11 +45,10 @@ export default class Login extends React.PureComponent {
     const nextPayload = this.props.data.payload;
     const prevPayload = prevProps.data.payload;
 
-    console.log('!!!?')
     if (prevPayload.name !== nextPayload.name) {
       setToStorage('name', nextPayload.name);
 
-      this.props.dispatch(push('/'));
+      this.props.dispatch(push('/panel'));
     }
   }
 
