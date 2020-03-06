@@ -18,6 +18,7 @@ const bullshitExamples = [
   'Problem z jedzeniem kuchni włoskiej polega na tym, że pięć lub sześć dni później, jesteś znowu głodny.',
   'Zamierzam żyć wiecznie. Jak na razie idzie mi całkiem nieźle.',
   'Moim ulubionym urządzeniem na siłowni jest automat z przekąskami.',
+  'Cokolwiek robisz, nie warto',
 ]
 
 const InspirationalBullshit = () => (

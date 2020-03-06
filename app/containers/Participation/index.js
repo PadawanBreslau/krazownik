@@ -10,6 +10,7 @@ import generateActions from 'redux/api/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { showUiSuccess } from 'redux/UI/actions';
 
+import { redirect } from 'helpers/Url';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
 import { withApiReadWrite } from 'hoc/apiHOC';
@@ -24,13 +25,10 @@ import ParticipationPanel from 'components/ParticipationPanel';
     destroyOnUnmount: false,
     keepDirtyOnReinitialize: true,
     onSubmit: (payload, dispatch, props) => {
-      console.log('Submitting')
-      const { submitPageData } = generateActions('participationPanelForm');
+      const { submitPageData } = generateActions('participationPanel');
       const formattedPayload = payload.toJS();
       const formattedEndpoint = prepareEndpoint('/challenges/draw', props);
-
-      const successCallbackAction = [showUiSuccess('Challenge has been drawn')];
-      console.log('Send now');
+      const successCallbackAction = [() => window.location.assign(`/participations/${props.data.payload.id}`)];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackAction));
     },

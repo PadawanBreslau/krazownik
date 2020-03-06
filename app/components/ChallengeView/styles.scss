@@ -9,3 +9,19 @@
   padding: .825rem;
   max-width: 500px;
 }
+
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.title{
+  flex: 2;
+  font-size: xx-large;
+}
+
+.image {
+  flex: 1;
+}

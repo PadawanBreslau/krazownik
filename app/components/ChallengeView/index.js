@@ -6,9 +6,12 @@ import styles from './styles.scss';
 const ChallengeView = ({ data }) =>
   (
     <div className={styles.challenge}>
-      <h1>{data.title}</h1>
-      <span className={styles.description}>{data.description}</span>
-      <h4>Punkty: {data.points}</h4>
+        <div className='header'>
+        <span className={styles.title}>{data.title}</span>      
+        <div className={styles.image}><img src={data.icon} alt={data.title}></img></div>
+        </div>
+        <span className={styles.description}>{data.description}</span>
+        <h4>Punkty: {data.points}</h4>
 
       { data.challengeConditions !== undefined && data.challengeConditions.length > 0 &&
       <>
@@ -19,9 +22,7 @@ const ChallengeView = ({ data }) =>
         ))}
       </ul>
       </>
-      
       }
-
     </div>
   )
 

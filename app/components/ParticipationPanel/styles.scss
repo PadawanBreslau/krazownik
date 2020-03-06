@@ -2,12 +2,11 @@
   margin-top: 4.5rem;
 }
 
-
 .button {
   background-color: rgb(3, 170, 3);
   border-radius:8px;
   color: #222;
-  font-size: 1.2375rem;
+  font-size: 1.4375rem;
   text-align: center;
   padding: .575rem;
   min-width: 4.25rem;
@@ -20,31 +19,44 @@
   }
 }
 
+.challenge {
+  display: flex;
+}
+
 .iconRow {
-  margin-top: .825rem;
+  margin-top: 1.825rem;
   margin-right: .825rem;
   padding: .125rem;
-  display: inline-block;
   max-width: 120px;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    max-width: 100%;
+    height: auto;
+}
 }
 
 .iconGreen {
-  display: block;
+  flex: 3;
   border:  4px solid;
   border-color:green;
   border-radius: 2px;
   padding: .125rem;
+  max-width: 120px;
 }
 
 .iconRed {
-  display: block;
+  flex: 3;
   border:  4px solid;
   border-color:red;
   border-radius: 2px;
   padding: .125rem;
+  max-width: 120px;
 }
 
 
 .title {
-  display: inline-block;
+  flex: 1
 }
