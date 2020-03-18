@@ -13,7 +13,7 @@ function combineChallengesWithCompletions (completions, challenges){
 
   const combined = completions.map(function(cmp){
     let chl = challenges.find((c) => (c.id === cmp.challengeId.toString()));
-    return {completed: cmp.completed, title: chl.title, points: chl.points, icon: chl.icon, id: cmp.id  } 
+    return {completed: cmp.completed, title: chl.title, points: chl.points, icon: chl.icon, id: cmp.id, challengeId: chl.id  } 
   });
 
   return combined;

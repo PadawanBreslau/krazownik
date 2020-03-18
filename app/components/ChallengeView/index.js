@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.scss';
+import { isLoggedIn } from 'helpers/User';
+import ToggleChallengeForm from './ToggleChallengeForm';
 
 
 const ChallengeView = ({ data }) =>
   (
+    <>
     <div className={styles.challenge}>
         <div className='header'>
         <span className={styles.title}>{data.title}</span>      
@@ -18,12 +21,18 @@ const ChallengeView = ({ data }) =>
       <h2>Warunki:</h2>
       <ul>
         {data.challengeConditions.map((item) => (
-          <li>{item.content}</li>
+          <li key={item.id}>{item.content}</li>
         ))}
       </ul>
       </>
       }
     </div>
+    <div>
+    { isLoggedIn() && 
+      <ToggleChallengeForm challengeId={data.id} />
+    }
+    </div>
+    </>
   )
 
 ChallengeView.propTypes = {
