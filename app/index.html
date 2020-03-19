@@ -11,6 +11,10 @@
   <!-- Allow installing the app to the homescreen -->
   <meta name="mobile-web-app-capable" content="yes">
 
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+/>
   <link rel="icon" href="/favicon.ico" />
   <title>Krazownik | Strona Zawodów</title>
 </head>
@@ -20,7 +24,11 @@
   <noscript>If you're seeing this message, that means
     <strong>JavaScript has been disabled on your browser</strong>, please
     <strong>enable JS</strong> to make this app work.</noscript>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-leaflet/2.6.3/react-leaflet.js"></script>
   <!-- The app hooks into this div -->
   <div id="app"></div>
   <!-- Open Sans Font -->

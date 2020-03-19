@@ -43,6 +43,12 @@ a {
 }
 
 :global {
+
+  .leaflet-container {
+    height: 600px;
+    width: 80%;
+}
+
   .media {
     display: flex;
     align-items: flex-start;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import RegionBonusPoints from 'components/BonusPoints'
+import { Map, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
 
 @withApiRead({
   storeName: 'BonusPoints',
@@ -26,11 +27,32 @@ export default class BonusPoints extends React.PureComponent {
 
     if (data.payload !== undefined) {
       return (
+        <>
+          
         <div>
           {regions.map((r)=>(<RegionBonusPoints data={this.selectRegionPoints(r)} region={r} />))}
         </div >
+
+        
+      <Map center={[49.429231, 20.498793]} zoom={11}>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+        />
+        {data.payload.map((d)=>(
+        <Marker position={[d.lat, d.lng]}>
+          <Popup>
+            {d.name} : {d.points} punkty
+          </Popup>
+        </Marker>))
+        }
+        <CircleMarker center={[49.429231, 20.498793]} color="red" radius={18}>
+        </CircleMarker>
+
+      </Map>
+      </>
       );
-    }s
+    }
     return null;
   }
 }
