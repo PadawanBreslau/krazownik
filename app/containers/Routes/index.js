@@ -16,7 +16,7 @@ import Participation from 'containers/Participation'
 import Teams from 'containers/Teams'
 import Team from 'containers/Team'
 import BonusPoints from 'containers/BonusPoints'
-import BonusPointMap from 'containers/BonusPointMap'
+import BonusPoint from 'containers/BonusPoint'
 
 
 import PublicRoute from './PublicRoute';
@@ -41,7 +41,7 @@ const Routes = () => (
     <PrivateRoute exect path='/participations/:id' component={Participation} />
     <PrivateRoute exect path='/teams/:id' component={Team} />
     <PrivateRoute exect path='/teams' component={Teams} />
-    <PublicRoute exect path='/bonus_points/:id' component={BonusPointMap} />
+    <PublicRoute exect path='/bonus_points/:id' component={BonusPoint} />
     <PublicRoute exect path='/bonus_points' component={BonusPoints} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
