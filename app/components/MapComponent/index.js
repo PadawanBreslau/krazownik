@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Map, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
-import styles from './styles.scss';
 import PopupContent from './PopupContent';
 
 export default class MapComponent extends React.PureComponent {
