@@ -47,8 +47,16 @@ a {
   .leaflet-container {
     height: 600px;
     width: 80%;
-    margin-bottom: 1rem;
+    margin-bottom : 1rem;
 }
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  background-color: $brand-light;
+  padding: .225rem;
+  font-size: 1.025rem;
+  width: 250px;
+} 
 
   .media {
     display: flex;

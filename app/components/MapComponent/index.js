@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Map, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
+import styles from './styles.scss';
+import PopupContent from './PopupContent';
 
 export default class MapComponent extends React.PureComponent {
   render(){
     const { data, zoom } = this.props;
     const accomodation = [49.429231, 20.498793]
-
-    console.log(data);
-
-
     const location = data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;
 
     return(
@@ -19,10 +18,10 @@ export default class MapComponent extends React.PureComponent {
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         
-        {data.map((bonus_point) => (
-          <Marker position={[bonus_point.lat, bonus_point.lng]}>
+        {data.map((bonusPoint) => (
+          <Marker position={[bonusPoint.lat, bonusPoint.lng]}>
             <Popup>
-              {bonus_point.name} : {bonus_point.points} pkt
+              <PopupContent bonusPoint={bonusPoint} />
             </Popup>
           </Marker>
         )
