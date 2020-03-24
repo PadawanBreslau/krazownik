@@ -36,8 +36,8 @@ export class HomePage extends React.PureComponent {
 
              </div>
              <Link to={'/login'}><div className={styles.loginBtn}>Zaloguj się </div></Link> 
-             <div className={styles.registerBtn}>Zarejestruj się </div>
-             <div className={styles.contactBtn}>Napisz do nas</div>
+             <Link to={'/register'}><div className={styles.registerBtn}>Zarejestruj się </div></Link>
+             <Link to={'/contact'}><div className={styles.contactBtn}>Napisz do nas</div></Link>
           </div>
         </div>
       </div>
