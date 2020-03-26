@@ -27,14 +27,7 @@ export class PasswordSet extends React.Component {
     if (this.props.data.meta.message === 'Password updated.') {
       const role = getFromStorage('user-role');
       setToStorage('name', this.props.data.meta.name);
-
-      if (role === ROLES.candidate) {
-        this.props.dispatch(push(`candidates/${this.props.data.meta.candidateId}/review_profile`));
-      } else if (role === ROLES.gdprInspector) {
-        this.props.dispatch(push('/cv_panel/'));
-      } else {
-        this.props.dispatch(push('/'));
-      }
+      this.props.dispatch(push('/'));
     }
   }
 
