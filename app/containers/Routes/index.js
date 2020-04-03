@@ -18,7 +18,7 @@ import Team from 'containers/Team'
 import BonusPoints from 'containers/BonusPoints'
 import BonusPoint from 'containers/BonusPoint'
 import Contact from 'containers/Contact'
-
+import Event from 'containers/Event'
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -45,6 +45,7 @@ const Routes = () => (
     <PublicRoute exect path='/contact' component={Contact} />
     <PublicRoute exect path='/bonus_points/:id' component={BonusPoint} />
     <PublicRoute exect path='/bonus_points' component={BonusPoints} />
+    <PublicRoute exect path='/events' component={Event} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );

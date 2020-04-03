@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form/immutable'
+import { Link } from 'react-router-dom'
 
 import Select from 'components/Form/Select'
 import ChallengeCompletion from './ChallengeCompletion'
@@ -26,11 +27,18 @@ function ParticipationPanel({data, handleSubmit}){
 
   return (
    <div>
-     <h1>{data.year} </h1>
+     
+  <Link to={'/events'}><div className={styles.link}>Infomacje o edycji {data.year} </div></Link>
+  <Link to={'/challenges'}><div className={styles.link}>Dostępne wyzwania z edycji {data.year} </div></Link>
+  <Link to={'/riddles'}><div className={styles.link}>Zagadki o edycji {data.year} </div></Link>
+
+
+
      { shouldBeAbleToDraw && 
      <div className={styles.drawing}>
       <h2>Możesz losować wyzwania</h2>
        <form>
+         <span>Wybierz maksymalną liczbę punktów </span>
          <Field component={Select} name="maxPoints" className={styles.select} validate={required}>
            <option />
            <option value="3">3</option>
@@ -43,7 +51,7 @@ function ParticipationPanel({data, handleSubmit}){
        </div>
      }
 
-     { data.challengeCompletions && 
+     { completionChallenges && 
        <div className={styles.challenge}>
            { completionChallenges.map((cmp) => (
              <ChallengeCompletion data={cmp}  key={cmp.id} />

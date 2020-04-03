@@ -1,0 +1,36 @@
+@import '../../styles/shared/colors';
+
+
+.container {
+  width: 80%;
+  padding: 1rem;
+}
+
+.content {
+  background-color: $primary-bg;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+
+.header {
+  margin-top: 2rem;
+  font-size: x-large;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.info {
+
+}
+
+
+.label {
+  min-width: 8rem;
+  margin-right: 1rem;
+  padding-bottom: 2.825rem;
+}
+
+.value {
+  font-size: larger;
+}

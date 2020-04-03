@@ -18,6 +18,7 @@ export class Contact extends React.PureComponent {
       <div className={styles.infoBox}>
         <p>
           <span>E-mail:</span><span className={styles.email}> krazownik.im@gmail.com</span>
+          <span>Telefon</span><span className={styles.email}> 697-111-475</span>
         </p>
       </div>
 
@@ -26,5 +27,4 @@ export class Contact extends React.PureComponent {
     );
   }
 }
-
 export default Contact;
