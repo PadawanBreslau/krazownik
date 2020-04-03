@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss'
 
 function ChallengeCompletions({data}) {
-  console.log(data);
   return (
     <Link to={`/challenges/${data.challengeId}`}>
     <div className={styles.iconRow}>

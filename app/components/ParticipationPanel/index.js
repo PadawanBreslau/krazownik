@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form/immutable'
-import { Link } from 'react-router-dom'
+import { Field } from 'redux-form/immutable';
+import { Link } from 'react-router-dom';
 
-import Select from 'components/Form/Select'
-import ChallengeCompletion from './ChallengeCompletion'
-import styles from './styles.scss'
+import Select from 'components/Form/Select';
+import ChallengeCompletion from './ChallengeCompletion';
+import Links from './Links';
+import Result from './Result';
+import styles from './styles.scss';
 
 function combineChallengesWithCompletions (completions, challenges){
   if(completions === undefined || completions.length === 0){
@@ -14,27 +16,21 @@ function combineChallengesWithCompletions (completions, challenges){
 
   const combined = completions.map(function(cmp){
     let chl = challenges.find((c) => (c.id === cmp.challengeId.toString()));
-    return {completed: cmp.completed, title: chl.title, points: chl.points, icon: chl.icon, id: cmp.id, challengeId: chl.id  } 
+    return {completed: cmp.completed, title: chl.title, points: chl.points, icon: chl.icon, id: cmp.id, challengeId: chl.id, open: chl.open  } 
   });
 
   return combined;
 }
-
 function ParticipationPanel({data, handleSubmit}){
   const shouldBeAbleToDraw =  !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 3
   const completionChallenges = combineChallengesWithCompletions(data.challengeCompletions, data.challenges);
+  const finishedChallenges = completionChallenges ? completionChallenges.filter((chl)=>(chl.completed)) : []
   const required = (value) => (value ? undefined : '*');
 
   return (
    <div>
+     <Links data={data} />
      
-  <Link to={'/events'}><div className={styles.link}>Infomacje o edycji {data.year} </div></Link>
-  <Link to={'/challenges'}><div className={styles.link}>Dostępne wyzwania z edycji {data.year} </div></Link>
-  <Link to={'/riddles'}><div className={styles.link}>Zagadki z edycji {data.year} </div></Link>
-  <Link to={'/bonus_points'}><div className={styles.link}>Punkty bonusowe {data.year} </div></Link>
-
-
-
      { shouldBeAbleToDraw && 
      <div className={styles.drawing}>
       <span className={styles.info}>Możesz losować wyzwania</span>
@@ -57,12 +53,10 @@ function ParticipationPanel({data, handleSubmit}){
            { completionChallenges.map((cmp) => (
              <ChallengeCompletion data={cmp}  key={cmp.id} />
            ))}
-       </div> 
-     }
-
-     
+       </div> }
      { !shouldBeAbleToDraw && <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>}
 
+     <Result data={data} challenges={finishedChallenges} />
      <Link to={'/panel'}><div className={styles.link}>Powrót do panelu</div></Link>
   </div>
   );

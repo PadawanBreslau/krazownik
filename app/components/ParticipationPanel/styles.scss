@@ -11,7 +11,7 @@
 }
 
 .link {
-  background-color: rgb(175, 134, 226);
+  background-color: rgb(195, 174, 226);
   border-radius:8px;
   color: #222;
   font-size: 1.4375rem;
@@ -78,4 +78,20 @@
 
 .title {
   flex: 1
+}
+
+.table 
+  { 
+    th, td {
+    border: 1px solid black;
+    padding: .425rem;
+  }
+
+  th{
+    background-color: lightskyblue;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(245, 234, 246);
+  }
 }
