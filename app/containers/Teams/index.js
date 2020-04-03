@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
+import TeamView from 'components/TeamView';
 
 @withAuthentication()
 @withApiRead({
@@ -24,7 +26,7 @@ export default class Teams extends React.PureComponent {
           <h1> Lista drużyn na rok 2020</h1>
           <ul>
           { data.payload.map((t) => (
-            <li> { t.name }</li>
+            <Link to={`/teams/${t.id}`}><TeamView team={t} /></Link>
           ))}
           </ul>
         </div>

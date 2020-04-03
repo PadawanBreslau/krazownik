@@ -30,21 +30,22 @@ function ParticipationPanel({data, handleSubmit}){
      
   <Link to={'/events'}><div className={styles.link}>Infomacje o edycji {data.year} </div></Link>
   <Link to={'/challenges'}><div className={styles.link}>Dostępne wyzwania z edycji {data.year} </div></Link>
-  <Link to={'/riddles'}><div className={styles.link}>Zagadki o edycji {data.year} </div></Link>
+  <Link to={'/riddles'}><div className={styles.link}>Zagadki z edycji {data.year} </div></Link>
+  <Link to={'/bonus_points'}><div className={styles.link}>Punkty bonusowe {data.year} </div></Link>
 
 
 
      { shouldBeAbleToDraw && 
      <div className={styles.drawing}>
-      <h2>Możesz losować wyzwania</h2>
+      <span className={styles.info}>Możesz losować wyzwania</span>
        <form>
          <span>Wybierz maksymalną liczbę punktów </span>
          <Field component={Select} name="maxPoints" className={styles.select} validate={required}>
            <option />
-           <option value="3">3</option>
-           <option value="5">5</option>
-           <option value="8">8</option>
-           <option value="12">12</option>
+           <option value="3">3 ptk</option>
+           <option value="5">5 pkt</option>
+           <option value="8">8 pkt</option>
+           <option value="12">12 pkt</option>
          </Field>
          <button type="submit" onClick={handleSubmit} className={styles.button}>Wylosuj nowe wyzwanie</button>
        </form>
@@ -58,6 +59,11 @@ function ParticipationPanel({data, handleSubmit}){
            ))}
        </div> 
      }
+
+     
+     { !shouldBeAbleToDraw && <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>}
+
+     <Link to={'/panel'}><div className={styles.link}>Powrót do panelu</div></Link>
   </div>
   );
  }

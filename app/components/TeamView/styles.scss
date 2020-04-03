@@ -1,0 +1,38 @@
+@import '../../styles/shared/colors';
+
+.team {
+  background-color: rgb(195, 234, 196);
+  border-radius:8px;
+   margin: .825rem;
+  padding: 1.225rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  flex: 1;
+}
+
+.name {
+  flex: 3;
+  color: #222;
+  font-size: 1.4375rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.userList {
+  flex: 2;
+  list-style-type: square;
+}
+
+.user {
+  font-size: 1rem;
+}
