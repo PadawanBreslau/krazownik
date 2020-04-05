@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
-import MapComponent from 'components/MapComponent';
+import BonusPointView from 'components/BonusPointView'
 
 @withApiRead({
   storeName: 'BonusPoint',
@@ -21,12 +20,9 @@ export default class BonusPoint extends React.PureComponent {
     if(data.payload === undefined || data.payload.length === 0){
       return null;
     }
+
     return (
-      <>
-      <h2>{data.payload.name}</h2>
-      <MapComponent data={[data.payload]} zoom={13} />
-      <Link to={"/bonus_points"}>Powrót do wszystkich punktów</Link>
-      </>
+      <BonusPointView bonusPoint={data.payload} />
     );
   }
 }

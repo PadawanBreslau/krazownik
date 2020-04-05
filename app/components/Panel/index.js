@@ -8,7 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ParticipationList from 'components/ParticipationList';
 import InspirationalBullshit from 'components/InspirationalBullshit';
-import MessageBox from 'components/MessageBox'
 import JoinForm from './JoinForm';
 import styles from './styles.scss';
 
@@ -21,7 +20,6 @@ export default class Panel extends React.PureComponent {
 
     return(
     <>
-      <MessageBox />
       <h1>Panel Użytkownika</h1>
       <h2> Witaj, {payload.name} </h2>
        { availableToJoin &&  <JoinForm /> }
