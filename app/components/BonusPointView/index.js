@@ -14,7 +14,7 @@ export default class BonusPointView extends React.PureComponent {
     const checkedNames = bonusPoint.bonusPointCompletions.filter((bpc) => (bpc.completed && bpc.name))
     const isChecked = bonusPoint.completed
     const label = !isChecked ? 'Zaznacz punkt bonusowy' : 'Odznacz punkt bonusowy'
-    const message = !isChecked ? 'Punkt został zaznaczony' : 'Punkt został odznaczony'
+    const message = !isChecked ? `Punkt ${bonusPoint.name} został zaznaczony` : `Punkt  ${bonusPoint.name} został odznaczony`
 
     return (
       <>
