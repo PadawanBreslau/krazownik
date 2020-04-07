@@ -8,11 +8,10 @@ export default class TeamView extends React.PureComponent {
 
     return (
       <>
+
       <div className={styles.team}>
-        <div className={styles.header}>
-          <div className={styles.logo}><img src={team.emblem}/></div>
-          <div className={styles.name}> {team.name} </div>
-        </div>
+         <div className={styles.name}> {team.name} </div>
+         <div className={styles.logo}><img src={team.emblem}/></div>
         {team.participations &&
           <ul className={styles.userList}>
             {team.participations.map((p) => (

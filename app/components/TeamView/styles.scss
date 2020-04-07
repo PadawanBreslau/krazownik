@@ -1,27 +1,26 @@
 @import '../../styles/shared/colors';
 
 .team {
-  background-color: rgb(195, 234, 196);
-  border-radius:8px;
-   margin: .825rem;
-  padding: 1.225rem;
+  background-color: #e2e2e2;
+  border-radius:4px;
+  margin: .825rem;
+  padding: .825rem;
   display: flex;
   flex-direction: column;
-}
-
-.header{
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  margin-bottom: 1rem;
+  min-width: 22rem;
+  height: 30rem;
+  box-shadow: 3px 3px #d1d1d1;
 }
 
 .logo {
   flex: 1;
+  text-align: center;
 }
 
 .name {
-  flex: 3;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 1rem;
   color: #222;
   font-size: 1.4375rem;
   margin-bottom: 1rem;
@@ -31,8 +30,10 @@
 .userList {
   flex: 2;
   list-style-type: square;
+  font-size: larger;
 }
 
 .user {
   font-size: 1rem;
+  font-size: larger;
 }
