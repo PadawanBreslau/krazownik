@@ -1,5 +1,25 @@
 .riddle {
-  background-color: lavender;
+  flex: 1;
+  background-color:#e2e2e2;
   padding: .825rem;
-  margin-bottom: .5rem;
+  margin: 1.825rem;  
+  min-width: 20rem;
+}
+
+.title {
+  text-align: center;
+  font-size: x-large;
+  font-weight: 800;
+}
+
+
+.label {
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.riddleContent {
+  font-size: medium;
+  padding-left: 2rem;
 }

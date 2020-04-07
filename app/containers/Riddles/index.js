@@ -21,10 +21,7 @@ export default class Riddles extends React.PureComponent {
 
     if (data.payload.length > 0) {
       return (
-        <div>
-          <h1> Lista zagadek na rok 2020</h1>
-          <RiddleList data={data.payload} />
-        </div>
+        <RiddleList data={data.payload} />
       );
     }
     return null;

@@ -1,25 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
-
 import styles from './styles.scss'
 
 const RiddleView = ({ data }) =>
   (
-    <Link to={`/riddles/${data.id}`}>
-    <div className={styles.riddle}>
-      <h3> {data.title} </h3>
-      <h4>Widoczne od: {moment(data.visibleFrom).locale('pl').format('LLL')} </h4>
+    <div  className={styles.riddle}>
+      <p className={styles.title}> {data.title} ({moment(data.visibleFrom).locale('pl').format('LT')}) </p>
       { data.content &&
-        <p>{data.content}</p>
+        <p className={styles.riddleContent}>{data.content}</p>
       }
 
-      { data.answer && 
-        <p>{data.answer}</p>
+      { data.answer &&
+        <> 
+        <p className={styles.label}>Odpowiedź:</p>
+        <p className={styles.riddleContent}>{data.answer}</p>
+        </>
       }
     
-    </div></Link>
+    </div>
   )
 
 RiddleView.propTypes = {

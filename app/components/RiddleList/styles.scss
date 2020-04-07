@@ -1,10 +1,5 @@
-.challengeBox {
-  background-color: lightblue;
-  margin-bottom: .825rem;
-  padding: .825rem;
-  max-width: 500px;
-}
-
-.description {
-  font-size: smaller;
+.riddleList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
 }

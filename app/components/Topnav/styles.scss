@@ -4,62 +4,80 @@ $_border-color: #48506b;
 
 .topnav {
   display: flex;
-  justify-content: space-between;
-  background-color: $brand-dark;
+  flex-direction: row;
+  justify-content: space-between  ;
+  background-color: $brand-light;
   margin-left: auto;
   margin-right: auto;
   position: fixed;
   z-index: 100;
-  width: 100%;
-  color: #fff;
+  width: 80%;
+  color: #000000;
   height: $topbar-height;
+  border-bottom: 2px solid #e2e2e2;
 }
 
-
-.topnavUser {
-  flex: 0 0 12.5rem;
-  padding: 1.125rem 2.375rem;
+.menu {
+  flex: 5;
   display: flex;
-  align-items: center;
-  font-family: $base-font;
-  font-weight: $base-font-semibold;
+  width: 80%;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: $brand-light;
 }
 
-.user-details {
-  display: flex;
-}
-
-.topnavMiddle {
+.menuItem { 
   flex: 1;
-  padding: 0 $wrapper-horizontal-padding;
-  border-right: 1px solid $_border-color;
+  margin-top: 1.325rem;
+  padding: .225rem;
 }
 
-.logout-button {
-  margin-left: 1.25rem;
-  cursor: pointer;
-  svg {
-    width: 1.25rem;
-    height: 1.25rem;
+.buttons {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-right: 1rem;
+}
+
+.button {
+  flex: 1;
+  margin-top: .825rem;
+  background-color: #d3e2eb;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 120px;
+  height: 30px;
+  padding: .215rem;
+  text-align: center;
+  margin-left: 1rem;
+  opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.link{
+  opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
   }
 }
 
 .logo {
-  color: #fff;
-  margin-left: -.625rem;
+  max-width: 50px;
+  color: #000;
+  margin-left: 1.625rem;
+  
 
   &:hover {
-    color: #fff;
+    color: #a2a2a2;
   }
 
   svg {
-    width: 10.625rem;
+    margin-top: -.815rem;
+    width: 2.125rem;
   }
-}
-
-.topnavBrand {
-  display: flex;
-  align-items: center;
-  width: $sidebar-width;
-  padding: 0 1.875rem;
 }
