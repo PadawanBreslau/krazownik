@@ -5,8 +5,6 @@ import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
 import ChallengeList from 'components/ChallengeList'
 
-
-
 @withAuthentication()
 @withApiRead({
   storeName: 'Challenges',
@@ -23,10 +21,7 @@ export default class Challenges extends React.PureComponent {
 
     if (data.payload.length > 0) {
       return (
-        <div>
-          <h1> List of Challenges for 2020</h1>
-          <ChallengeList data={data.payload} />
-        </div>
+        <ChallengeList data={data.payload} />
       );
     }
     return null;

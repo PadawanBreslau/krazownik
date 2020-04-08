@@ -8,30 +8,26 @@ import ToggleChallengeForm from './ToggleChallengeForm';
 const ChallengeView = ({ data }) =>
   (
     <>
-    <div className={styles.challenge}>
-        <div className='header'>
-        <span className={styles.title}>{data.title}</span>      
-        <div className={styles.image}><img src={data.icon} alt={data.title}></img></div>
-        </div>
+      <div className={data.completed ? styles.completedChallenge : styles.challenge}>
+        <div className={styles.title}>{data.title} ({data.points} pkt)</div>
         <span className={styles.description}>{data.description}</span>
-        <h4>Punkty: {data.points}</h4>
 
-      { data.challengeConditions !== undefined && data.challengeConditions.length > 0 &&
-      <>
-      <h2>Warunki:</h2>
-      <ul>
-        {data.challengeConditions.map((item) => (
-          <li key={item.id}>{item.content}</li>
-        ))}
-      </ul>
-      </>
-      }
-    </div>
-    <div>
-    { isLoggedIn() && 
-      <ToggleChallengeForm challengeId={data.id} />
-    }
-    </div>
+        {data.challengeConditions !== undefined && data.challengeConditions.length > 0 &&
+          <>
+            <ul className={styles.conditionList}>
+              {data.challengeConditions.map((item) => (
+                <li key={item.id} className={styles.condition}>{item.content}</li>
+              ))}
+            </ul>
+          </>
+        }
+        <div className={styles.finish}>
+          {isLoggedIn() &&
+            <ToggleChallengeForm challengeId={data.id} completed={data.completed} />
+          }
+        </div>
+      </div>
+
     </>
   )
 

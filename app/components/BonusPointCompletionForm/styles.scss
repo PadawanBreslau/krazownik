@@ -1,13 +1,13 @@
 .button {
-  background-color: rgb(3, 170, 3);
-  border-radius:8px;
+  background-color: rgb(30, 170, 30);
+  border-radius: 4px;
   color: #222;
-  font-size: 1.4375rem;
+  font-size: .8375rem;
   text-align: center;
-  padding: .575rem;
-  min-width: 4.25rem;
+  padding: .225rem;
+  width: 80%;
+  text-align: center;
   cursor: pointer;
-  width: 18.625rem;
 
   &[disabled] {
     cursor: not-allowed;

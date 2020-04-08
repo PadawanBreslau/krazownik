@@ -37,7 +37,7 @@ const TopnavMenu = () => (
       </Link>
     </div>
     <div className={styles.menuItem}>
-      <Link to="/teams"  className={styles.link}>
+      <Link to="/photos"  className={styles.link}>
         ZDJECIA
       </Link>
     </div>

@@ -16,11 +16,12 @@ import styles from './styles.scss'
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('toggleBonusPoint');
+      const { loadPageData } = generateActions('BonusPoints')
       const formattedPayload = payload.toJS();
 
       const formattedEndpoint = prepareEndpoint(`/bonus_points/${props.bonusPointId}/toggle`, props);
       const callback = [
-        redirect(`/bonus_points`),
+        loadPageData('/bonus_points'),
         showUiSuccess(props.message)
       ];
 

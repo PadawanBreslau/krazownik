@@ -29,7 +29,7 @@ MessageBox.propTypes = {
   dispatch: PropTypes.func,
 };
 MessageBox.defaultProps = {
-  delay: 10000,
+  delay: 4000,
 };
 
 export default withUi()(MessageBox);

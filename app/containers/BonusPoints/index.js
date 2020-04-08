@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
-import MapComponent from 'components/MapComponent';
-import BonusPointList from 'components/BonusPointList'
+import BonusPointMap from 'components/BonusPointMap'
+
 
 @withApiRead({
   storeName: 'BonusPoints',
@@ -20,10 +20,7 @@ export default class BonusPoints extends React.PureComponent {
 
     if (data.payload !== undefined) {
       return (
-        <>
-        <BonusPointList data={data.payload} />
-        <MapComponent data={data.payload} zoom={10} />
-      </>
+        <BonusPointMap data={data.payload} />
       );
     }
     return null;
