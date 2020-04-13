@@ -8,7 +8,7 @@ import styles from './styles.scss';
 const TeamsList = ({ data }) =>
   (<div className={styles.teams}>
     { data.map((t) => (
-      <Link to={`/teams/${t.id}`}><TeamView team={t} /></Link>
+      <Link key={t.id} to={`/teams/${t.id}`}><TeamView team={t} /></Link>
     )) }
     </div>
   )

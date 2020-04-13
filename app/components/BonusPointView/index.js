@@ -17,7 +17,7 @@ export default class BonusPointView extends React.PureComponent {
     const message = !isChecked ? `Punkt ${bonusPoint.name} został zaznaczony` : `Punkt  ${bonusPoint.name} został odznaczony`
 
     return (
-      <>
+      <div className={styles.bonusPoint}>
         <h2>{bonusPoint.name}</h2>
         <MapComponent data={[bonusPoint]} zoom={13} />
 
@@ -31,10 +31,8 @@ export default class BonusPointView extends React.PureComponent {
       }
 
 
-        {name && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message} />}
-
-        <Link to={"/bonus_points"}>Powrót do wszystkich punktów</Link>
-      </>
+        {name && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message}  />}
+      </div>
     )
   }
 }

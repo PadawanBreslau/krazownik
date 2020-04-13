@@ -8,8 +8,7 @@ import styles from './styles.scss';
 const Topnav = (props) => (
   <nav className={styles.topnav}>
     <TopnavMenu />
-
-    { props.name ? <LoggedInPanel /> : <LoggedOutPanel /> }
+    { props.userName ? <LoggedInPanel /> : <LoggedOutPanel /> }
   </nav>
 );
 

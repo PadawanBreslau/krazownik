@@ -30,7 +30,7 @@ function RegisterForm(props) {
             className="form-field"
           />
         </div>
-        <div className="companyFormPart">
+        <div className="userFormPart">
           <div className="form-row form-row--full">
             <FormField
               label="User name"

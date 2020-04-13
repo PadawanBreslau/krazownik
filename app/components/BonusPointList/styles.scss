@@ -5,15 +5,33 @@
 }
 
 .region {
-  flex: 1
+  flex: 1;
+  background: #e2e2e2;
+  margin: 1.225rem;
+  padding: 1rem;
 }
 
 .regionLabel {
-  font-size: x-large;
-  margin-left: 2.225rem;
+  font-size: xx-large;
+  background: lightgray;
+  margin-left: 1.225rem;
+  width: 10rem;
 }
 
 .bonusPointLabel {
   font-size: x-small;
   list-style-type: square;
+}
+
+.completedBonusPoint {
+  font-size: x-small;
+  list-style-type: square;
+  font-weight: 600;
+  a { 
+    color: green;
+  
+    &:hover {
+      color: darkgreen;
+    }
+  }
 }

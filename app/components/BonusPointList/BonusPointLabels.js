@@ -8,7 +8,11 @@ const BonusPointLabels = ({ data, region }) =>
     <div className={styles.region}>
       <span className={styles.regionLabel}>{region}</span>
       <ul>
-        {data.map((d)=>(<li key={d.id} className={styles.bonusPointLabel}> <Link to={`/bonus_points/${d.id}`}> {d.name} </Link> </li>))}
+        {data.map((d)=>(
+        <li key={d.id} className={d.completed ? styles.completedBonusPoint : styles.bonusPointLabel}> 
+        <Link to={`/bonus_points/${d.id}`}> {d.name} ({d.points} pkt) </Link> 
+        </li>
+        ))}
       </ul>
     </div>
   )

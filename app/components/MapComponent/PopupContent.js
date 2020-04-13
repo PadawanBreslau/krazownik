@@ -10,7 +10,7 @@ import styles from './styles.scss';
 export default class PopupContent extends React.PureComponent {
   render() {
     const { bonusPoint } = this.props;
-    const label = bonusPoint.completed ? "Odznacz" : "Zaznacz"
+    const label = bonusPoint.completed ? "Odznacz punkt bunusowy" : "Zaznacz punkt bonusowy"
     const message = bonusPoint.completed ? `Punkt bonusowy ${bonusPoint.name} odznaczony` : `Punkt bonusowy ${bonusPoint.name} zaznaczony`
 
     return (

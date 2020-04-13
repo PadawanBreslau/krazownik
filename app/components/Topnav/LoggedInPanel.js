@@ -5,8 +5,8 @@ import styles from './styles.scss';
 
 const LoggedInPanel = () => (
   <div className={styles.buttons}>
-    <div className={styles.button}>Prześlij Pliki</div>
-    <div className={styles.button}>Wyloguj się</div>
+    <div className={styles.button}>PRZEŚLIJ&nbsp;PLIKI</div>
+    <div className={styles.button}>WYLOGUJ&nbsp;SIĘ</div>
   </div>
 );
 

@@ -8,9 +8,9 @@ import PopupContent from './PopupContent';
 
 export default class MapComponent extends React.PureComponent {
   render() {
-    const { data, zoom } = this.props;
+    const { data, routes, zoom } = this.props;
     const accomodation = [49.429231, 20.498793]
-    const location = data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;    
+    const location = data !== undefined && data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;    
     const imageBlue = new Leaflet.Icon({
                iconUrl: require('images/icons/marker-icon-blue.png'),
                iconSize:     [20, 30],
@@ -29,8 +29,8 @@ export default class MapComponent extends React.PureComponent {
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
 
-        {data.map((bonusPoint) => (
-          <Marker position={[bonusPoint.lat, bonusPoint.lng]}  icon={bonusPoint.completed ? imageBlue : imageRed}>
+        {data && data.map((bonusPoint) => (
+          <Marker key={bonusPoint.id} position={[bonusPoint.lat, bonusPoint.lng]}  icon={bonusPoint.completed ? imageBlue : imageRed}>
             <Popup>
               <PopupContent bonusPoint={bonusPoint} />
             </Popup>

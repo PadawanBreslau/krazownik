@@ -16,7 +16,7 @@ export default class BonusPointList extends React.PureComponent {
 
     return(
       <div className={styles.bonusPointLabels}>
-        {regions.map((r)=>(<BonusPointLabels data={this.selectRegionPoints(r)} region={r} />))}
+        {regions.map((r)=>(<BonusPointLabels key={r} data={this.selectRegionPoints(r)} region={r} />))}
       </div >
     );
   }

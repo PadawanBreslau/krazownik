@@ -2,28 +2,22 @@
 
 
 .container {
-  width: 80%;
+  width: 100%;
   padding: 1rem;
 }
 
 .content {
-  background-color: $primary-bg;
+  background-color:#e2e2e2;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 
 .header {
-  margin-top: 2rem;
   font-size: x-large;
   font-weight: 900;
   margin-bottom: 2rem;
 }
-
-.info {
-
-}
-
 
 .label {
   min-width: 8rem;

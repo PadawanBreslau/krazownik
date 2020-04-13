@@ -12,7 +12,7 @@ import styles from './styles.scss';
 @withApiRead({
   storeName: 'SearchesStats',
   api: {
-    get: '/companies/stats',
+    get: '/',
   },
 })
 class Layout extends React.Component {
