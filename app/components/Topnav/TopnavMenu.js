@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Home from '-!babel-loader!svg-react-loader?name=LogoutIcon!images/icons/home.svg';
+import fb from 'images/fb.png';
+
 import styles from './styles.scss';
 
 const TopnavMenu = () => (
@@ -46,8 +47,10 @@ const TopnavMenu = () => (
         KONTAKT
       </Link>
     </div>
+    <div className={styles.menuItem}>
+      <a href={"https://www.facebook.com/events/664301550682259/"}><img src={fb} className={styles.fbLogo} /></a>
+    </div>
   </div>
-
 );
 
 export default TopnavMenu;

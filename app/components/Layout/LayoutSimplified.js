@@ -7,27 +7,29 @@ import logo from 'images/logo.png';
 import styles from './styles.scss';
 import { getFromStorage } from 'helpers/Headers';
 
-class LayoutSimplified extends React.Component{
-  render(){
-  const userName = getFromStorage('name');
-  return (
-    <>
-    <MessageBox />
-    <div className={styles.simpleWrapper}>
-      <div className={styles.header}>
-        <Topnav userName={userName} />
-      </div>
-      {this.props.ui.loading && <Loader />}
-      <a href="https://www.krazownik.pl/">
-        <img src={logo} className={styles.simpleLogo}/>
-      </a>
-      <div className={styles.content}>
-        {this.props.children}
-      </div>
-    </div>
-    </>
-  );
-}
+class LayoutSimplified extends React.Component {
+  render() {
+    const { onLogout } = this.props;
+    console.log(this.props)
+    const userName = getFromStorage('name');
+    return (
+      <>
+        <MessageBox />
+        <div className={styles.simpleWrapper}>
+          <div className={styles.header}>
+            <Topnav userName={userName} onLogout={onLogout} />
+          </div>
+          {this.props.ui.loading && <Loader />}
+          <a href="https://www.krazownik.pl/">
+            <img src={logo} className={styles.simpleLogo} />
+          </a>
+          <div className={styles.content}>
+            {this.props.children}
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 LayoutSimplified.propTypes = {

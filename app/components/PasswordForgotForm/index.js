@@ -19,7 +19,7 @@ function PasswordForgotForm(props) {
       <form>
         <div className="form-row form-row--full">
           <FormField
-            label="Enter your email address"
+            label="Wpisz swój adres email"
             type="email"
             fieldName="email"
             className="form-field"
@@ -27,7 +27,7 @@ function PasswordForgotForm(props) {
         </div>
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
-            Send
+            Wyślij
           </button>
         </Button>
       </form>

@@ -8,7 +8,6 @@ import withLayout from 'hoc/layoutHOC';
 import { setToStorage, getFromStorage, setHeadersFromQuery } from 'helpers/Headers';
 
 import PasswordSetForm from 'components/PasswordSetForm';
-import { ROLES } from '../../rolesConstants';
 @withLayout({ type: 'simplified' })
 @withApiWrite({
   storeName: 'password',
@@ -25,7 +24,6 @@ export class PasswordSet extends React.Component {
 
   componentDidUpdate() {
     if (this.props.data.meta.message === 'Password updated.') {
-      const role = getFromStorage('user-role');
       setToStorage('name', this.props.data.meta.name);
       this.props.dispatch(push('/'));
     }

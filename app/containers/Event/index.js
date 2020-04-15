@@ -5,7 +5,6 @@ import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
 import EventView from 'components/EventView'
 
-@withAuthentication()
 @withApiRead({
   storeName: 'Event',
   api: {

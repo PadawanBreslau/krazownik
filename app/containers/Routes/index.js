@@ -20,6 +20,7 @@ import BonusPoint from 'containers/BonusPoint'
 import Contact from 'containers/Contact'
 import Event from 'containers/Event'
 import Photos from 'containers/Photos'
+import Files from 'containers/Files'
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -33,7 +34,7 @@ const Routes = () => (
     />
     <PublicRoute exact path="/set_password" component={PasswordSet} />
     <PublicRoute exact path="/reset_password" component={PasswordForgot} />
-    <PublicRoute exact path="/register" component={Register} /> 
+    <PublicRoute exact path="/register" component={Register} />
     <PublicRoute exact path="/login" component={Login} />
     <PublicRoute exect path='/challenges/:id' component={Challenge} />
     <PublicRoute exect path='/challenges' component={Challenges} />
@@ -46,8 +47,9 @@ const Routes = () => (
     <PublicRoute exect path='/bonus_points' component={BonusPoints} />
     <PublicRoute exect path='/events' component={Event} />
     <PublicRoute exect path='/photos' component={Photos} />
-
+    <PrivateRoute exect path='/files' component={Files} />
     <PrivateRoute exect path='/panel' component={UserPanel} />
+
     <PrivateRoute exect path='/participations/:id' component={Participation} />
     <PublicRoute component={NotFoundPage} />
   </Switch>

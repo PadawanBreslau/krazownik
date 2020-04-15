@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import withAuthentication from 'hoc/authHOC';
 import styles from './styles.scss';
 
-const LoggedInPanel = () => (
-  <div className={styles.buttons}>
-    <div className={styles.button}>PRZEŚLIJ&nbsp;PLIKI</div>
-    <div className={styles.button}>WYLOGUJ&nbsp;SIĘ</div>
-  </div>
-);
+@withAuthentication()
+export class LoggedInPanel extends React.PureComponent {
+  render() {
+    const {onLogout} = this.props;
+    return (
+      <div className={styles.buttons}>
+        <div className={styles.button}>PRZEŚLIJ&nbsp;PLIKI</div>
+        <button className={styles.button} onClick={onLogout}>WYLOGUJ&nbsp;SIĘ</button>
+      </div>
+    );
+  }
+};
 
-export default LoggedInPanel;
+  LoggedInPanel.propTypes = {
+    onLogout: PropTypes.func,
+  };
+
+  export default LoggedInPanel;

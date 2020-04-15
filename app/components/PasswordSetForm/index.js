@@ -16,15 +16,15 @@ function PasswordForm(props) {
   const { handleSubmit } = props;
   return (
     <div className="form-wrapper">
-      <h1 className="form-title">Set a password to get started</h1>
+      <h1 className="form-title">Zmień hasło</h1>
       <MessageBox />
       <form>
         <div className="form-row form-row--full">
-          <FormField label="Password" type="password" fieldName="password" className="form-field" />
+          <FormField label="Hasło" type="password" fieldName="password" className="form-field" />
         </div>
         <div className="form-row form-row--full">
           <FormField
-            label="Confirm password"
+            label="Potwierdzenie hasła"
             type="password"
             fieldName="password_confirmation"
             className="form-field"
@@ -32,11 +32,11 @@ function PasswordForm(props) {
         </div>
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
-            View my dashboard
+            Przejdź do strony
           </button>
         </Button>
         <Link to="/login" className={styles.passwordLink}>
-          Already have an account? Login here
+          Masz już hasło? Po cholerę tu wszedłeś?
         </Link>
       </form>
     </div>

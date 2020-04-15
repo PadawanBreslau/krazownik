@@ -34,6 +34,7 @@ export default function withAuthentication(options) {
     function mapDispatchToProps(dispatch) {
       return {
         onLogout: () => {
+          console.log('Logging out');
           dispatch(LogOut('/auth/sign_out'));
         },
       };

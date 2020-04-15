@@ -48,7 +48,7 @@ $_border-color: #48506b;
   border-radius: 4px;
   width: 120px;
   height: 30px;
-  padding: .215rem;
+  padding: .415rem;
   text-align: center;
   margin-left: 1rem;
   opacity: 70%;
@@ -64,6 +64,11 @@ $_border-color: #48506b;
   &:hover {
     opacity: 100%;
   }
+}
+
+.fbLogo {
+  max-width: 20px;
+  margin-top: -.815rem;
 }
 
 .logo {
