@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Loader from 'components/Loader';
 import MessageBox from 'components/MessageBox';
 import Topnav from 'components/Topnav';
-import logo from 'images/logo.png';
+import logo from 'images/krazownik.png';
 import styles from './styles.scss';
 import { getFromStorage } from 'helpers/Headers';
 
