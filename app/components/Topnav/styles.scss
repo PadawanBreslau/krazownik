@@ -48,10 +48,46 @@ $_border-color: #48506b;
   border-radius: 4px;
   width: 120px;
   height: 30px;
-  padding: .415rem;
+  padding: .315rem;
   text-align: center;
   margin-left: 1rem;
   opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+.logout {
+  flex: 1;
+  margin-top: .825rem;
+  background-color: #d3e2eb;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 120px;
+  height: 30px;
+  padding: .515rem;
+  text-align: center;
+  margin-left: 1rem;
+  opacity: 70%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+
+.darkButton {
+  flex: 1;
+  margin-top: .825rem;
+  background-color: #aabbcc;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 120px;
+  height: 30px;
+  padding: .415rem;
+  text-align: center;
+  margin-left: 1rem;
 
   &:hover {
     opacity: 100%;

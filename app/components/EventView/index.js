@@ -6,8 +6,6 @@ import styles from './styles.scss'
 export default class EventView extends React.PureComponent {
   render() {
     const { data } = this.props;
-    console.log(data.informations)
-
     if (data.informations === undefined || data.informations === null) {
       return (<h3>Wkrótce</h3>);
     }
