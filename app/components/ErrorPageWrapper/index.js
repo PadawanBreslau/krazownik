@@ -9,11 +9,6 @@ function ErrorPageWrapper(props) {
   const { imgSrc, header, text, homeButton, actionButton, padded, children } = props;
   return (
     <div className={styles.wrapper}>
-      <div className={styles.nav}>
-        <Link to="/">
-          <Logo className={styles.logo} />
-        </Link>
-      </div>
       <div className={styles.container}>
         <img
           src={imgSrc}

@@ -8,7 +8,7 @@ $_error-page-bg: #F5F6FA;
   justify-content: center;
   align-items: center;
   background-color: $brand-dark;
-  width: 100%;
+  width: 80%;
   color: #fff;
   height: $topbar-height;
 }
@@ -19,6 +19,7 @@ $_error-page-bg: #F5F6FA;
 }
 
 .wrapper {
+  width: 80%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
