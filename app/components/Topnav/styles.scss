@@ -26,10 +26,10 @@ $_border-color: #48506b;
   background-color: $brand-light;
 }
 
-.menuItem { 
-  flex: 1;
+.menuItem {
   margin-top: 1.325rem;
-  padding: .225rem;
+  padding-left: 1.525rem;
+  padding-top: .425rem;
 }
 
 .buttons {
@@ -52,6 +52,8 @@ $_border-color: #48506b;
   text-align: center;
   margin-left: 1rem;
   opacity: 70%;
+  cursor: pointer;
+
 
   &:hover {
     opacity: 100%;
@@ -70,6 +72,8 @@ $_border-color: #48506b;
   text-align: center;
   margin-left: 1rem;
   opacity: 70%;
+  cursor: pointer;
+
 
   &:hover {
     opacity: 100%;
@@ -111,14 +115,13 @@ $_border-color: #48506b;
   max-width: 50px;
   color: #000;
   margin-left: 1.625rem;
-  
 
   &:hover {
     color: #a2a2a2;
   }
 
   svg {
-    margin-top: -.815rem;
+    margin-top: -1.215rem;
     width: 2.125rem;
   }
 }

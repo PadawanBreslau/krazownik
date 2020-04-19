@@ -12,7 +12,7 @@ const Select = ({
     <label>{label}</label>
     <div>
       <select 
-        {...input} 
+        {...input}
         placeholder = {label}
         type = 'select'
         className = {`select ${error ? styles.inputError : ''}`}

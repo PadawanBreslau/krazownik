@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form/immutable';
-import Select from 'components/Form/Select';
 import MapComponent from 'components/MapComponent'
 import ChallengeCompletion from './ChallengeCompletion';
 import Result from './Result';
+import DrawNewChallengeForm from './DrawNewChallengeForm'
 import styles from './styles.scss';
 
 function combineChallengesWithCompletions(completions, challenges) {
@@ -37,7 +36,7 @@ function ParticipationPanel({ data, handleSubmit }) {
   const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 3
   const completionChallenges = combineChallengesWithCompletions(data.challengeCompletions, data.challenges);
   const finishedChallenges = completionChallenges ? completionChallenges.filter((chl) => (chl.completed)) : []
-  const required = (value) => (value ? undefined : '*');
+
   const enhancedPoints = enhanceBonusPointsCompletion(data.bonusPoints, data.bonusPointCompletions)
 
   return (
@@ -54,23 +53,9 @@ function ParticipationPanel({ data, handleSubmit }) {
             ))}
           </div>}
 
-        {!shouldBeAbleToDraw && <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>}
-
-        {shouldBeAbleToDraw &&
-          <div className={styles.drawing}>
-            <span className={styles.info}>Możesz losować wyzwania</span>
-            <form>
-              <span>Wybierz maksymalną liczbę punktów </span>
-              <Field component={Select} name="maxPoints" className={styles.select} validate={required}>
-                <option />
-                <option value="3">3 ptk</option>
-                <option value="5">5 pkt</option>
-                <option value="8">8 pkt</option>
-                <option value="12">12 pkt</option>
-              </Field>
-              <button type="submit" onClick={handleSubmit} className={styles.button}>Wylosuj nowe wyzwanie</button>
-            </form>
-          </div>
+        { shouldBeAbleToDraw ?
+          <DrawNewChallengeForm handleSubmit={handleSubmit} /> :
+          <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         }
         <Result data={data} challenges={finishedChallenges} />
       </div>
