@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Leaflet from 'leaflet'
-
 import { Map, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
 import PopupContent from './PopupContent';
+import styles from './styles.scss';
 
 export default class MapComponent extends React.PureComponent {
   render() {
@@ -31,7 +30,7 @@ export default class MapComponent extends React.PureComponent {
 
         {data && data.map((bonusPoint) => (
           <Marker key={bonusPoint.id} position={[bonusPoint.lat, bonusPoint.lng]}  icon={bonusPoint.completed ? imageBlue : imageRed}>
-            <Popup>
+            <Popup className={styles.popup}>
               <PopupContent bonusPoint={bonusPoint} />
             </Popup>
           </Marker>

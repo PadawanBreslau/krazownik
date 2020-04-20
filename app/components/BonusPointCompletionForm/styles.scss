@@ -1,12 +1,14 @@
 .button {
-  background-color: rgb(30, 170, 30);
+  background-color: rgb(96, 223, 96);
   border-radius: 4px;
+  border: 1px #a2a2a  2 solid;
   color: #222;
   font-size: .8375rem;
   text-align: center;
-  margin-top: .225rem;
+  margin-top: .425rem;
+  font-weight: 500;
   padding: .225rem;
-  width: 80%;
+  width: 100%;
   max-width: 16rem;
   text-align: center;
   cursor: pointer;

@@ -14,9 +14,9 @@ export default class PopupContent extends React.PureComponent {
     const message = bonusPoint.completed ? `Punkt bonusowy ${bonusPoint.name} odznaczony` : `Punkt bonusowy ${bonusPoint.name} zaznaczony`
 
     return (
-      <div>
+      <div className={styles.popup}>
       <Link to={`/bonus_points/${bonusPoint.id}`}>
-        <p className={styles.bonusPointLabel}>{bonusPoint.name} ({bonusPoint.points} pkt)</p>
+        <div className={styles.bonusPointLabel}>{bonusPoint.name} ({bonusPoint.points} pkt)</div>
       </Link>
       <img src={bonusPoint.photo} alt={bonusPoint.name} />
       {isLoggedIn() && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message} />}
