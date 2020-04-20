@@ -10,8 +10,9 @@ import styles from './styles.scss';
 export default class PopupContent extends React.PureComponent {
   render() {
     const { bonusPoint } = this.props;
-    const label = bonusPoint.completed ? "Odznacz punkt bunusowy" : "Zaznacz punkt bonusowy"
-    const message = bonusPoint.completed ? `Punkt bonusowy ${bonusPoint.name} odznaczony` : `Punkt bonusowy ${bonusPoint.name} zaznaczony`
+    const isChecked = bonusPoint.completed
+    const label =  isChecked ? "Odznacz punkt bunusowy" : "Zaznacz punkt bonusowy"
+    const message = isChecked ? `Punkt bonusowy ${bonusPoint.name} odznaczony` : `Punkt bonusowy ${bonusPoint.name} zaznaczony`
 
     return (
       <div className={styles.popup}>
@@ -19,7 +20,7 @@ export default class PopupContent extends React.PureComponent {
         <div className={styles.bonusPointLabel}>{bonusPoint.name} ({bonusPoint.points} pkt)</div>
       </Link>
       <img src={bonusPoint.photo} alt={bonusPoint.name} />
-      {isLoggedIn() && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message} />}
+      {isLoggedIn() && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message} isChecked={isChecked} />}
       </div>
     );
   }

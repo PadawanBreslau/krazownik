@@ -31,11 +31,12 @@ import styles from './styles.scss'
 })
 export default class BonusPointCompletionForm extends React.PureComponent{
   render(){
-    const { handleSubmit,buttonStyle, label } = this.props;
+    const { handleSubmit, isChecked, label } = this.props;
+    console.log(isChecked);
 
     return(
       <form>
-        <button onClick={handleSubmit} className={styles.button}>{label}</button>
+        <button onClick={handleSubmit} className={isChecked ? styles.buttonRed : styles.buttonGreen }>{label}</button>
       </form>
     
     );

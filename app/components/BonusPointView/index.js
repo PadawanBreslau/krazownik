@@ -11,10 +11,10 @@ export default class BonusPointView extends React.PureComponent {
   render() {
     const { bonusPoint } = this.props;
     const name = getFromStorage('name');
-    const checkedNames = bonusPoint.bonusPointCompletions.filter((bpc) => (bpc.completed && bpc.name))
-    const isChecked = bonusPoint.completed
-    const label = !isChecked ? 'Zaznacz punkt bonusowy' : 'Odznacz punkt bonusowy'
-    const message = !isChecked ? `Punkt ${bonusPoint.name} został zaznaczony` : `Punkt  ${bonusPoint.name} został odznaczony`
+    const checkedNames = bonusPoint.bonusPointCompletions.filter((bpc) => (bpc.completed && bpc.name));
+    const isChecked = bonusPoint.completed;
+    const label = !isChecked ? 'Zaznacz punkt bonusowy' : 'Odznacz punkt bonusowy';
+    const message = !isChecked ? `Punkt ${bonusPoint.name} został zaznaczony` : `Punkt  ${bonusPoint.name} został odznaczony`;
 
     return (
       <div className={styles.bonusPoint}>
@@ -29,9 +29,7 @@ export default class BonusPointView extends React.PureComponent {
           </ul>
           </>
       }
-
-
-        {name && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message}  />}
+        {name && <BonusPointCompletionForm bonusPointId={bonusPoint.id} label={label} message={message} isChecked={isChecked} />}
       </div>
     )
   }
