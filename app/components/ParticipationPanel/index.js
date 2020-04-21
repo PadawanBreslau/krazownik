@@ -36,8 +36,8 @@ function ParticipationPanel({ data, handleSubmit }) {
   const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 3
   const completionChallenges = combineChallengesWithCompletions(data.challengeCompletions, data.challenges);
   const finishedChallenges = completionChallenges ? completionChallenges.filter((chl) => (chl.completed)) : []
-
   const enhancedPoints = enhanceBonusPointsCompletion(data.bonusPoints, data.bonusPointCompletions)
+  const finishedPoints = enhancedPoints.filter((point)=>(point.completed));
 
   return (
     <div className={styles.container}>
@@ -53,11 +53,11 @@ function ParticipationPanel({ data, handleSubmit }) {
             ))}
           </div>}
 
-        { shouldBeAbleToDraw ?
+        {shouldBeAbleToDraw ?
           <DrawNewChallengeForm handleSubmit={handleSubmit} /> :
           <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         }
-        <Result data={data} challenges={finishedChallenges} />
+        <Result data={data} challenges={finishedChallenges} bonusPoints={finishedPoints} />
       </div>
     </div>
   );

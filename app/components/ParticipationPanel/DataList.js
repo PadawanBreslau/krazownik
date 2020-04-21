@@ -6,7 +6,7 @@ function DataList({data}){
   return(
     <ul>
       { data.map((d) => (
-        <li key={d.id}>{d.title}</li>
+        <li key={d.id}>{d.title || d.name.concat(` (${d.points})`) }</li>
       )
       )}
     </ul>

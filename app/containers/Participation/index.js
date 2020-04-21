@@ -33,7 +33,6 @@ import ParticipationPanel from 'components/ParticipationPanel';
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackAction));
     },
   },
-
   api: {
     get: '/participations/:id',
     post: '/challenges/draw'
