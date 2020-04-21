@@ -7,6 +7,7 @@ import styles from './styles.scss';
 
 class FileField extends React.Component {
   handleDropOrClick = (acceptedFiles, rejectedFiles, e) => {
+    console.log("handle drop or click")
     if (rejectedFiles.length > 0) return null;
     let eventOrValue = e;
     const {
@@ -16,7 +17,6 @@ class FileField extends React.Component {
 
     if (eventOrValue.type === 'drop') {
       if (acceptedFiles.length) {
-        // FileList or [File]
         eventOrValue = (e.dataTransfer && e.dataTransfer.files) || acceptedFiles;
       } else {
         eventOrValue = null;
@@ -24,14 +24,17 @@ class FileField extends React.Component {
     }
 
     const file = eventOrValue.target ? eventOrValue.target.files[0] : eventOrValue[0];
-    onFileUpload(file, (result) => {
-      onChange(result.data.attributes.picture);
-    });
+    const callback = (result) => {
+      onChange(result.data.attributes.file);
+    }
+    onFileUpload(file, callback);
 
+    console.log("After onFileUpload")
     return true;
   };
 
   render() {
+    console.log("2")
     const { accept, input, uploading, uiMessage } = this.props;
     const selectedFile = (input && input.value && input.value[0]) || null;
     const dropzoneProps = {
@@ -41,22 +44,17 @@ class FileField extends React.Component {
       className: styles.dropzone,
       activeClassName: styles.dropzoneActive,
       rejectClassName: styles.dropzoneFailed,
-      maxSize: 10000000,
+      maxSize: 16000000,
     };
+    console.log("3")
+    console.log("uiMessage", uiMessage)
 
     return (
       <div className={styles.wrapper}>
         <input type="hidden" disabled {...input} />
-        {selectedFile && (
-          <div className={styles.avatar}>
-            <img
-              src={selectedFile.preview ? selectedFile.preview : input.value}
-              alt="avatar"
-              className={styles['avatar-image']}
-            />
-          </div>
-        )}
-        <Dropzone {...dropzoneProps}>
+        <Dropzone             
+           {...dropzoneProps} 
+        >
           {({ acceptedFiles, rejectedFiles }) => (
             <Placeholder
               uploadState={getDropzoneState(acceptedFiles, rejectedFiles, uploading, uiMessage)}

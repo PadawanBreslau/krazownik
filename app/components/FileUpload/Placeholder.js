@@ -19,6 +19,9 @@ function CandidateSignupDropzonePlaceholder({ uploadState }) {
     infoLoading: uploadState === 'loading',
   });
 
+  console.log("4")
+  console.log('upload stage', uploadState)
+
   return (
     <div className={styles.wrapper}>
       {DROPZONES_STATES[uploadState].icon}

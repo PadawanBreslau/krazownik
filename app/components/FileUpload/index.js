@@ -17,7 +17,11 @@ class FileUpload extends React.Component {
 
   onFileUpload = (file, successCallback) => {
     if (!file) return;
-    const { dispatch, uploadConfig } = this.props;
+    const { dispatch } = this.props;
+    const uploadConfig = {
+           endpoint: '/files/upload',
+           storeName: 'participationFiles',
+           uploadAttributeName: 'file'}
     const { uploadFileRequest } = generateActions(uploadConfig.storeName);
     const formattedEndpoint = prepareEndpoint(uploadConfig.endpoint, this.props);
     const reader = new FileReader();
@@ -34,9 +38,15 @@ class FileUpload extends React.Component {
           },
         },
       };
-      const successCallbackAction = [showUiSuccess('File uploaded!')];
+
+      console.log('?', uploadFileRequest);
+      console.log(formattedEndpoint);
+      console.log(payload);
+      console.log("Success callback", successCallback);
+      const successCallbackAction = [() => (console.log('callback succeeded')), showUiSuccess('Plik wgrany!')];
       successCallbackAction.push(successCallback);
       dispatch(uploadFileRequest(formattedEndpoint, payload, successCallbackAction));
+
     };
     reader.onprogress = () => {
       this.setState({ uploading: true });
@@ -53,6 +63,7 @@ class FileUpload extends React.Component {
       fieldName,
       message,
     } = this.props;
+    console.log("1")
     return (
       <div>
         <Field

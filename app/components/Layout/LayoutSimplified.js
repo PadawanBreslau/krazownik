@@ -10,7 +10,6 @@ import { getFromStorage } from 'helpers/Headers';
 class LayoutSimplified extends React.Component {
   render() {
     const { onLogout } = this.props;
-    console.log(this.props)
     const userName = getFromStorage('name');
     return (
       <>

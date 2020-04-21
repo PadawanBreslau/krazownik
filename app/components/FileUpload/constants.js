@@ -8,36 +8,36 @@ import styles from './Placeholder.scss';
 export const DROPZONES_STATES = {
   default: {
     icon: <DropIcon />,
-    heading: 'Drag & drop',
+    heading: 'Kliknij lub przeciągnij',
     helper: (
       <span>
-        your files here, or
-        <span className={styles.link}>browse</span>
+        by dodać zdjęcia lub trasy
+        <p>Trasy w formacie GPX</p>
+        <p>Zdjęcia w formacie JPG/PNG</p>
       </span>
     ),
     info: (
       <span>
-        {'Size limit: 10mb.'}
-        <span className={styles.infoPrimary}>PDF</span> only*
+        {'Limit pliku: 16mb.'}
       </span>
     ),
   },
   success: {
     icon: <SuccessIcon />,
-    heading: 'Uploaded!',
-    helper: 'File was succesfully uploaded!',
-    info: 'Browse for other file instead',
+    heading: 'Załadowane!',
+    helper: 'Plik został załadowany!',
+    info: 'Poszukaj innych plików',
   },
   error: {
     icon: <ErrorIcon />,
-    heading: 'Something went wrong...',
-    helper: 'You have tried to upload file type we do not support',
-    info: 'Browse for a new file',
+    heading: 'Coś się nie teges...',
+    helper: 'Próbowałeś wgrać plik o złym rozszerzeniu?',
+    info: 'Poszukaj innego pliku',
   },
   loading: {
     icon: <Loader />,
-    heading: 'Uploading',
-    helper: 'Please wait, your file is being uploaded.',
+    heading: 'Ładujemy',
+    helper: 'ZzzzzZzzzzzZzzzz. Obudź się.',
     info: '...',
   },
 };

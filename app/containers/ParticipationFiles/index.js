@@ -18,7 +18,7 @@ import FileUpload from 'components/FileUpload'
       const { loadPageData } = generateActions('Files')
       const formattedPayload = payload.toJS();
 
-      const formattedEndpoint = prepareEndpoint(`/bonus_points/${props.bonusPointId}/toggle`, props);
+      const formattedEndpoint = prepareEndpoint(`/files/upload`, props);
       const callback = [
         loadPageData('/files'),
         showUiSuccess(props.message)
@@ -30,12 +30,13 @@ import FileUpload from 'components/FileUpload'
 })
 export class ParticipationFiles extends React.PureComponent {
   render() {
-    const { data } = this.props;
+    const { dispatch } = this.props;
+    console.log("container", dispatch)
 
     return(
       <div>
     <h1>Pliki</h1>
-    <FileUpload />
+    <FileUpload dispatch={dispatch} />
     </div>
     );
   }
