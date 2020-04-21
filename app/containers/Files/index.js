@@ -2,7 +2,7 @@ import React from 'react';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import ParticipationFiles from 'components/ParticipationFiles'
+import ParticipationFiles from 'containers/ParticipationFiles'
 
 @withAuthentication()
 @withApiRead({

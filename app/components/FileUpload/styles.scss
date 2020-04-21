@@ -1,0 +1,27 @@
+@import '../../styles/shared/colors';
+$_avatar-size: 8.125rem;
+
+.avatarWrapper {
+  position: relative;
+  margin-right: 2.375rem;
+}
+.avatar {
+  width: $_avatar-size;
+  height: $_avatar-size;
+  position: absolute;
+  pointer-events: none;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.avatarDropzone {
+  width: $_avatar-size;
+  height: $_avatar-size;
+  border: 1px solid $form-border-color;
+  border-radius: 4px;
+}
