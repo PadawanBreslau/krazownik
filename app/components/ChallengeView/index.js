@@ -10,6 +10,7 @@ const ChallengeView = ({ data }) =>
     <>
       <div className={data.completed ? styles.completedChallenge : styles.challenge}>
         <div className={styles.title}>{data.title} ({data.points} pkt)</div>
+        <div className={styles.icon}><img src={data.icon} alt={data.name} /></div>
         <span className={styles.description}>{data.description}</span>
 
         {data.challengeConditions !== undefined && data.challengeConditions.length > 0 &&
