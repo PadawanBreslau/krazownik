@@ -20,7 +20,7 @@ class LayoutSimplified extends React.Component {
             <Topnav userName={userName} onLogout={onLogout} />
           </div>
           {this.props.ui.loading && <Loader />}
-          <a href="https://www.krazownik.pl/">
+          <a href="http://krazownik.pl/">
             <img src={logo} className={styles.simpleLogo} />
           </a>
           <div className={styles.content}>
