@@ -28,20 +28,26 @@ export default class EventView extends React.PureComponent {
             </div>
           }
 
-         {data.informations.baseLocation &&
+          {data.informations.baseLocation &&
             <div className={styles.info}>
               <span className={styles.label}>Baza zawodów:</span>
               <span className={styles.value}>{data.informations.baseLocation}</span>
             </div>
           }
 
-         {data.informations.baseLocationUrl &&
+          {data.informations.baseLocationUrl &&
             <div className={styles.info}>
               <span className={styles.label}>Baza zawodów: </span>
               <span className={styles.value}><a href={data.informations.baseLocationUrl}> Strona WWW </a></span>
             </div>
           }
 
+          {data.informations.rules &&
+            <div className={styles.info}>
+              <span className={styles.label}>Regulamin: </span>
+              <span className={styles.value}><a href={data.informations.rules}> Strona WWW </a></span>
+            </div>
+          }
         </div>
       </div>
     );
