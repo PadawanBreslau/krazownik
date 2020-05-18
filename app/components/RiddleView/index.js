@@ -7,6 +7,8 @@ const RiddleView = ({ data }) =>
   (
     <div  className={styles.riddle}>
       <p className={styles.title}> {data.title} ({moment(data.visibleFrom).locale('pl').format('LT')}) </p>
+      {data.sponsor && <p className={styles.sponsor}>Sponsor nagordy: {data.sponsor} </p> }
+
       { data.content &&
         <p className={styles.riddleContent}>{data.content}</p>
       }
