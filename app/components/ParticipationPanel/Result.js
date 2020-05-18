@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import DataList from './DataList';
 import styles from './styles.scss';
 
-function Result({ data, challenges, bonusPoints }) {
+function Result({ data, challenges, bonusPoints, extraPoints }) {
   const commonChallenges = challenges.filter((chl) => (chl.open));
   const ownChallenges = challenges.filter((chl) => (!chl.open));
   const commonChallengesPoints = commonChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const ownChallengesPoints = ownChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const finishedBonusPoints = bonusPoints.reduce((prVal, currVal) => (prVal + currVal.points), 0)
-  const pointsTogether = commonChallengesPoints + ownChallengesPoints + finishedBonusPoints;
+  const pointsTogether = commonChallengesPoints + ownChallengesPoints + finishedBonusPoints + extraPoints;
 
   console.log("Enhanced points", bonusPoints);
 
@@ -65,7 +65,7 @@ function Result({ data, challenges, bonusPoints }) {
         </tr>
         <tr>
           <td>Zdjęcia</td>
-          <td></td>
+          <td>{ extraPoints }</td>
           <td></td>
         </tr>
         <tr>

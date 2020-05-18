@@ -33,11 +33,12 @@ function enhanceBonusPointsCompletion(bonusPoints, bonusPointCompletions) {
 }
 
 function ParticipationPanel({ data, handleSubmit }) {
-  const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 3
+  const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 2
   const completionChallenges = combineChallengesWithCompletions(data.challengeCompletions, data.challenges);
   const finishedChallenges = completionChallenges ? completionChallenges.filter((chl) => (chl.completed)) : []
   const enhancedPoints = enhanceBonusPointsCompletion(data.bonusPoints, data.bonusPointCompletions)
   const finishedPoints = enhancedPoints.filter((point)=>(point.completed));
+  const extraPoints = data.extra ? data.extra.points : 0.0
 
   return (
     <div className={styles.container}>
@@ -57,7 +58,7 @@ function ParticipationPanel({ data, handleSubmit }) {
           <DrawNewChallengeForm handleSubmit={handleSubmit} /> :
           <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         }
-        <Result data={data} challenges={finishedChallenges} bonusPoints={finishedPoints} />
+        <Result data={data} challenges={finishedChallenges} bonusPoints={finishedPoints} extraPoints={extraPoints} />
       </div>
     </div>
   );
