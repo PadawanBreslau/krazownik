@@ -5,8 +5,6 @@ import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
 import ChallengeView from 'components/ChallengeView'
 
-
-
 @withAuthentication()
 @withApiRead({
   storeName: 'Challenge',

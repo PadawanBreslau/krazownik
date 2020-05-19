@@ -1,17 +1,27 @@
 import React from 'react';
+import moment from 'moment';
 import styles from './styles.scss';
 
 export default class HomePageView extends React.PureComponent {
   render() {
-    return(
+    const { notes } = this.props;
+
+    return (
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.info}>
             <h1>Krążownik</h1>
             <h3>Szczawnica, 6-7.06.2020</h3>
-            <span className={styles.alert}>
-              Z uwagi na sytuację epidemiologiczną termin tegorocznego Krążownika może zostać zmieniony. Będziemy informować.
-            </span>
+            {notes && notes.map((note) => (
+              <>
+                <span className={styles.title}>
+                  {note.title} { moment(note.createdAt).locale('pl').format('l')}
+                </span>
+                <span className={styles.alert}>
+                  {note.content}
+                </span>
+              </>
+            ))}
           </div>
         </div>
       </div>

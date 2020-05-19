@@ -8,9 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import generateActions from 'redux/api/actions';
 import { prepareEndpoint } from 'helpers/Url';
-import { showUiSuccess } from 'redux/UI/actions';
-
-import { redirect } from 'helpers/Url';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
 import { withApiReadWrite } from 'hoc/apiHOC';
