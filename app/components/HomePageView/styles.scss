@@ -4,7 +4,22 @@
   flex-direction: column;
 }
 
+.notes {
+  margin-top: 4rem;
+}
+
+.note {
+  width: 80%;
+  background-color: #e2e2e2;
+  margin: .825rem;
+  padding: .625rem;
+  border: thin;
+  border-radius: 2px;
+  box-shadow: 3px 3px #b1b1b1;
+}
+
 .title {
+  font-size: larger;
   font-weight: 600;
   display: block;
   margin-bottom: .5rem;
