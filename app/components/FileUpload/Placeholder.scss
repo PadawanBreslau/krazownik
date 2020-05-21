@@ -1,0 +1,57 @@
+@import '../../styles/shared/colors';
+@import '../../styles/shared/variables';
+
+$_dropzone-helper-text: #838DA5;
+
+.wrapper {
+  padding-top: 1.525rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 1.125rem;
+  font-weight: $base-font-bold;
+  margin: .5rem 0;
+}
+
+.headingError {
+  color: $text-error;
+}
+
+.headingSuccess {
+  color: $form-success-color;
+}
+
+.helper {
+  color: $_dropzone-helper-text;
+  font-size: .9375rem;
+}
+
+.link {
+  color: $brand-blue;
+  text-decoration: underline;
+  margin-left: .25rem;
+  cursor: pointer;
+}
+
+.infoPrimary {
+  color: $brand-blue;
+  margin-left: .25rem;
+}
+
+.info {
+  color: $text-light;
+  font-size: .8125rem;
+
+  &.link {
+    color: $brand-blue;
+  }
+}
+
+.infoLoading {
+  color: transparent;
+}
