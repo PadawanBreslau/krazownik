@@ -4,7 +4,8 @@ import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
 import { prepareEndpoint, redirect } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
-import FileUpload from 'components/FileUpload'
+import FileUpload from 'components/FileUpload';
+import FileList from 'components/FileList';
 
 @withApiWrite({
   storeName: 'participationFiles',
@@ -30,14 +31,16 @@ import FileUpload from 'components/FileUpload'
 })
 export class ParticipationFiles extends React.PureComponent {
   render() {
-    const { dispatch } = this.props;
-    console.log("container", dispatch)
+    const { dispatch, files } = this.props;
 
-    return(
+    return (
       <div>
-    <h1>Pliki</h1>
-    <FileUpload dispatch={dispatch} />
-    </div>
+        <h1>Pliki</h1>
+        <>
+          <FileUpload dispatch={dispatch} />
+          {files && files.payload.length > 0 && <FileList files={files.payload} />}
+        </>
+      </div>
     );
   }
 }

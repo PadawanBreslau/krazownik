@@ -14,12 +14,11 @@ import ParticipationFiles from 'containers/ParticipationFiles'
 @withLayout({
   type: 'simplified'
 })
-
 export class Files extends React.PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <ParticipationFiles data={data} />
+      <ParticipationFiles files={data} />
     );
   }
 }

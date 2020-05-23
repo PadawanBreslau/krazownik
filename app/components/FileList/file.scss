@@ -1,0 +1,15 @@
+.fileBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.files{
+  background-color: #e2e2e2;
+  padding: 2rem;
+  flex: 1;
+}
+
+.fileRow{
+  font-size: larger;
+}
