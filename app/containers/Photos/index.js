@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
+import { withApiRead } from 'hoc/apiHOC';
+import PhotoSlider from 'components/PhotoSlider'
 
+@withApiRead({
+  storeName: 'Photos',
+  api: {
+    get: '/photos',
+  },
+})
 @withLayout({
   type: 'simplified',
 })
 export default class Photos extends React.PureComponent {
   render() {
+    const { data } = this.props;
     return(
-    <h1> Wkrótce. Nie później jak za miesiąc od jutra</h1>
+      <PhotoSlider photos={data.payload} />
     );
   }
 }
