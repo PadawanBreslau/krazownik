@@ -9,13 +9,14 @@ function Result({ data, challenges, bonusPoints, extraPoints }) {
   const commonChallengesPoints = commonChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const ownChallengesPoints = ownChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const finishedBonusPoints = bonusPoints.reduce((prVal, currVal) => (prVal + currVal.points), 0)
-  const pointsTogether = commonChallengesPoints + ownChallengesPoints + finishedBonusPoints + extraPoints;
+  const pointsTogether = commonChallengesPoints + ownChallengesPoints +
+    finishedBonusPoints + extraPoints + data.totalAscentPoints + data.totalDistancePoints;
 
-  console.log("Enhanced points", bonusPoints);
+  console.log("All data", data);
 
   function feedback(points) {
     if (points === 0) {
-      return 'No ogarnij się nieco'
+      return 'Uzbieraj coś'
     } else if (points < 20) {
       return "Zacząłeś chodzić i myślisz, że możesz być z tego dumny?"
     } else if (points < 40) {
@@ -33,7 +34,7 @@ function Result({ data, challenges, bonusPoints, extraPoints }) {
     } else if (points < 210) {
       return "To już nie w kij pierdział"
     } else if (points < 250) {
-      return "To już nie w kij pierdział"
+      return "Naprawdę przesadziłeś"
     }
 
   }
@@ -48,6 +49,16 @@ function Result({ data, challenges, bonusPoints, extraPoints }) {
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>Punkty za dystans</td>
+          <td>{data.totalDistancePoints}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Punkty za wysokości</td>
+          <td>{data.totalAscentPoints}</td>
+          <td></td>
+        </tr>
         <tr>
           <td>Wyzwania wspólne</td>
           <td>{commonChallengesPoints}</td>
@@ -65,7 +76,7 @@ function Result({ data, challenges, bonusPoints, extraPoints }) {
         </tr>
         <tr>
           <td>Zdjęcia</td>
-          <td>{ extraPoints }</td>
+          <td>{extraPoints}</td>
           <td></td>
         </tr>
         <tr>
