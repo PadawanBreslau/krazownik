@@ -43,7 +43,7 @@ function ParticipationPanel({ data, handleSubmit }) {
   return (
     <div className={styles.container}>
       <div className={styles.ownMap}>
-        <MapComponent zoom={12} data={enhancedPoints} />
+        <MapComponent zoom={12} data={enhancedPoints} bonusPoints />
       </div>
       <div className={styles.panelRight}>
 

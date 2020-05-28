@@ -16,6 +16,7 @@ import Participation from 'containers/Participation'
 import Teams from 'containers/Teams'
 import Team from 'containers/Team'
 import BonusPoints from 'containers/BonusPoints'
+import GpxPoints from 'containers/GpxPoints'
 import BonusPoint from 'containers/BonusPoint'
 import Contact from 'containers/Contact'
 import Event from 'containers/Event'
@@ -45,6 +46,7 @@ const Routes = () => (
     <PublicRoute exect path='/contact' component={Contact} />
     <PublicRoute exect path='/bonus_points/:id' component={BonusPoint} />
     <PublicRoute exect path='/bonus_points' component={BonusPoints} />
+    <PublicRoute exect path='/gpx_points' component={GpxPoints} />
     <PublicRoute exect path='/events' component={Event} />
     <PublicRoute exect path='/photos' component={Photos} />
     <PrivateRoute exect path='/files' component={Files} />

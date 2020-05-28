@@ -19,7 +19,7 @@ export default class BonusPointView extends React.PureComponent {
     return (
       <div className={styles.bonusPoint}>
         <h2>{bonusPoint.name}</h2>
-        <MapComponent data={[bonusPoint]} zoom={13} />
+        <MapComponent data={[bonusPoint]} zoom={13} bonusPoints/>
 
         {checkedNames.length > 0 &&
           <>
