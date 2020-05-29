@@ -5,8 +5,9 @@ import styles from './styles.scss';
 
 function Result({ data, challenges, bonusPoints, extraPoints }) {
   const commonChallenges = challenges.filter((chl) => (chl.open));
+  const bestFiveChallenges = commonChallenges.sort((chl) => (-chl.points)).slice(0,5);
   const ownChallenges = challenges.filter((chl) => (!chl.open));
-  const commonChallengesPoints = commonChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
+  const commonChallengesPoints = bestFiveChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const ownChallengesPoints = ownChallenges.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const finishedBonusPoints = bonusPoints.reduce((prVal, currVal) => (prVal + currVal.points), 0)
   const pointsTogether = commonChallengesPoints + ownChallengesPoints +

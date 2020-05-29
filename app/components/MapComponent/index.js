@@ -7,7 +7,7 @@ import styles from './styles.scss';
 
 export default class MapComponent extends React.PureComponent {
   render() {
-    const { data, routes, zoom, bonusPoints, tracks } = this.props;
+    const { data, gpxPoints, zoom, bonusPoints, tracks } = this.props;
     const accomodation = [49.429231, 20.498793]
     const location = data !== undefined && data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;    
     const imageBlue = new Leaflet.Icon({
@@ -37,7 +37,7 @@ export default class MapComponent extends React.PureComponent {
         )
         )}         
 
-        { tracks && data && data.map((gpxPoint) => (
+        { tracks && gpxPoints && gpxPoints.map((gpxPoint) => (
            <CircleMarker key={gpxPoint.id} center={[gpxPoint.lat, gpxPoint.lng]} color={gpxPoint.color} radius={5}>
               <Popup className={styles.popup}>
                 {gpxPoint.counter}
@@ -53,5 +53,9 @@ export default class MapComponent extends React.PureComponent {
 }
 
 MapComponent.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  gpxPoints: PropTypes.array,
+  zoom: PropTypes.number,
+  bonusPoint: PropTypes.bool,
+  tracks: PropTypes.bool,
 }

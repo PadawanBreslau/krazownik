@@ -8,7 +8,7 @@ export default class GpxPointsMap extends React.PureComponent {
     const { data } = this.props;
     return (
       <div className={styles.mapView}>
-        <MapComponent data={data} zoom={12} tracks />
+        <MapComponent gpxPoints={data} zoom={12} tracks />
       </div>);
   }
 }
