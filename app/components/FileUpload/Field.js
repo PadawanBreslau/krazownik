@@ -7,7 +7,6 @@ import styles from './styles.scss';
 
 class FileField extends React.Component {
   handleDropOrClick = (acceptedFiles, rejectedFiles, e) => {
-    console.log("handle drop or click")
     if (rejectedFiles.length > 0) return null;
     let eventOrValue = e;
     const {
@@ -25,16 +24,15 @@ class FileField extends React.Component {
 
     const file = eventOrValue.target ? eventOrValue.target.files[0] : eventOrValue[0];
     const callback = (result) => {
-      onChange(result.data.attributes.file);
+      // FIX ME - reload file list
+      //  onChange(result.data.attributes.file);
     }
     onFileUpload(file, callback);
 
-    console.log("After onFileUpload")
     return true;
   };
 
   render() {
-    console.log("2")
     const { accept, input, uploading, uiMessage } = this.props;
     const selectedFile = (input && input.value && input.value[0]) || null;
     const dropzoneProps = {
@@ -46,8 +44,6 @@ class FileField extends React.Component {
       rejectClassName: styles.dropzoneFailed,
       maxSize: 16000000,
     };
-    console.log("3")
-    console.log("uiMessage", uiMessage)
 
     return (
       <div className={styles.wrapper}>

@@ -39,10 +39,6 @@ class FileUpload extends React.Component {
         },
       };
 
-      console.log('?', uploadFileRequest);
-      console.log(formattedEndpoint);
-      console.log(payload);
-      console.log("Success callback", successCallback);
       const successCallbackAction = [() => (console.log('callback succeeded')), showUiSuccess('Plik wgrany!')];
       successCallbackAction.push(successCallback);
       dispatch(uploadFileRequest(formattedEndpoint, payload, successCallbackAction));
@@ -63,7 +59,6 @@ class FileUpload extends React.Component {
       fieldName,
       message,
     } = this.props;
-    console.log("1")
     return (
       <div>
         <Field

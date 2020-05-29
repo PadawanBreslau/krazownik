@@ -1,5 +1,4 @@
 export default function getDropzoneState(acceptedFiles, rejectedFiles, loading, message) {
-  console.log("Message", message)
   let currentState = 'default';
 
   if (message && isSuccess(message, acceptedFiles)) currentState = 'success';
