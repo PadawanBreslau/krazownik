@@ -7,7 +7,16 @@
 .files{
   background-color: #e2e2e2;
   padding: 2rem;
+  min-width: 25rem;
+  margin-left: .8rem;
   flex: 1;
+
+  @media (max-width: 500px) {
+    font-size: x-small;
+    min-width: 11rem;
+    padding: .5rem;
+  }
+
 }
 
 .fileRow{

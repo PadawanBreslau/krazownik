@@ -7,6 +7,10 @@
 .ownMap {
   flex: 2;
   margin: 1rem;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 
 .panelRight{

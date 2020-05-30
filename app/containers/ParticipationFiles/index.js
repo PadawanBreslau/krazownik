@@ -35,7 +35,6 @@ export class ParticipationFiles extends React.PureComponent {
 
     return (
       <div>
-        <h1>Pliki</h1>
         <>
           <FileUpload dispatch={dispatch} />
           {files && files.payload.length > 0 && <FileList files={files.payload} />}

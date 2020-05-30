@@ -11,7 +11,7 @@ export class LoggedInPanel extends React.PureComponent {
     return (
       <div className={styles.buttons}>
         <Link to= '/panel'><div className={styles.darkButton}>PANEL</div></Link>
-        <Link to='/files'><div className={styles.button}>PRZEŚLIJ&nbsp;PLIKI</div></Link>
+        <Link to='/files'><div className={styles.darkButton}>DODAJ PLIKI</div></Link>
         <button className={styles.logout} onClick={onLogout}>WYLOGUJ&nbsp;SIĘ</button>
       </div>
     );

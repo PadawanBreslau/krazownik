@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import MapComponent from 'components/MapComponent'
 import ChallengeCompletion from './ChallengeCompletion';
 import Result from './Result';
@@ -40,6 +41,8 @@ function ParticipationPanel({ data, handleSubmit }) {
   const finishedPoints = enhancedPoints.filter((point)=>(point.completed));
   const extraPoints = data.extra ? data.extra.points : 0.0
 
+  console.log("TEAN", data.team)
+
   return (
     <div className={styles.container}>
       <div className={styles.ownMap}>
@@ -59,6 +62,8 @@ function ParticipationPanel({ data, handleSubmit }) {
           <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         }
         <Result data={data} challenges={finishedChallenges} bonusPoints={finishedPoints} extraPoints={extraPoints} />
+        { data.team && <Link to={`/teams/${data.team.id}`}><div className={styles.button}> Menu drużyny</div>  </Link>}
+
       </div>
     </div>
   );

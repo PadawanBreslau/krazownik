@@ -16,7 +16,6 @@ import styles from './styles.scss';
 export default class Panel extends React.PureComponent {
   render() {
     const { payload } = this.props;
-    console.log(payload);
     const currentYear = new Date().getFullYear();
     const availableToJoin = !payload.participations || !payload.participations.find((part) => (part.year === currentYear))
 

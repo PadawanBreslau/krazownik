@@ -1,13 +1,15 @@
 .panel {
   display: flex;
   flex-direction: column;
+  margin-left: .425rem;
 }
 
 .boxes { 
   flex: 2;
   display: flex;
   flex-direction: row;
-  min-width: 50rem;
+  flex-wrap: wrap;
+  min-width: 20rem;
 }
 
 .data {

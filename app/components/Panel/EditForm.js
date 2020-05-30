@@ -40,7 +40,7 @@ export default class EditForm extends React.PureComponent {
 
     return(
       <form>
-        <button onClick={handleSubmit} className={styles.button}>Zmień dane</button>
+        <button onClick={handleSubmit} className={styles.button} disabled>Zmień dane</button>
       </form>
     );
   }

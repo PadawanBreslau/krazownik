@@ -4,6 +4,7 @@
 $_dropzone-helper-text: #838DA5;
 
 .wrapper {
+  margin-left: .5rem;
   padding-top: 1.525rem;
   display: flex;
   flex: 1;
@@ -46,6 +47,7 @@ $_dropzone-helper-text: #838DA5;
 .info {
   color: $text-light;
   font-size: .8125rem;
+  margin-top: .225rem;
 
   &.link {
     color: $brand-blue;

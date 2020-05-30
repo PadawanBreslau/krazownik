@@ -5,6 +5,7 @@ import { showUiSuccess, showUiError } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import generateActions from 'redux/api/actions';
 import FileField from './Field';
+import styles from './styles.scss'
 
 class FileUpload extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class FileUpload extends React.Component {
       message,
     } = this.props;
     return (
-      <div>
+      <div className={styles.uploadBox}>
         <Field
           component={FileField}
           name={fieldName}
