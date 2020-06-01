@@ -49,6 +49,7 @@ function ParticipationPanel({ data, handleSubmit }) {
         <MapComponent zoom={12} data={enhancedPoints} gpxPoints={data.gpxPoints} bonusPoints tracks />
       </div>
       <div className={styles.panelRight}>
+        { data.team && <Link to={`/teams/${data.team.id}`}><div className={styles.button}> Menu drużyny</div>  </Link>}
 
         {completionChallenges &&
           <div className={styles.challenges}>
@@ -62,7 +63,6 @@ function ParticipationPanel({ data, handleSubmit }) {
           <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         }
         <Result data={data} challenges={finishedChallenges} bonusPoints={finishedPoints} extraPoints={extraPoints} />
-        { data.team && <Link to={`/teams/${data.team.id}`}><div className={styles.button}> Menu drużyny</div>  </Link>}
 
       </div>
     </div>

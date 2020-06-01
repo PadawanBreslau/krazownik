@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PhotoGallery from 'components/PhotoGallery';
 import styles from './styles.scss'
 
 export default class TeamView extends React.PureComponent {
@@ -7,8 +8,7 @@ export default class TeamView extends React.PureComponent {
     const { team, extended } = this.props;
 
     return (
-      <>
-
+      <div className={styles.teamPage}>
       <div className={styles.team}>
          <div className={styles.name}> {team.name} </div>
          <div className={styles.logo}><img src={team.emblem}/></div>
@@ -22,9 +22,9 @@ export default class TeamView extends React.PureComponent {
 
         {!team.participations && <span>Nikt nie został dołączony do tego zespołu</span>}
       </div>
-      
-      { extended && <div><span>Więcej info</span></div> }
-      </>
+
+      { extended && team.photos && <PhotoGallery photos={team.photos} /> }
+      </div>
     )
   }
 }

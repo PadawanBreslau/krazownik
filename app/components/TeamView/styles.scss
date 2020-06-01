@@ -1,6 +1,13 @@
 @import '../../styles/shared/colors';
 
+.teamPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .team {
+  flex: 1;
   background-color: #e2e2e2;
   border-radius:4px;
   margin: .825rem;
@@ -8,10 +15,11 @@
   display: flex;
   flex-direction: column;
   min-width: 22rem;
-  height: 30rem;
+  max-width: 30rem;
+  height: 20rem;
   box-shadow: 3px 3px #d1d1d1;
   @media (max-width: 500px) {
-    height: 18rem;
+    height: 8rem;
   }
 }
 
@@ -29,15 +37,22 @@
   font-weight: 800;
   margin-bottom: 1rem;
   color: #222;
-  font-size: 1.4375rem;
-  margin-bottom: 1rem;
+  font-size: 1.2375rem;
+  margin-bottom: .5rem;
   font-weight: 600;
+
+  @media (max-width: 500px) {
+    font-size: 0.8375rem;
+    margin-bottom: .215rem;
+  }
 }
 
 .userList {
   flex: 2;
   list-style-type: square;
-  font-size: larger;
+  @media (max-width: 500px) {
+    font-size: smaller;
+  }
 }
 
 .user {
