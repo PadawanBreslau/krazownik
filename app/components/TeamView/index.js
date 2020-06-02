@@ -23,7 +23,7 @@ export default class TeamView extends React.PureComponent {
         {!team.participations && <span>Nikt nie został dołączony do tego zespołu</span>}
       </div>
 
-      { extended && team.photos && <PhotoGallery photos={team.photos} /> }
+      { extended && team.photos && team.photos.length > 0 && <PhotoGallery photos={team.photos} /> }
       </div>
     )
   }
