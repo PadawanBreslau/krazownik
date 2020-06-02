@@ -39,6 +39,7 @@ const Routes = () => (
     <PublicRoute exact path="/login" component={Login} />
     <PublicRoute exect path='/challenges/:id' component={Challenge} />
     <PublicRoute exect path='/challenges' component={Challenges} />
+    <PublicRoute exect path='/wyzwania' component={Challenges} />
     <PublicRoute exect path='/riddles/:id' component={Riddle} />
     <PublicRoute exect path='/riddles' component={Riddles} />
     <PublicRoute exect path='/teams/:id' component={Team} />
@@ -46,6 +47,7 @@ const Routes = () => (
     <PublicRoute exect path='/contact' component={Contact} />
     <PublicRoute exect path='/bonus_points/:id' component={BonusPoint} />
     <PublicRoute exect path='/bonus_points' component={BonusPoints} />
+    <PublicRoute exect path='/punkty' component={BonusPoints} />
     <PublicRoute exect path='/gpx_points' component={GpxPoints} />
     <PublicRoute exect path='/events' component={Event} />
     <PublicRoute exect path='/photos' component={Photos} />
