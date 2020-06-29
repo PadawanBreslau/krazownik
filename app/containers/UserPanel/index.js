@@ -27,7 +27,7 @@ export default class UserPanel extends React.PureComponent {
     if (data.payload === undefined) {
       return null;
     }
-    return (<Panel payload={data.payload} />);
+    return <Panel payload={data.payload} />;
   }
 }
 

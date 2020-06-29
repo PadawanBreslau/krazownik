@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
-import { prepareEndpoint, redirect } from 'helpers/Url';
+import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import FileUpload from 'components/FileUpload';
 import FileList from 'components/FileList';
@@ -16,13 +16,12 @@ import FileList from 'components/FileList';
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('participationFiles');
-      const { loadPageData } = generateActions('Files')
+      const { loadPageData } = generateActions('Files');
       const formattedPayload = payload.toJS();
 
       const formattedEndpoint = prepareEndpoint(`/files/upload`, props);
       const callback = [
-        loadPageData('/files'),
-        showUiSuccess(props.message)
+        loadPageData('/files'), showUiSuccess(props.message)
       ];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, callback));

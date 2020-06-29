@@ -6,7 +6,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import { showUiSuccess } from 'redux/UI/actions';
 import { getFormValues } from 'redux-form/immutable';

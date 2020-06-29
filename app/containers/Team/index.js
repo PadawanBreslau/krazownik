@@ -20,9 +20,7 @@ export default class Team extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload !== undefined) {
-      return (
-        <TeamView team={data.payload} extended />
-      );
+      return <TeamView team={data.payload} extended />;
     }
     return null;
   }

@@ -5,7 +5,7 @@ import { compose } from 'redux';
 import { push } from 'react-router-redux';
 import { withApiWrite } from 'hoc/apiHOC';
 import withLayout from 'hoc/layoutHOC';
-import { setToStorage, getFromStorage, setHeadersFromQuery } from 'helpers/Headers';
+import { setToStorage, setHeadersFromQuery } from 'helpers/Headers';
 
 import PasswordSetForm from 'components/PasswordSetForm';
 @withLayout({ type: 'simplified' })

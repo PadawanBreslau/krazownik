@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import ResultList from 'components/ResultList'
+import ResultList from 'components/ResultList';
 
 @withAuthentication()
 @withApiRead({
@@ -20,9 +20,7 @@ export default class Results extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload.length > 0) {
-      return (
-        <ResultList data={data.payload} />
-      );
+      return  <ResultList data={data.payload} />;
     }
     return null;
   }
