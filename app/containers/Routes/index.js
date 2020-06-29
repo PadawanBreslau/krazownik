@@ -20,6 +20,7 @@ import GpxPoints from 'containers/GpxPoints'
 import BonusPoint from 'containers/BonusPoint'
 import Contact from 'containers/Contact'
 import Event from 'containers/Event'
+import Results from 'containers/Results'
 import Photos from 'containers/Photos'
 import Files from 'containers/Files'
 
@@ -50,6 +51,7 @@ const Routes = () => (
     <PublicRoute exect path='/punkty' component={BonusPoints} />
     <PublicRoute exect path='/gpx_points' component={GpxPoints} />
     <PublicRoute exect path='/events' component={Event} />
+    <PublicRoute exect path='/results' component={Results} />
     <PublicRoute exect path='/photos' component={Photos} />
     <PrivateRoute exect path='/files' component={Files} />
     <PrivateRoute exect path='/panel' component={UserPanel} />
