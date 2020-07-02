@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import MapComponent from 'components/MapComponent'
 import ChallengeCompletion from './ChallengeCompletion';
 import Result from './Result';
-import DrawNewChallengeForm from './DrawNewChallengeForm'
+import DrawNewChallengeForm from './DrawNewChallengeForm';
 import styles from './styles.scss';
 
 function combineChallengesWithCompletions(completions, challenges) {
@@ -34,12 +34,12 @@ function enhanceBonusPointsCompletion(bonusPoints, bonusPointCompletions) {
 }
 
 function ParticipationPanel({ data, handleSubmit }) {
-  const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 2
+  const shouldBeAbleToDraw = !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 2;
   const completionChallenges = combineChallengesWithCompletions(data.challengeCompletions, data.challenges);
-  const finishedChallenges = completionChallenges ? completionChallenges.filter((chl) => (chl.completed)) : []
-  const enhancedPoints = enhanceBonusPointsCompletion(data.bonusPoints, data.bonusPointCompletions)
-  const finishedPoints = enhancedPoints.filter((point)=>(point.completed));
-  const extraPoints = data.extra ? data.extra.points : 0.0
+  const finishedChallenges = completionChallenges ? completionChallenges.filter((chl) => (chl.completed)) : [];
+  const enhancedPoints = enhanceBonusPointsCompletion(data.bonusPoints, data.bonusPointCompletions);
+  const finishedPoints = enhancedPoints.filter((point) => (point.completed));
+  const extraPoints = data.extra ? data.extra.points : 0.0;
 
   console.log("TEAN", data.team)
 
@@ -49,7 +49,7 @@ function ParticipationPanel({ data, handleSubmit }) {
         <MapComponent zoom={12} data={enhancedPoints} gpxPoints={data.gpxPoints} bonusPoints tracks />
       </div>
       <div className={styles.panelRight}>
-        { data.team && <Link to={`/teams/${data.team.id}`}><div className={styles.button}> Menu drużyny</div>  </Link>}
+        {data.team && <Link to={`/teams/${data.team.id}`}><div className={styles.button}> Menu drużyny</div>  </Link>}
 
         {completionChallenges &&
           <div className={styles.challenges}>

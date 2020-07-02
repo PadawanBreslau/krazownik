@@ -5,7 +5,7 @@ import styles from './styles.scss';
 export default class ResultList extends React.PureComponent {
   render() {
     const { data } = this.props;
-    return(
+    return (
       <table className={styles.table}>
         <tr className={styles.header}>
           <th className={styles.cell}>Uczestnik</th>
@@ -16,7 +16,9 @@ export default class ResultList extends React.PureComponent {
           <th className={styles.cell}>Dodatkowe</th>
           <th className={styles.cell}>Suma</th>
         </tr>
-       { data.map((score) => (<Result result={score} />)) }
+        {data.map((score) => (
+          <Result result={score} />
+        ))}
       </table>
     );
   }

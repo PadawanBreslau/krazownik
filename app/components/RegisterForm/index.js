@@ -1,16 +1,9 @@
-/**
- *
- * RegisterForm
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FormField from 'components/FormField';
 import Button from 'components/Button';
 import MessageBox from 'components/MessageBox';
-import { validateNumericValues } from 'utils/validators';
 import styles from './styles.scss';
 import { FIELD_NAMES } from './constants';
 
@@ -56,13 +49,11 @@ function RegisterForm(props) {
             />
           </div>
         </div>
-
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
             Register
           </button>
         </Button>
-
         <Link to="/login" className={styles.returnLink}>
           Return to login
         </Link>

@@ -12,12 +12,14 @@ const PhotoSlider = ({ photos }) => {
   const slider = (
     <AutoplaySlider
       interval={6000}
-      play={true}
+      play
       cancelOnInteraction={false} // should stop playing on user interaction
-      animation="cubeAnimation">
-      {photos && photos.map((photo) => (
+      animation="cubeAnimation"
+    >
+      {photos && (
+        photos.map((photo) => (
         <div><img src={backendUrl + photo.url} /></div>
-      ))}
+      )))}
     </AutoplaySlider>
   );
   return (
@@ -27,7 +29,6 @@ const PhotoSlider = ({ photos }) => {
 
 PhotoSlider.propTypes = {
   photos: PropTypes.array,
-}
+};
 
 export default PhotoSlider
-
