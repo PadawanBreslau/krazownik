@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import ParticipationFiles from 'containers/ParticipationFiles'
+import ParticipationFiles from 'containers/ParticipationFiles';
 
 @withAuthentication()
 @withApiRead({
@@ -12,15 +13,17 @@ import ParticipationFiles from 'containers/ParticipationFiles'
   },
 })
 @withLayout({
-  type: 'simplified'
+  type: 'simplified',
 })
 export class Files extends React.PureComponent {
   render() {
     const { data } = this.props;
-    return (
-      <ParticipationFiles files={data} />
-    );
+    return <ParticipationFiles files={data} />;
   }
 }
 
-export default Files;  
+Files.propTypes = {
+  data: PropTypes.object,
+};
+
+export default Files;

@@ -20,7 +20,7 @@ export default class Results extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload.length > 0) {
-      return  <ResultList data={data.payload} />;
+      return <ResultList data={data.payload} />;
     }
     return null;
   }

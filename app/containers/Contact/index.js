@@ -1,16 +1,13 @@
 import React from 'react';
-import ContactInfo from 'components/ContactInfo'
+import ContactInfo from 'components/ContactInfo';
 import withLayout from 'hoc/layoutHOC';
 
 @withLayout({
-  type: 'simplified'
+  type: 'simplified',
 })
-
 export class Contact extends React.PureComponent {
   render() {
-    return (
-      <ContactInfo />
-    );
+    return <ContactInfo />;
   }
 }
 export default Contact;

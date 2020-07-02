@@ -18,15 +18,12 @@ import FileList from 'components/FileList';
       const { submitPageData } = generateActions('participationFiles');
       const { loadPageData } = generateActions('Files');
       const formattedPayload = payload.toJS();
-
       const formattedEndpoint = prepareEndpoint(`/files/upload`, props);
-      const callback = [
-        loadPageData('/files'), showUiSuccess(props.message)
-      ];
+      const callback = [loadPageData('/files'), showUiSuccess(props.message)];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, callback));
     },
-  }
+  },
 })
 export class ParticipationFiles extends React.PureComponent {
   render() {
@@ -44,7 +41,8 @@ export class ParticipationFiles extends React.PureComponent {
 }
 
 ParticipationFiles.propTypes = {
-  data: PropTypes.array,
-}
+  files: PropTypes.object,
+  dispatch: PropTypes.func,
+};
 
 export default ParticipationFiles;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import ChallengeList from 'components/ChallengeList'
+import ChallengeList from 'components/ChallengeList';
 
 @withAuthentication()
 @withApiRead({
@@ -20,9 +20,7 @@ export default class Challenges extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload.length > 0) {
-      return (
-        <ChallengeList data={data.payload} />
-      );
+      return <ChallengeList data={data.payload} />;
     }
     return null;
   }
@@ -31,4 +29,3 @@ export default class Challenges extends React.PureComponent {
 Challenges.propTypes = {
   data: PropTypes.object,
 };
-

@@ -25,14 +25,16 @@ import ParticipationPanel from 'components/ParticipationPanel';
       const { submitPageData } = generateActions('participationPanel');
       const formattedPayload = payload.toJS();
       const formattedEndpoint = prepareEndpoint('/challenges/draw', props);
-      const successCallbackAction = [() => window.location.assign(`/participations/${props.data.payload.id}`)];
+      const successCallbackAction = [
+        () => window.location.assign(`/participations/${props.data.payload.id}`),
+      ];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackAction));
     },
   },
   api: {
     get: '/participations/:id',
-    post: '/challenges/draw'
+    post: '/challenges/draw',
   },
 })
 export default class Participation extends React.PureComponent {
@@ -42,10 +44,11 @@ export default class Participation extends React.PureComponent {
     if (data.payload === undefined) {
       return null;
     }
-    return <ParticipationPanel data={data.payload} handleSubmit={handleSubmit}/>
+    return <ParticipationPanel data={data.payload} handleSubmit={handleSubmit} />;
   }
 }
 
 Participation.propTypes = {
   data: PropTypes.object,
+  handleSubmit: PropTypes.func,
 };

@@ -12,8 +12,8 @@ export default class NotFound extends React.PureComponent {
     return (
       <ErrorPageWrapper
         imgSrc={Image}
-        header={"Zgubiłeś szlak, zdarza się każdemu."}
-        text={"To nie jest najgorsze co mogło się zdarzyć, mogłeś zgubić się z Januszem. Albo jeszcze gorzej - być nim."}
+        header="Zgubiłeś szlak, zdarza się każdemu."
+        text="To nie jest najgorsze co mogło się zdarzyć, mogłeś zgubić się z Januszem. Albo jeszcze gorzej - być nim."
         homeButton={{
           title: 'Wróc',
           path: '/',
