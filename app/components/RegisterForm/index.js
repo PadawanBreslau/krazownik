@@ -16,12 +16,7 @@ function RegisterForm(props) {
       <form>
         <MessageBox />
         <div className="form-row form-row--full">
-          <FormField
-            label="Email"
-            type="text"
-            fieldName='email'
-            className="form-field"
-          />
+          <FormField label="Email" type="text" fieldName="email" className="form-field" />
         </div>
         <div className="userFormPart">
           <div className="form-row form-row--full">
@@ -36,7 +31,7 @@ function RegisterForm(props) {
             <FormField
               label="Password"
               type="password"
-              fieldName='password'
+              fieldName="password"
               className={`form-field ${styles.validable}`}
             />
           </div>
@@ -44,7 +39,7 @@ function RegisterForm(props) {
             <FormField
               label="Password confirmation"
               type="password"
-              fieldName='password_confirmation'
+              fieldName="password_confirmation"
               className={`form-field ${styles.validable}`}
             />
           </div>
@@ -64,7 +59,6 @@ function RegisterForm(props) {
 
 RegisterForm.propTypes = {
   handleSubmit: PropTypes.func,
-  formValues: PropTypes.object,
 };
 
 export default RegisterForm;

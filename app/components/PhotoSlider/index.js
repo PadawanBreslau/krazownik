@@ -16,19 +16,19 @@ const PhotoSlider = ({ photos }) => {
       cancelOnInteraction={false} // should stop playing on user interaction
       animation="cubeAnimation"
     >
-      {photos && (
+      {photos &&
         photos.map((photo) => (
-        <div><img src={backendUrl + photo.url} /></div>
-      )))}
+          <div>
+            <img src={backendUrl + photo.url} alt="User fed input" />
+          </div>
+        ))}
     </AutoplaySlider>
   );
-  return (
-    <>{slider}</>
-  )
-}
+  return <>{slider}</>;
+};
 
 PhotoSlider.propTypes = {
   photos: PropTypes.array,
 };
 
-export default PhotoSlider
+export default PhotoSlider;
