@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import MapComponent from 'components/MapComponent';
-import BonusPointList from 'components/BonusPointList'
-import styles from './styles.scss'
+import BonusPointList from 'components/BonusPointList';
+import styles from './styles.scss';
 
 export default class BonusPointMap extends React.PureComponent {
   render() {
@@ -11,10 +11,11 @@ export default class BonusPointMap extends React.PureComponent {
       <div className={styles.mapView}>
         <MapComponent data={data} zoom={10} bonusPoints />
         <BonusPointList data={data} />
-      </div>);
+      </div>
+    );
   }
 }
 
 BonusPointMap.propTypes = {
   data: PropTypes.array,
-}
+};

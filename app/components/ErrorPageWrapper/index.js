@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Logo from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/logo.svg';
 import ErrorPageWrapperLink from './Link';
 import styles from './styles.scss';
 

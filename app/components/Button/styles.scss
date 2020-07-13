@@ -14,16 +14,16 @@ $_button-box-shadow-hover: 0 2px 24px 0 rgba(72, 128, 255, .4);
 
   button,
   a {
-    background: #30ca9a;
+    background: #06d37e;
     width: 100%;
     display: block;
     box-shadow: $_button-box-shadow;
-    border-radius: 6.25rem;
+    border-radius: .5rem;
     text-align: center;
     color: #fff;
-    font-size: .875rem;
-    letter-spacing: .1437rem;
-    padding: .9375rem;
+    font-size: 1.275rem;
+    letter-spacing: .25rem;
+    padding: .5375rem;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: bold;

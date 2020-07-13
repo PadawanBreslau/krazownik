@@ -12,7 +12,7 @@ function RegisterForm(props) {
 
   return (
     <div className="form-wrapper">
-      <h1 className="form-title">Register new user to Krazownik</h1>
+      <h1 className="form-title">Zarejestruj się na Krazownika</h1>
       <form>
         <MessageBox />
         <div className="form-row form-row--full">
@@ -21,7 +21,7 @@ function RegisterForm(props) {
         <div className="userFormPart">
           <div className="form-row form-row--full">
             <FormField
-              label="User name"
+              label="Twoje imię"
               type="text"
               fieldName={FIELD_NAMES.name.fieldName}
               className={`form-field ${styles.validable}`}
@@ -29,7 +29,7 @@ function RegisterForm(props) {
           </div>
           <div className="form-row form-row--full">
             <FormField
-              label="Password"
+              label="Hasło"
               type="password"
               fieldName="password"
               className={`form-field ${styles.validable}`}
@@ -37,7 +37,7 @@ function RegisterForm(props) {
           </div>
           <div className="form-row form-row--full">
             <FormField
-              label="Password confirmation"
+              label="Potwierdź hasło"
               type="password"
               fieldName="password_confirmation"
               className={`form-field ${styles.validable}`}
@@ -46,11 +46,11 @@ function RegisterForm(props) {
         </div>
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
-            Register
+            Zarejestruj
           </button>
         </Button>
         <Link to="/login" className={styles.returnLink}>
-          Return to login
+          Powrót do logowania
         </Link>
       </form>
     </div>

@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import generateActions from 'redux/api/actions';
+import { prepareEndpoint } from 'helpers/Url';
 import { showUiSuccess } from 'redux/UI/actions';
-import { prepareEndpoint, redirect } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 
-import styles from './styles.scss'
+import styles from './styles.scss';
 
 @withApiWrite({
   storeName: 'toggleBonusPoint',
@@ -16,33 +16,39 @@ import styles from './styles.scss'
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('toggleBonusPoint');
-      const { loadPageData } = generateActions('BonusPoints')
+      const { loadPageData } = generateActions('BonusPoints');
       const formattedPayload = payload.toJS();
 
-      const formattedEndpoint = prepareEndpoint(`/bonus_points/${props.bonusPointId}/toggle`, props);
-      const callback = [
-        loadPageData('/bonus_points'),
-        showUiSuccess(props.message)
-      ];
+      const formattedEndpoint = prepareEndpoint(
+        `/bonus_points/${props.bonusPointId}/toggle`,
+        props,
+      );
+      const callback = [loadPageData('/bonus_points'), showUiSuccess(props.message)];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, callback));
     },
-  }
+  },
 })
-export default class BonusPointCompletionForm extends React.PureComponent{
-  render(){
+export default class BonusPointCompletionForm extends React.PureComponent {
+  render() {
     const { handleSubmit, isChecked, label } = this.props;
-    console.log(isChecked);
 
-    return(
+    return (
       <form>
-        <button onClick={handleSubmit} className={isChecked ? styles.buttonRed : styles.buttonGreen }>{label}</button>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className={isChecked ? styles.buttonRed : styles.buttonGreen}
+        >
+          {label}
+        </button>
       </form>
-    
     );
   }
 }
 
 BonusPointCompletionForm.propTypes = {
-  bonusPoint: PropTypes.object,
-}
+  handleSubmit: PropTypes.func,
+  isChecked: PropTypes.bool,
+  label: PropTypes.string,
+};

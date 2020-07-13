@@ -1,9 +1,3 @@
-/**
- *
- * LoginForm
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -25,7 +19,7 @@ function LoginForm(props) {
             <Message
               message={{
                 type: 'success',
-                text: 'Your password was reset. Please login with the new password',
+                text: 'Zresetowane hasło zostało wysłane na maila',
               }}
             />
           </HidableBox>

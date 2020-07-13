@@ -15,7 +15,7 @@ import styles from './styles.scss';
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('toggleChallenge');
-      const { loadPageData } = generateActions('Challenges')
+      const { loadPageData } = generateActions('Challenges');
       const formattedPayload = payload.toJS();
 
       const formattedEndpoint = prepareEndpoint(`/challenges/${props.challengeId}/toggle`, props);
@@ -26,18 +26,20 @@ import styles from './styles.scss';
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, callback));
     },
-  }
+  },
 })
 export default class ToggleChallengeForm extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function
   render() {
     const { completed, handleSubmit } = this.props;
 
-    const label = completed ? 'Cofnij' : 'Ukończ'
-    const style = completed ? styles.buttonBack : styles.button
+    const label = completed ? 'Cofnij' : 'Ukończ';
+    const style = completed ? styles.buttonBack : styles.button;
     return (
       <form>
-        <button onClick={handleSubmit} className={style}>{label}</button>
+        <button type="button" onClick={handleSubmit} className={style}>
+          {label}
+        </button>
       </form>
     );
   }
@@ -45,7 +47,5 @@ export default class ToggleChallengeForm extends React.PureComponent {
 
 ToggleChallengeForm.propTypes = {
   handleSubmit: PropTypes.func,
-  data: PropTypes.object,
-  dispatch: PropTypes.func,
-  location: PropTypes.object,
+  completed: PropTypes.bool,
 };
