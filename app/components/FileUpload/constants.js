@@ -3,7 +3,6 @@ import DropIcon from '-!babel-loader!svg-react-loader?name=ExitIcon!./dropzone.s
 import ErrorIcon from '-!babel-loader!svg-react-loader?name=ExitIcon!./error.svg';
 import SuccessIcon from '-!babel-loader!svg-react-loader?name=ExitIcon!./success.svg';
 import Loader from '-!babel-loader!svg-react-loader?name=ExitIcon!./loader.svg';
-import styles from './Placeholder.scss';
 
 export const DROPZONES_STATES = {
   default: {
@@ -16,11 +15,7 @@ export const DROPZONES_STATES = {
         <p>Zdjęcia w formacie JPG/PNG</p>
       </span>
     ),
-    info: (
-      <span>
-        {'Limit pliku: 16mb.'}
-      </span>
-    ),
+    info: <span>Limit pliku: 16mb.</span>,
   },
   success: {
     icon: <SuccessIcon />,

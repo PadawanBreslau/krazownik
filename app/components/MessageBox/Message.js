@@ -35,7 +35,6 @@ class Message extends React.Component {
     const { type, title, text } = this.props.message;
     let msg;
 
-    console.log('TITLE', title)
     if (type === 'error' || (title && title.status === 422)) {
       msg = this.parseError(title);
     } else {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
@@ -6,7 +7,6 @@ import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
 
 import styles from './styles.scss';
-
 
 @withAuthentication()
 @withApiWrite({
@@ -22,7 +22,6 @@ import styles from './styles.scss';
       const { submitPageData } = generateActions('joinForm');
       const { loadPageData } = generateActions('userPanel');
 
-
       const formattedEndpoint = prepareEndpoint('/participations', payload);
       const reloadCallback = loadPageData('/panel');
 
@@ -36,15 +35,19 @@ import styles from './styles.scss';
   },
 })
 export default class JoinForm extends React.PureComponent {
-  render(){
+  render() {
     const { handleSubmit } = this.props;
 
-    return(
+    return (
       <form>
-        <button onClick={handleSubmit} className={styles.button}>Zapisz sie na najbliższego Krążownika</button>
+        <button type="submit" onClick={handleSubmit} className={styles.button}>
+          Zapisz sie na najbliższego Krążownika
+        </button>
       </form>
     );
   }
 }
 
-
+JoinForm.propTypes = {
+  handleSubmit: PropTypes.func,
+};

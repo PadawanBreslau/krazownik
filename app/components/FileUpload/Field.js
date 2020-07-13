@@ -9,10 +9,7 @@ class FileField extends React.Component {
   handleDropOrClick = (acceptedFiles, rejectedFiles, e) => {
     if (rejectedFiles.length > 0) return null;
     let eventOrValue = e;
-    const {
-      input: { onChange },
-      onFileUpload,
-    } = this.props;
+    const { onFileUpload } = this.props;
 
     if (eventOrValue.type === 'drop') {
       if (acceptedFiles.length) {
@@ -23,10 +20,11 @@ class FileField extends React.Component {
     }
 
     const file = eventOrValue.target ? eventOrValue.target.files[0] : eventOrValue[0];
-    const callback = (result) => {
-      // FIX ME - reload file list
-      //  onChange(result.data.attributes.file);
-    }
+    // const callback = (result) => {
+    // FIX ME - reload file list
+    //  onChange(result.data.attributes.file);
+    // };
+    const callback = () => undefined;
     onFileUpload(file, callback);
 
     return true;
@@ -34,7 +32,7 @@ class FileField extends React.Component {
 
   render() {
     const { accept, input, uploading, uiMessage } = this.props;
-    const selectedFile = (input && input.value && input.value[0]) || null;
+    // const selectedFile = (input && input.value && input.value[0]) || null;
     const dropzoneProps = {
       accept,
       multiple: false,
@@ -48,9 +46,7 @@ class FileField extends React.Component {
     return (
       <div className={styles.wrapper}>
         <input type="hidden" disabled {...input} />
-        <Dropzone             
-           {...dropzoneProps} 
-        >
+        <Dropzone {...dropzoneProps}>
           {({ acceptedFiles, rejectedFiles }) => (
             <Placeholder
               uploadState={getDropzoneState(acceptedFiles, rejectedFiles, uploading, uiMessage)}

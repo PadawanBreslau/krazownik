@@ -18,7 +18,7 @@ function CandidateSignupDropzonePlaceholder({ uploadState }) {
     link: uploadState === 'error' || uploadState === 'success',
     infoLoading: uploadState === 'loading',
   });
-  
+
   return (
     <div className={styles.wrapper}>
       {DROPZONES_STATES[uploadState].icon}

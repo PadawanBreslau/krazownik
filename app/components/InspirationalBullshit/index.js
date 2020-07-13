@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import styles from './styles.scss'
+import styles from './styles.scss';
 
 const bullshitExamples = [
   'Jeśli cię nie boli, znaczy że nie robisz tego dobrze.',
@@ -19,10 +19,12 @@ const bullshitExamples = [
   'Zamierzam żyć wiecznie. Jak na razie idzie mi całkiem nieźle.',
   'Moim ulubionym urządzeniem na siłowni jest automat z przekąskami.',
   'Cokolwiek robisz, nie warto',
-]
+];
 
 const InspirationalBullshit = () => (
-    <div className={styles.bullshit}>{bullshitExamples[Math.floor(Math.random()*bullshitExamples.length)]}</div>
+  <div className={styles.bullshit}>
+    {bullshitExamples[Math.floor(Math.random() * bullshitExamples.length)]}
+  </div>
 );
 
 export default InspirationalBullshit;

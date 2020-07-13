@@ -12,12 +12,12 @@ import JoinForm from './JoinForm';
 import EditForm from './EditForm';
 import styles from './styles.scss';
 
-
 export default class Panel extends React.PureComponent {
   render() {
     const { payload } = this.props;
     const currentYear = new Date().getFullYear();
-    const availableToJoin = !payload.participations || !payload.participations.find((part) => (part.year === currentYear))
+    const availableToJoin =
+      !payload.participations || !payload.participations.find((part) => part.year === currentYear);
 
     return (
       <div className={styles.panel}>
@@ -34,12 +34,12 @@ export default class Panel extends React.PureComponent {
           </div>
         </div>
 
-
         <InspirationalBullshit />
-      </div>);
+      </div>
+    );
   }
-};
+}
 
 Panel.propTypes = {
-  data: PropTypes.object,
-}
+  payload: PropTypes.object,
+};

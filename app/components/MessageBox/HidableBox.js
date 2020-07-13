@@ -13,10 +13,6 @@ class HidableBox extends React.Component {
     this.closeMessage = this.closeMessage.bind(this);
   }
 
-  state = {
-    isVisible: false,
-  };
-
   componentWillMount() {
     if (this.props.static) {
       this.setState({ isVisible: true });

@@ -5,7 +5,7 @@ import { showUiSuccess, showUiError } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import generateActions from 'redux/api/actions';
 import FileField from './Field';
-import styles from './styles.scss'
+import styles from './styles.scss';
 
 class FileUpload extends React.Component {
   constructor(props) {
@@ -20,9 +20,10 @@ class FileUpload extends React.Component {
     if (!file) return;
     const { dispatch } = this.props;
     const uploadConfig = {
-           endpoint: '/files/upload',
-           storeName: 'participationFiles',
-           uploadAttributeName: 'file'}
+      endpoint: '/files/upload',
+      storeName: 'participationFiles',
+      uploadAttributeName: 'file',
+    };
     const { uploadFileRequest } = generateActions(uploadConfig.storeName);
     const formattedEndpoint = prepareEndpoint(uploadConfig.endpoint, this.props);
     const reader = new FileReader();
@@ -40,10 +41,9 @@ class FileUpload extends React.Component {
         },
       };
 
-      const successCallbackAction = [() => (console.log('callback succeeded')), showUiSuccess('Plik wgrany!')];
+      const successCallbackAction = [showUiSuccess('Plik wgrany!')];
       successCallbackAction.push(successCallback);
       dispatch(uploadFileRequest(formattedEndpoint, payload, successCallbackAction));
-
     };
     reader.onprogress = () => {
       this.setState({ uploading: true });
@@ -55,11 +55,7 @@ class FileUpload extends React.Component {
   };
 
   render() {
-    const {
-      acceptedFormats,
-      fieldName,
-      message,
-    } = this.props;
+    const { acceptedFormats, fieldName, message } = this.props;
     return (
       <div className={styles.uploadBox}>
         <Field
@@ -80,7 +76,6 @@ FileUpload.propTypes = {
   message: PropTypes.object,
   acceptedFormats: PropTypes.string,
   fieldName: PropTypes.string,
-  uploadConfig: PropTypes.object,
 };
 
 export default FileUpload;

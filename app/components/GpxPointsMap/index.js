@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import MapComponent from 'components/MapComponent';
-import styles from './styles.scss'
+import styles from './styles.scss';
 
 export default class GpxPointsMap extends React.PureComponent {
   render() {
@@ -9,10 +9,11 @@ export default class GpxPointsMap extends React.PureComponent {
     return (
       <div className={styles.mapView}>
         <MapComponent gpxPoints={data} zoom={12} tracks />
-      </div>);
+      </div>
+    );
   }
 }
 
 GpxPointsMap.propTypes = {
   data: PropTypes.array,
-}
+};
