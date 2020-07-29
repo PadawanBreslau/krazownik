@@ -8,7 +8,7 @@ import styles from './styles.scss';
 export default class MapComponent extends React.PureComponent {
   render() {
     const { data, gpxPoints, zoom, bonusPoints, tracks } = this.props;
-    const accomodation = [49.429231, 20.498793];
+    const accomodation = [50.38938, 16.358968];
     const location =
       data !== undefined && data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;
     const imageBlue = new Leaflet.Icon({
