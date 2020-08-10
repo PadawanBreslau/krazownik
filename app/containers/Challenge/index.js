@@ -20,7 +20,7 @@ export default class Challenge extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload) {
-      return <ChallengeView data={data.payload} />;
+      return <ChallengeView data={data.payload} fullView />;
     }
     return null;
   }
