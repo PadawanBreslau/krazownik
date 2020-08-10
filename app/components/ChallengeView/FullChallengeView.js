@@ -5,7 +5,6 @@ import MapComponent from '../MapComponent';
 
 const FullChallengeView = ({ challengeCompletions, locations }) => (
   <>
-    {challengeCompletions && <CompletionList data={challengeCompletions} />}
     {locations && (
       <MapComponent
         challengePoints={locations}
@@ -13,6 +12,10 @@ const FullChallengeView = ({ challengeCompletions, locations }) => (
         customStyle={{ height: '300px', width: '100%' }}
       />
     )}
+    {challengeCompletions &&
+      challengeCompletions.filter((cc) => cc.completed).length > 0 && (
+        <CompletionList data={challengeCompletions} />
+      )}
   </>
 );
 

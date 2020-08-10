@@ -36,6 +36,12 @@
   font-weight: 600;
 }
 
+.description {
+  flex: 2;
+  font-size: 1.025rem;
+  font-weight: 600;
+}
+
 .finish{
   margin-top: 1rem;
   text-align: center;
@@ -50,8 +56,28 @@
   margin-bottom: 1rem;
 }
 
+.fullHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.titleFull {
+  flex: 1;
+  font-size: large;
+  font-weight: 800;
+}
+
+.descriptionFull {
+  flex: 2;
+  font-size: larger;
+  font-weight: 600;
+}
+
 .conditionList {
   flex: 1;
+  font-size: larger;
 }
 
 .condition {

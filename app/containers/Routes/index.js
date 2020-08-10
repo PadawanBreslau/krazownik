@@ -23,6 +23,7 @@ import Event from 'containers/Event';
 import Results from 'containers/Results';
 import Photos from 'containers/Photos';
 import Files from 'containers/Files';
+import Privacy from 'components/Privacy';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -51,6 +52,7 @@ const Routes = () => (
     <PublicRoute exect path="/photos" component={Photos} />
     <PrivateRoute exect path="/files" component={Files} />
     <PrivateRoute exect path="/panel" component={UserPanel} />
+    <PrivateRoute exect path="/privacy" component={Privacy} />
     <PrivateRoute exect path="/participations/:id" component={Participation} />
     <PublicRoute component={NotFoundPage} />
   </Switch>

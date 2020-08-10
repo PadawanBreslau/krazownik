@@ -1,23 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { isLoggedIn } from 'helpers/User';
-import styles from './styles.scss';
 import ToggleChallengeForm from './ToggleChallengeForm';
 import FullChallengeView from './FullChallengeView';
+import FullHeader from './FullHeader';
+import SimpleHeader from './SimpleHeader';
+import styles from './styles.scss';
 
 const ChallengeView = ({ data, fullView }) => (
   <div className={fullView ? styles.fullView : styles.windowView}>
     <div className={data.completed ? styles.completedChallenge : styles.challenge}>
-      <div className={styles.title}>
-        <Link to={`/challenges/${data.id}`}>
-          {data.title} ({data.points} pkt)
-        </Link>
-      </div>
-      <div className={styles.icon}>
-        <img src={data.icon} alt={data.name} />
-      </div>
-      <span className={styles.description}>{data.description}</span>
+      {fullView ? <FullHeader data={data} /> : <SimpleHeader data={data} />}
 
       {data.challengeConditions !== undefined &&
         data.challengeConditions.length > 0 && (
@@ -31,6 +24,7 @@ const ChallengeView = ({ data, fullView }) => (
             </ul>
           </>
         )}
+
       {fullView && (
         <FullChallengeView
           challengeCompletions={data.challengeCompletions}
