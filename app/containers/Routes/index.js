@@ -52,7 +52,7 @@ const Routes = () => (
     <PublicRoute exect path="/photos" component={Photos} />
     <PrivateRoute exect path="/files" component={Files} />
     <PrivateRoute exect path="/panel" component={UserPanel} />
-    <PrivateRoute exect path="/privacy" component={Privacy} />
+    <PublicRoute exect path="/privacy" component={Privacy} />
     <PrivateRoute exect path="/participations/:id" component={Participation} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
