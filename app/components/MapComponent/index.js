@@ -14,7 +14,7 @@ export default class MapComponent extends React.PureComponent {
     const challengeMarkerSize = 10;
 
     const location =
-      data !== undefined && data.length === 1 ? [data[0].lat, data[0].lng] : accomodation;
+      data !== undefined && data.length === 1 ? [data[0].lat, data[0].lon] : accomodation;
     const imageBlue = new Leaflet.Icon({
       iconUrl: require('images/icons/marker-icon-blue.png'), // eslint-disable-line global-require
       iconSize: [20, 30],
@@ -38,7 +38,7 @@ export default class MapComponent extends React.PureComponent {
           data.map((bonusPoint) => (
             <Marker
               key={bonusPoint.id}
-              position={[bonusPoint.lat, bonusPoint.lng]}
+              position={[bonusPoint.lat, bonusPoint.lon]}
               icon={bonusPoint.completed ? imageBlue : imageRed}
             >
               <Popup className={styles.popup}>
@@ -52,7 +52,7 @@ export default class MapComponent extends React.PureComponent {
           gpxPoints.map((gpxPoint) => (
             <CircleMarker
               key={gpxPoint.id}
-              center={[gpxPoint.lat, gpxPoint.lng]}
+              center={[gpxPoint.lat, gpxPoint.lon]}
               color={gpxPoint.color}
               radius={trackMarkerSize}
             >

@@ -12,22 +12,10 @@ const ChallengeView = ({ data, fullView }) => (
     <div className={data.completed ? styles.completedChallenge : styles.challenge}>
       {fullView ? <FullHeader data={data} /> : <SimpleHeader data={data} />}
 
-      {data.challengeConditions !== undefined &&
-        data.challengeConditions.length > 0 && (
-          <>
-            <ul className={styles.conditionList}>
-              {data.challengeConditions.map((item) => (
-                <li key={item.id} className={styles.condition}>
-                  {item.content}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-
       {fullView && (
         <FullChallengeView
           challengeCompletions={data.challengeCompletions}
+          challengeConditions={data.challengeConditions}
           locations={data.locations}
         />
       )}

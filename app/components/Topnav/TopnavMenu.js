@@ -48,7 +48,7 @@ const TopnavMenu = () => (
       </Link>
     </div>
     <div className={styles.menuItem}>
-      <a href="https://www.facebook.com/events/664301550682259/">
+      <a href="https://www.facebook.com/events/387343032232845">
         <img src={fb} className={styles.fbLogo} alt="FB logo" />
       </a>
     </div>

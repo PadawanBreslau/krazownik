@@ -1,45 +1,66 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getFormValues } from 'redux-form/immutable';
+import { fromJS } from 'immutable';
+import { Link } from 'react-router-dom';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
 import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
-
+import FormField from 'components/FormField';
+import CheckboxField from 'components/CheckboxField';
+import Button from 'components/Button';
+import validators from 'helpers/Validators';
 import styles from './styles.scss';
 
 @withAuthentication()
 @withApiWrite({
   storeName: 'editForm',
   formName: 'editForm',
-  api: {
-    put: '/users',
-  },
   customFormOptions: {
     destroyOnUnmount: false,
     keepDirtyOnReinitialize: true,
-    onSubmit: (payload, id, dispatch) => {
+    onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('editForm');
       const { loadPageData } = generateActions('userPanel');
-
-      const formattedEndpoint = prepareEndpoint(`/users/${id}`, payload);
+      const formattedEndpoint = prepareEndpoint(`/users/${props.userId}`, payload);
       const reloadCallback = loadPageData('/panel');
-
       const successCallbackActions = [reloadCallback, showUiSuccess('Zmieniłeś swoje dane')];
 
-      dispatch(submitPageData(formattedEndpoint, 'put', payload, successCallbackActions));
+      dispatch(submitPageData(formattedEndpoint, 'put', payload.toJS(), successCallbackActions));
     },
   },
 })
-export default class EditForm extends React.PureComponent {
+class EditForm extends React.PureComponent {
   render() {
     const { handleSubmit } = this.props;
+    const validateTerms = validators.requireWithMessage(
+      'Proszę zapoznać się z polityką prywatności',
+    );
 
     return (
       <form>
-        <button type="submit" onClick={handleSubmit} className={styles.button} disabled>
-          Zmień dane
-        </button>
+        <FormField label="Imię (wyświetlane innym)" type="text" fieldName="name" />
+        <FormField label="Telefon" type="text" fieldName="phoneNumber" />
+        <CheckboxField fieldName="sendMessages" className="form-field">
+          Chcę dostawać informacje SMSem
+        </CheckboxField>
+        <CheckboxField fieldName="sendRiddles" className="form-field">
+          Chcę dostawać zagadki SMSem
+        </CheckboxField>
+        <CheckboxField fieldName="privacyCheck" validate={validateTerms}>
+          Zapoznałem się z{' '}
+          <Link to="/privacy" target="_blank">
+            polityką prywatności
+          </Link>
+        </CheckboxField>
+        <Button>
+          <button type="submit" onClick={handleSubmit} className={styles.button}>
+            Zmień dane
+          </button>
+        </Button>
       </form>
     );
   }
@@ -48,3 +69,13 @@ export default class EditForm extends React.PureComponent {
 EditForm.propTypes = {
   handleSubmit: PropTypes.func,
 };
+
+export default connect((state) => ({
+  formValues: getFormValues('UserPanel')(state),
+  initialValues: fromJS({
+    name: state.toJS().user.name,
+    phoneNumber: state.toJS().user.phoneNumber,
+    sendMessages: state.toJS().user.sendMessages,
+    sendRiddles: state.toJS().user.sendRiddles,
+  }),
+}))(EditForm);

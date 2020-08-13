@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FormField from 'components/FormField';
 import Button from 'components/Button';
 import MessageBox from 'components/MessageBox';
+import CheckboxField from 'components/CheckboxField';
 import styles from './styles.scss';
 import { FIELD_NAMES } from './constants';
 
@@ -44,6 +45,12 @@ function RegisterForm(props) {
             />
           </div>
         </div>
+        <CheckboxField fieldName="privacyCheck">
+          Zapoznałem się z{' '}
+          <Link to="/privacy" target="_blank">
+            polityką prywatności
+          </Link>
+        </CheckboxField>
         <Button className="form-button">
           <button type="submit" onClick={handleSubmit}>
             Zarejestruj

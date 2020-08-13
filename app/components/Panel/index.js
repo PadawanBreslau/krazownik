@@ -1,9 +1,3 @@
-/**
- *
- * UserPanel
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import ParticipationList from 'components/ParticipationList';
@@ -24,8 +18,7 @@ export default class Panel extends React.PureComponent {
         <div className={styles.boxes}>
           <div className={styles.data}>
             <h2>Twoje dane</h2>
-            Nickname: {payload.name}
-            <EditForm />
+            <EditForm userId={payload.id} />
           </div>
           <div className={styles.data}>
             <h2>Twoje występy</h2>
@@ -41,5 +34,5 @@ export default class Panel extends React.PureComponent {
 }
 
 Panel.propTypes = {
-  payload: PropTypes.object,
+  payload: PropTypes.any,
 };
