@@ -10,8 +10,11 @@ export default class Panel extends React.PureComponent {
   render() {
     const { payload } = this.props;
     const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
     const availableToJoin =
-      !payload.participations || !payload.participations.find((part) => part.year === currentYear);
+      !payload.participations ||
+      (currentMonth < 7 && !payload.participations.find((part) => part.year === currentYear)) ||
+      (currentMonth > 6 && !payload.participations.find((part) => part.year === currentYear + 1));
 
     return (
       <div className={styles.panel}>

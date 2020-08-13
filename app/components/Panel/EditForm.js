@@ -49,6 +49,9 @@ class EditForm extends React.PureComponent {
         <CheckboxField fieldName="sendRiddles" className="form-field">
           Chcę dostawać zagadki SMSem
         </CheckboxField>
+        <CheckboxField fieldName="teamReady" className="form-field">
+          Chcę brać udział w drużynówce
+        </CheckboxField>
         <CheckboxField fieldName="privacyPolicyAccepted" validate={validateTerms}>
           Zapoznałem się z{' '}
           <Link to="/privacy" target="_blank">
@@ -75,6 +78,7 @@ export default connect((state) => ({
     phoneNumber: state.toJS().userPanel.data?.attributes?.phoneNumber,
     sendMessages: state.toJS().userPanel.data?.attributes?.sendMessages,
     sendRiddles: state.toJS().userPanel.data?.attributes?.sendRiddles,
+    teamReady: state.toJS().userPanel.data?.attributes?.teamReady,
     privacyPolicyAccepted: state.toJS().userPanel.data?.attributes?.privacyPolicyAccepted,
   }),
 }))(EditForm);
