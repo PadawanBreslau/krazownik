@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getFormValues } from 'redux-form/immutable';
 import { fromJS } from 'immutable';
 import { Link } from 'react-router-dom';
 import { prepareEndpoint } from 'helpers/Url';
@@ -50,7 +49,7 @@ class EditForm extends React.PureComponent {
         <CheckboxField fieldName="sendRiddles" className="form-field">
           Chcę dostawać zagadki SMSem
         </CheckboxField>
-        <CheckboxField fieldName="privacyCheck" validate={validateTerms}>
+        <CheckboxField fieldName="privacyPolicyAccepted" validate={validateTerms}>
           Zapoznałem się z{' '}
           <Link to="/privacy" target="_blank">
             polityką prywatności
@@ -71,11 +70,11 @@ EditForm.propTypes = {
 };
 
 export default connect((state) => ({
-  formValues: getFormValues('UserPanel')(state),
   initialValues: fromJS({
-    name: state.toJS().user.name,
-    phoneNumber: state.toJS().user.phoneNumber,
-    sendMessages: state.toJS().user.sendMessages,
-    sendRiddles: state.toJS().user.sendRiddles,
+    name: state.toJS().userPanel.data?.attributes?.name,
+    phoneNumber: state.toJS().userPanel.data?.attributes?.phoneNumber,
+    sendMessages: state.toJS().userPanel.data?.attributes?.sendMessages,
+    sendRiddles: state.toJS().userPanel.data?.attributes?.sendRiddles,
+    privacyPolicyAccepted: state.toJS().userPanel.data?.attributes?.privacyPolicyAccepted,
   }),
 }))(EditForm);

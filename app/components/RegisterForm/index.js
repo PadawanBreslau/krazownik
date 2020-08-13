@@ -45,7 +45,7 @@ function RegisterForm(props) {
             />
           </div>
         </div>
-        <CheckboxField fieldName="privacyCheck">
+        <CheckboxField fieldName="privacyPolicyAccepted">
           Zapoznałem się z{' '}
           <Link to="/privacy" target="_blank">
             polityką prywatności

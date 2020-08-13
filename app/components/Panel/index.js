@@ -18,7 +18,7 @@ export default class Panel extends React.PureComponent {
         <div className={styles.boxes}>
           <div className={styles.data}>
             <h2>Twoje dane</h2>
-            <EditForm userId={payload.id} />
+            {payload.id && <EditForm userId={payload.id} />}
           </div>
           <div className={styles.data}>
             <h2>Twoje występy</h2>
