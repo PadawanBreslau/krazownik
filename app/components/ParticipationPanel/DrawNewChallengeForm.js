@@ -17,7 +17,7 @@ export default class DrawNewChallengeForm extends React.PureComponent {
             component={Select}
             name="maxPoints"
             className={styles.select}
-            label="Wybierz maksymalną liczbę punktów"
+            label="Wybierz liczbę punktów"
           >
             <option value="3">3 ptk</option>
             <option value="5">5 pkt</option>

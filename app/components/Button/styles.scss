@@ -1,7 +1,7 @@
 @import '../../styles/shared/variables';
 
-$_button-box-shadow: 0 2px 24px 0 rgba(72, 128, 255, .2);
-$_button-box-shadow-hover: 0 2px 24px 0 rgba(72, 128, 255, .4);
+$_button-box-shadow: 0 2px 2px 0 rgba(72, 128, 255, .2);
+$_button-box-shadow-hover: 0 2px 12px 0 rgba(32, 96, 245, 0.4);
 
 .button {
   min-width: 13.75rem;

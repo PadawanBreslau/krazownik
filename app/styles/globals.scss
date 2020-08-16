@@ -55,8 +55,7 @@ a {
   background-color: $brand-light;
   padding: .225rem;
   font-size: 1.025rem;
-  width: 245px;
-  height: 230px;
+  width: 50%px;
 }
 
   .media {
@@ -153,9 +152,10 @@ a {
     font-size: .75rem !important;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-style: italic;
-    color: $_tippy-tooltip-color !important;
+    background-color: #eee;
     padding: .8rem !important;
     text-align: left !important;
+    border-radius: 6px;
 
     p {
       margin-top: 0;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fromJS } from 'immutable';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tippy';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
@@ -12,6 +13,7 @@ import FormField from 'components/FormField';
 import CheckboxField from 'components/CheckboxField';
 import Button from 'components/Button';
 import validators from 'helpers/Validators';
+import InfoIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/info.svg';
 import styles from './styles.scss';
 
 @withAuthentication()
@@ -41,16 +43,31 @@ class EditForm extends React.PureComponent {
 
     return (
       <form>
-        <FormField label="Imię (wyświetlane innym)" type="text" fieldName="name" />
-        <FormField label="Telefon" type="text" fieldName="phoneNumber" />
+        <FormField type="text" fieldName="name" placeholder="Nazwa użytkownika" />
+        <FormField type="text" fieldName="phoneNumber" placeholder="Numer telefonu" />
         <CheckboxField fieldName="sendMessages" className="form-field">
           Chcę dostawać informacje SMSem
+          <span className={styles.label}>
+            <Tooltip title="Organizacyjne informacje SMSowe" position="right" delay={250}>
+              <InfoIcon />
+            </Tooltip>
+          </span>
         </CheckboxField>
         <CheckboxField fieldName="sendRiddles" className="form-field">
           Chcę dostawać zagadki SMSem
+          <span className={styles.label}>
+            <Tooltip title="Zagadki w trakcie trwania imprezy" position="right" delay={250}>
+              <InfoIcon />
+            </Tooltip>
+          </span>
         </CheckboxField>
         <CheckboxField fieldName="teamReady" className="form-field">
           Chcę brać udział w drużynówce
+          <span className={styles.label}>
+            <Tooltip title="Czy rozpatrywać Cię przy rozdziale drużyn" position="right" delay={250}>
+              <InfoIcon />
+            </Tooltip>
+          </span>
         </CheckboxField>
         <CheckboxField fieldName="privacyPolicyAccepted" validate={validateTerms}>
           Zapoznałem się z{' '}

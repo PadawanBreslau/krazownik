@@ -11,7 +11,7 @@ export default class HomePageView extends React.PureComponent {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.info}>
-            <h1>Krążownik 2020 | Szczawnica, 6-7.06.2020</h1>
+            <h1>Krążownik 2021 | Duszniki-Zdrój, 5-6.06.2021</h1>
             <div className={styles.notes}>
               {notes &&
                 notes.map((note) => (

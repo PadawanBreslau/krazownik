@@ -22,7 +22,6 @@ export default class PopupContent extends React.PureComponent {
             {bonusPoint.name} ({bonusPoint.points} pkt)
           </div>
         </Link>
-        <img src={bonusPoint.photo} alt={bonusPoint.name} />
         {isLoggedIn() && (
           <BonusPointCompletionForm
             bonusPointId={bonusPoint.id}
