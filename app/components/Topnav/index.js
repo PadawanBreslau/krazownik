@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TopnavMenu from './TopnavMenu';
 import LoggedInPanel from './LoggedInPanel';
 import LoggedOutPanel from './LoggedOutPanel';
+import fb from 'images/fb.png';
 import styles from './styles.scss';
 
 const Topnav = (props) => (

@@ -9,6 +9,7 @@ $_border-color: #48506b;
   background-color: $brand-light;
   margin-left: auto;
   margin-right: auto;
+  margin-top: .125rem;
   position: fixed;
   z-index: 100;
   width: 80%;
@@ -18,16 +19,13 @@ $_border-color: #48506b;
 }
 
 .menu {
-  flex: 5;
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   flex-direction: row;
   justify-content: flex-start;
   background-color: $brand-light;
-  @media (max-width: 500px) {
-    display: none;
-  }
 }
 
 .menuItem {
@@ -36,26 +34,35 @@ $_border-color: #48506b;
   padding-top: .425rem;
 }
 
+.menuLabel {
+  margin-left: 1.525rem;
+  font-size: larger;
+  margin-top: 1.225rem;
+  font-weight: 800;
+
+  @media (max-width: 500px) {
+    font-size: smaller;
+    margin-top: 1.725rem;
+  }
+}
+
 .buttons {
-  flex: 2;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-right: 1rem;
+  flex: 1;
+  margin-right: .5rem;
+  text-align: right;
 }
 
 .button {
   flex: 1;
   margin-top: .825rem;
-  background-color: #d3e2eb;
+  background-color: black;
   border: 1px solid black;
   border-radius: 4px;
-  width: 120px;
-  height: 30px;
-  padding: .315rem;
+  color: #e2e2e2;
+  padding: .225rem;
   text-align: center;
   margin-left: 1rem;
-  opacity: 70%;
+  opacity: 60%;
   cursor: pointer;
 
 
@@ -68,56 +75,6 @@ $_border-color: #48506b;
   }
 }
 
-.logout {
-  flex: 1;
-  margin-top: .825rem;
-  background-color: #d3e2eb;
-  border: 1px solid black;
-  border-radius: 4px;
-  width: 120px;
-  height: 30px;
-  padding: .515rem;
-  text-align: center;
-  margin-left: 1rem;
-  opacity: 70%;
-  cursor: pointer;
-
-
-  &:hover {
-    opacity: 100%;
-  }
-}
-
-
-.darkButton {
-  flex: 1;
-  margin-top: .825rem;
-  background-color: #aabbcc;
-  border: 1px solid black;
-  border-radius: 4px;
-  width: 105px;
-  height: 30px;
-  padding: .415rem;
-  text-align: center;
-  margin-left: 1rem;
-
-  &:hover {
-    opacity: 100%;
-  }
-}
-
-.link{
-  opacity: 70%;
-
-  &:hover {
-    opacity: 100%;
-  }
-}
-
-.fbLogo {
-  max-width: 20px;
-  margin-top: -.815rem;
-}
 
 .logo {
   max-width: 50px;
@@ -130,6 +87,6 @@ $_border-color: #48506b;
 
   svg {
     margin-top: -1.215rem;
-    width: 1.625rem;
+    width: 1.825rem;
   }
 }

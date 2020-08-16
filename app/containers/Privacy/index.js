@@ -1,24 +1,32 @@
 import React from 'react';
 import styles from './styles.scss';
+import withLayout from 'hoc/layoutHOC';
+import withAuthentication from 'hoc/authHOC';
 
-const Privacy = () => (
-  <div className={styles.privacy}>
-    <h1> Polityka prywatności </h1>
-    <h3>
-      {' '}
+@withAuthentication()
+@withLayout({
+  type: 'simplified',
+})
+export default class Privacy extends React.PureComponent {
+  render() {
+    return (
+      <div className={styles.privacy}>
+        <h1> Polityka prywatności </h1>
+        <h3>
+          {' '}
       Czyli kilka słów o tym, że potrzebuję tych danych tylko do prowadzenia strony i samego
       Krążownika i nie sprzedam waszego numeru handlarzom garnków{' '}
-    </h3>
-    <div className={styles.section}>
-      <p className={styles.title}> 1. Wprowadzenie</p>
+        </h3>
+        <div className={styles.section}>
+          <p className={styles.title}> 1. Wprowadzenie</p>
       Prywatność odwiedzających naszą stronę internetową jest dla nas bardzo ważna i dokładamy
       wszelkich starań, aby ją chronić. Niniejsza polityka wyjaśnia, co robimy z Twoimi danymi
       osobowymi. Zgoda na korzystanie z plików cookie zgodnie z warunkami niniejszej polityki
       podczas pierwszej wizyty na naszej stronie pozwala nam na korzystanie z plików cookie przy
       każdej kolejnej wizycie na naszej stronie.
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 2. Zbieranie danych osobowych</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 2. Zbieranie danych osobowych</p>
       Następujące rodzaje danych osobowych mogą być gromadzone, przechowywane i wykorzystywane:
       informacje, takie jak adres e-mail, które podajesz podczas rejestracji w naszej witrynie
       internetowej; informacje wprowadzane podczas tworzenia profilu w naszej witrynie — na przykład
@@ -29,8 +37,8 @@ const Privacy = () => (
       musisz uzyskać zgodę tej osoby na ujawnienie i przetwarzanie tych danych osobowych zgodnie z
       niniejszymi zasadami
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 3. Korzystanie z Twoich danych osobowych</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 3. Korzystanie z Twoich danych osobowych</p>
       Dane osobowe przesłane do nas za pośrednictwem naszej strony internetowej będą wykorzystywane
       do celów określonych w niniejszej polityce lub na odpowiednich stronach witryny. Możemy
       wykorzystywać Twoje dane osobowe do celu: administrowania naszą stroną internetową i biznesem;
@@ -44,8 +52,8 @@ const Privacy = () => (
       przekazywać danych osobowych stronom trzecim, lub jakimkolwiek innym związanym z nimi stronom
       trzecim, w celach marketingu bezpośredniego.
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 4. Ujawnianie danych osobowych </p>
+        <div className={styles.section}>
+          <p className={styles.title}> 4. Ujawnianie danych osobowych </p>
       Możemy ujawniać dane osobowe użytkownika wszelkim naszym pracownikom, członkom kadry
       kierowniczej, przedstawicielom, dostawcom lub podwykonawcom, o ile jest to niezbędne do celów
       określonych w niniejszych „Zasadach ochrony prywatności”. Możemy ujawniać dane osobowe
@@ -61,8 +69,8 @@ const Privacy = () => (
       niniejszych „Zasadach ochrony prywatności” nie będziemy udostępniać osobom trzecim informacji
       dotyczących użytkownika.
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 5. Zachowywanie danych osobowych</p>W Niniejszej Sekcji
+        <div className={styles.section}>
+          <p className={styles.title}> 5. Zachowywanie danych osobowych</p>W Niniejszej Sekcji
       określiliśmy nasze zasady i procedury dotyczące zatrzymywania danych, które mają na celu
       zapewnienie przestrzegania naszych zobowiązań prawnych w zakresie zachowywania i usuwania
       danych osobowych. Dane osobowe, które przetwarzamy w dowolnym celu lub celach, nie będą
@@ -73,8 +81,8 @@ const Privacy = () => (
       i w celu ustanowienia, wyegzekwowania lub obrony naszych praw (wliczając w to udostępnienie
       informacji innym podmiotom w celu przeciwdziałania oszustwom).
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 6. Bezpieczeństwo danych osobowych</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 6. Bezpieczeństwo danych osobowych</p>
       Podejmiemy zasadne techniczne i organizacyjne środki ostrożności w celu przeciwdziałania
       utracie, nadużyciu lub zmianie danych osobowych użytkownika. Będziemy przechowywać wszystkie
       dane osobowe, które podasz na naszych bezpiecznych serwerach (chronionych hasłem i zaporą).
@@ -85,21 +93,21 @@ const Privacy = () => (
       poufności hasła używanego do uzyskania dostępu do naszej strony internetowej; nie poprosimy
       Cię o podanie hasła (z wyjątkiem sytuacji, gdy logujesz się na naszej stronie internetowej).
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 7. Nowelizacje</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 7. Nowelizacje</p>
       Niniejsze zasady mogą być okresowo aktualizowane poprzez zamieszczenie w naszej witrynie ich
       nowej wersji. Należy od czasu do czasu sprawdzać tę stronę, aby upewnić się, że rozumiesz
       wszelkie zmiany w tych zasadach. Możemy powiadomić Cię o zmianach w niniejszej polityce za
       pośrednictwem poczty elektronicznej lub prywatnego systemu przesyłania wiadomości na naszej
       stronie internetowej.
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 8. Twoje prawa</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 8. Twoje prawa</p>
       Użytkownik może zażądać udostępnienia jego danych osobowych, które są przechowywane. Możemy na
       Twoje żądanie ukrywać dane osobowe, w zakresie dozwolonym przez prawo.
     </div>
-    <div className={styles.section}>
-      <p className={styles.title}> 9. Ciasteczka</p>
+        <div className={styles.section}>
+          <p className={styles.title}> 9. Ciasteczka</p>
       Nasza strona internetowa korzysta z plików cookie. Plik cookie to plik zawierający
       identyfikator (ciąg liter i cyfr), który jest wysyłany przez serwer internetowy do
       przeglądarki internetowej i przechowywany przez przeglądarkę. Dane identyfikacyjne są ponownie
@@ -112,7 +120,7 @@ const Privacy = () => (
       osobowe, które przechowujemy na Twój temat, mogą być powiązane z informacjami przechowywanymi
       w plikach cookie i uzyskiwanymi z nich.
     </div>
-  </div>
-);
-
-export default Privacy;
+      </div>
+    )
+  }
+}

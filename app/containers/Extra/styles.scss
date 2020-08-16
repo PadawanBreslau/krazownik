@@ -1,0 +1,31 @@
+$_button-box-shadow: 0 5px 10px 0 rgba(150, 181, 253, 0.5);
+
+.extraContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1.225rem;
+  margin-bottom: 1rem;
+}
+
+.box{
+  flex: 1;
+  min-width: 275px;
+  text-align: center;
+  background-color: #e2e2e2;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: .5rem;
+  margin-bottom: .25rem;
+  box-shadow: $_button-box-shadow;
+  transition: box-shadow .3s ease-in-out;
+}
+
+.iconBox{
+  width: 200px;
+  height: 200px;
+}
+
+.label{
+  font-size: x-large;
+  margin-top: -1rem;
+}

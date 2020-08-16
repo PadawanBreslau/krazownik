@@ -23,14 +23,15 @@ import Event from 'containers/Event';
 import Results from 'containers/Results';
 import Photos from 'containers/Photos';
 import Files from 'containers/Files';
-import Privacy from 'components/Privacy';
+import Privacy from 'containers/Privacy';
+import Extra from 'containers/Extra';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
 
 const Routes = () => (
   <Switch>
-    <PublicRoute exact path="/" component={HomePage} />
+    <PublicRoute exact path="/" component={Extra} />
     <PublicRoute exact path="/set_password" component={PasswordSet} />
     <PublicRoute exact path="/reset_password" component={PasswordForgot} />
     <PublicRoute exact path="/register" component={Register} />
@@ -53,6 +54,7 @@ const Routes = () => (
     <PrivateRoute exect path="/files" component={Files} />
     <PrivateRoute exect path="/panel" component={UserPanel} />
     <PublicRoute exect path="/privacy" component={Privacy} />
+    <PublicRoute exect path="/extra" component={Extra} />
     <PrivateRoute exect path="/participations/:id" component={Participation} />
     <PublicRoute component={NotFoundPage} />
   </Switch>
