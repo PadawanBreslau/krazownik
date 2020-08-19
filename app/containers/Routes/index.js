@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PasswordSet from 'containers/PasswordSet';
 import PasswordForgot from 'containers/PasswordForgot';

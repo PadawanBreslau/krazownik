@@ -9,23 +9,28 @@ $_button-box-shadow: 0 5px 10px 0 rgba(150, 181, 253, 0.5);
 
 .box{
   flex: 1;
-  min-width: 275px;
+  min-width: 140px;
   text-align: center;
+  font-weight: 600;
   background-color: #e2e2e2;
   border-radius: 8px;
-  padding: 2rem;
-  margin: .5rem;
+  padding: 1rem;
+  margin: .525rem;
   margin-bottom: .25rem;
+  padding-top: 1.725rem;
   box-shadow: $_button-box-shadow;
   transition: box-shadow .3s ease-in-out;
 }
 
 .iconBox{
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
 }
 
 .label{
-  font-size: x-large;
+  font-size: larger;
   margin-top: -1rem;
+  max-width: 160px;
+  @media (max-width: 500px){
+  }
 }

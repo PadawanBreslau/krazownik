@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.scss';
 function DataList({ data }) {
   return (
-    <ul>
+    <ul className={styles.pointList}>
       {data.map((d) => (
-        <li key={d.id}>{d.title || d.name.concat(` (${d.points})`)}</li>
+        <li className={styles.pointLabel} key={d.id}>
+          {d.title || d.name.concat(` (${d.points})`)}
+        </li>
       ))}
     </ul>
   );

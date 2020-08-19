@@ -2,6 +2,9 @@
   width: 85%;
   display: flex;
   flex-direction: row;
+  @media (max-width: 500px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .ownMap {
@@ -9,7 +12,7 @@
   margin: 1rem;
 
   @media (max-width: 500px) {
-    display: none;
+    margin-top: 1rem;
   }
 }
 
@@ -20,15 +23,14 @@
 }
 
 .drawing {
-  margin-top: 4.5rem;
+  margin-top: .5rem;
 }
 
 .info {
-  font-size: 1.4375rem;
+  font-size: 1.2375rem;
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding: .5rem;
-  font-weight: 500;
+  padding: .225rem;
+  font-weight: 600;
 }
 .label {
   margin-top: 2rem;
@@ -82,9 +84,14 @@
 
 .table 
   { 
+    table-layout: auto;
     th, td {
     border: 1px solid black;
     padding: .425rem;
+      @media (max-width: 500px) {
+        padding: .225rem;
+        font-size: smaller;
+      }
   }
 
   th{
@@ -94,6 +101,26 @@
   tr:nth-child(even) {
     background-color: rgb(220, 220, 220);
   }
+}
+
+.pointList {
+  list-style-type: square;
+  margin-left: .225rem;
+  padding-inline-start: 1rem;
+  margin-block-start: .225rem;
+  margin-block-end: .225rem;
+}
+
+.pointLabel {
+  font-size: smaller;
+
+  @media (max-width: 500px) {
+    font-size: x-small;
+  }
+}
+
+.pointsColumn {
+  width: 1rem;
 }
 
 .button {
