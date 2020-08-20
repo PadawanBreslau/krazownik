@@ -2,13 +2,17 @@
   display: flex;
   justify-content: space-around;
   width: 80%;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 }
 
 .region {
   flex: 1;
   background: #e2e2e2;
-  margin: 1.225rem;
-  padding: .415rem;
+  margin: .725rem;
+  padding: .225rem;
 }
 
 .regionLabel {
@@ -21,14 +25,15 @@
 }
 
 .bonusPointLabel {
-  font-size: x-small;
+  font-size: 1rem;
+  font-weight: 600;
   list-style-type: square;
 }
 
 .completedBonusPoint {
-  font-size: x-small;
+  font-size: 1.125rem;
   list-style-type: square;
-  font-weight: 600;
+  font-weight: 700;
   a {
     color: green;
 

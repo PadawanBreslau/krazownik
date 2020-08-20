@@ -4,9 +4,13 @@ import Gallery from 'react-image-gallery';
 import config from '../../config';
 import './image-gallery.scss';
 
-const PhotoGallery = ({ props }) => {
+const PhotoGallery = ({ photos }) => {
   const backendUrl = config.api.url;
-  const images = props.photos.map((photo) => ({
+  console.log(photos);
+  if (photos === undefined) {
+    return <h3>Brak zdjęć</h3>;
+  }
+  const images = photos.map((photo) => ({
     original: backendUrl + photo.url,
     thumbnail: backendUrl + photo.thumb,
   }));
@@ -15,7 +19,6 @@ const PhotoGallery = ({ props }) => {
 };
 
 PhotoGallery.propTypes = {
-  props: PropTypes.object,
   photos: PropTypes.array,
 };
 

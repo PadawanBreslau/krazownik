@@ -16,6 +16,9 @@ import PhotoGallery from 'components/PhotoGallery';
 export default class Photos extends React.PureComponent {
   render() {
     const { data } = this.props;
+    if (data.payload === undefined) {
+      return null;
+    }
     return <PhotoGallery photos={data.payload} />;
   }
 }
