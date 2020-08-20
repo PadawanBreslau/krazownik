@@ -7,8 +7,18 @@ import styles from './styles.scss';
 
 export default class MapComponent extends React.PureComponent {
   render() {
-    const { data, gpxPoints, zoom, bonusPoints, challengePoints, tracks, customStyle } = this.props;
-    const accomodation = [50.38938, 16.358968];
+    const {
+      startingPoint,
+      data,
+      gpxPoints,
+      zoom,
+      bonusPoints,
+      challengePoints,
+      tracks,
+      customStyle,
+    } = this.props;
+
+    const accomodation = startingPoint || [50.38938, 16.358968];
     const accomodationMarkerSize = 13;
     const trackMarkerSize = 5;
     const challengeMarkerSize = 10;
@@ -76,6 +86,7 @@ export default class MapComponent extends React.PureComponent {
 }
 
 MapComponent.propTypes = {
+  startingPoint: PropTypes.array,
   data: PropTypes.array,
   gpxPoints: PropTypes.array,
   zoom: PropTypes.number,

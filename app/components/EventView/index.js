@@ -1,63 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import banner from 'images/pieniny-panorama.jpg';
+import moment from 'moment';
+import MapComponent from 'components/MapComponent';
 import styles from './styles.scss';
 
 export default class EventView extends React.PureComponent {
   render() {
     const { data } = this.props;
+
     if (data.informations === undefined || data.informations === null) {
       return <h3>Wkrótce</h3>;
     }
-
     return (
       <div className={styles.container}>
-        <img src={banner} alt="Panorama Pienin" />
-        <div className={styles.content}>
-          <div className={styles.header}>Krążownik - edycja {data.year}</div>
-          {data.informations.place && (
-            <div className={styles.info}>
-              <span className={styles.label}>Miejsce:</span>
-              <span className={styles.value}>{data.informations.place}</span>
+        <div className={styles.header}>
+          <span className={styles.location}>
+            {data.informations.place} ({data.informations.baseLocation})
+          </span>
+          <span className={styles.date}>
+            {data.informations.date &&
+              moment(data.informations.date)
+                .locale('pl')
+                .format('LLL')}
+          </span>
+        </div>
+        <div className={styles.address}>
+          <div className={styles.urls}>
+            <div className={styles.links}>
+              <h1>Linki</h1>
+              <a href={data.informations.url} target="_blank">
+                <p className={styles.link}>Strona ośrodka - bazy</p>
+              </a>
+              <a href={data.informations.regulationsUrl} target="_blank">
+                <p className={styles.link}>Strona regulaminu imprezy</p>
+              </a>
+              <a href={data.informations.fbEventUrl} target="_blank">
+                <p className={styles.link}>Strona wydarzenia na FB</p>
+              </a>
             </div>
-          )}
-          {data.informations.date && (
-            <div className={styles.info}>
-              <span className={styles.label}>Termin:</span>
-              <span className={styles.value}>{data.informations.date}</span>
+            <div className={styles.contact}>
+              <h1>Kontakt</h1>
+              <p className={styles.info}>Telefon: 697-111-475 (Staszek) </p>
+              <p className={styles.info}>
+                Email: <a href="mailto:krazownik.im@gmail.com">krazownik.im@gmail.com</a>
+              </p>
             </div>
-          )}
-
-          {data.informations.baseLocation && (
-            <div className={styles.info}>
-              <span className={styles.label}>Baza zawodów:</span>
-              <span className={styles.value}>{data.informations.baseLocation}</span>
-            </div>
-          )}
-
-          {data.informations.baseLocationUrl && (
-            <div className={styles.info}>
-              <span className={styles.label}>Baza zawodów: </span>
-              <span className={styles.value}>
-                <a href={data.informations.baseLocationUrl} target="_blank">
-                  {' '}
-                  Strona WWW{' '}
-                </a>
-              </span>
-            </div>
-          )}
-
-          {data.informations.rules && (
-            <div className={styles.info}>
-              <span className={styles.label}>Regulamin: </span>
-              <span className={styles.value}>
-                <a href={data.informations.rules} target="_blank">
-                  {' '}
-                  Strona WWW{' '}
-                </a>
-              </span>
-            </div>
-          )}
+          </div>
+          {data.informations.lat &&
+            data.informations.lon && (
+              <div className={styles.map}>
+                <MapComponent
+                  startingPoint={[data.informations.lat, data.informations.lon]}
+                  zoom={15}
+                />
+              </div>
+            )}
         </div>
       </div>
     );
