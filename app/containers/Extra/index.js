@@ -26,6 +26,7 @@ export default class Extra extends React.PureComponent {
     return (
       <div className={styles.extraContainer}>
         {isLoggedIn() && <ExtraBox name="Panel" icon={<PanelIcon />} url="panel" main />}
+        {isLoggedIn() && <ExtraBox name="Moje trasy" icon={<FileIcon />} url="tracks" main />}
         <ExtraBox name="Informacje" icon={<InfoIcon />} url="events" />
         <ExtraBox name="Mapa" icon={<MapIcon />} url="bonus_points" />
         <ExtraBox name="Wyzwania" icon={<ChallengeIcon />} url="challenges" />
@@ -33,7 +34,6 @@ export default class Extra extends React.PureComponent {
         <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
         <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" />
         <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />
-        {isLoggedIn() && <ExtraBox name="Dodaj pliki" icon={<FileIcon />} url="files" main />}
         <ExtraBox name="Media" icon={<MediaIcon />} url="photos" />
         <ExtraBox name="Wyniki" icon={<ResultIcon />} url="results" />
         <ExtraBox name="Heatmapa" icon={<HeatmapIcon />} url="gpx_points" />

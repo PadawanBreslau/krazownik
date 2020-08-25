@@ -14,7 +14,7 @@
   background-color: #e2e2e2;
   box-shadow: 3px 3px #d1d1d1;
   margin-bottom: .825rem;
-  padding: .825rem;
+  padding: .725rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -61,18 +61,27 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 1rem;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 }
 
 .titleFull {
   flex: 1;
   font-size: large;
-  font-weight: 800;
+  font-weight: 900;
+  @media (max-width: 500px) {
+    margin-bottom: .725rem;
+  }
 }
 
 .descriptionFull {
   flex: 2;
   font-size: larger;
   font-weight: 600;
+  @media (max-width: 500px) {
+    font-weight: 500;
+  }
 }
 
 .conditionList {

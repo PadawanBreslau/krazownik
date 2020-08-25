@@ -7,23 +7,23 @@ import ParticipationFiles from 'containers/ParticipationFiles';
 
 @withAuthentication()
 @withApiRead({
-  storeName: 'Files',
+  storeName: 'Tracks',
   api: {
-    get: '/files',
+    get: '/tracks',
   },
 })
 @withLayout({
   type: 'simplified',
 })
-export class Files extends React.PureComponent {
+export class Tracks extends React.PureComponent {
   render() {
     const { data } = this.props;
     return <ParticipationFiles files={data} />;
   }
 }
 
-Files.propTypes = {
+Tracks.propTypes = {
   data: PropTypes.object,
 };
 
-export default Files;
+export default Tracks;

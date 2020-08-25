@@ -20,7 +20,7 @@ class FileUpload extends React.Component {
     if (!file) return;
     const { dispatch } = this.props;
     const uploadConfig = {
-      endpoint: '/files/upload',
+      endpoint: '/tracks/upload',
       storeName: 'participationFiles',
       uploadAttributeName: 'file',
     };

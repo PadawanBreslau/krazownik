@@ -32,7 +32,6 @@ class FileField extends React.Component {
 
   render() {
     const { accept, input, uploading, uiMessage } = this.props;
-    // const selectedFile = (input && input.value && input.value[0]) || null;
     const dropzoneProps = {
       accept,
       multiple: false,
@@ -40,7 +39,7 @@ class FileField extends React.Component {
       className: styles.dropzone,
       activeClassName: styles.dropzoneActive,
       rejectClassName: styles.dropzoneFailed,
-      maxSize: 16000000,
+      maxSize: 12000000,
     };
 
     return (

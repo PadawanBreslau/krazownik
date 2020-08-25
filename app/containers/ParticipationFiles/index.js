@@ -18,8 +18,8 @@ import FileList from 'components/FileList';
       const { submitPageData } = generateActions('participationFiles');
       const { loadPageData } = generateActions('Files');
       const formattedPayload = payload.toJS();
-      const formattedEndpoint = prepareEndpoint(`/files/upload`, props);
-      const callback = [loadPageData('/files'), showUiSuccess(props.message)];
+      const formattedEndpoint = prepareEndpoint(`/tracks/upload`, props);
+      const callback = [loadPageData('/tracks'), showUiSuccess(props.message)];
 
       dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, callback));
     },

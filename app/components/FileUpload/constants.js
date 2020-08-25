@@ -8,14 +8,8 @@ export const DROPZONES_STATES = {
   default: {
     icon: <DropIcon />,
     heading: 'Kliknij lub przeciągnij',
-    helper: (
-      <span>
-        by dodać zdjęcia lub trasy
-        <p>Trasy w formacie GPX</p>
-        <p>Zdjęcia w formacie JPG/PNG</p>
-      </span>
-    ),
-    info: <span>Limit pliku: 16mb.</span>,
+    helper: <span>dodaj trasę GPX</span>,
+    info: <span>Limit pliku: 12mb.</span>,
   },
   success: {
     icon: <SuccessIcon />,
