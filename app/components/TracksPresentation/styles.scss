@@ -1,0 +1,42 @@
+.eventDisplayRow{
+  display: flex;
+  flex-direction: column;
+}
+
+.eventYear{
+  flex: 1;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.eventMaps{
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
+.mapComponent{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapHeader{
+  flex: 1;
+  font-size: larger;
+}
+
+.headerText{
+  margin-left: 1.725rem;
+}
+
+.mapBox{
+  flex: 1;
+  margin: 1rem;
+  min-width: 25rem;
+}

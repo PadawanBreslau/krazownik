@@ -6,6 +6,8 @@ import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import FileUpload from 'components/FileUpload';
 import FileList from 'components/FileList';
+import TracksPresentation from 'components/TracksPresentation';
+import styles from './styles.scss';
 
 @withApiWrite({
   storeName: 'participationFiles',
@@ -30,11 +32,10 @@ export class ParticipationFiles extends React.PureComponent {
     const { dispatch, files } = this.props;
 
     return (
-      <div>
-        <>
-          <FileUpload dispatch={dispatch} />
-          {files && files.payload.length > 0 && <FileList files={files.payload} />}
-        </>
+      <div className={styles.trackManagement}>
+        {false && <FileUpload dispatch={dispatch} />}
+        <TracksPresentation files={files.payload} />
+        {false && files && files.payload.length > 0 && <FileList files={files.payload} />}
       </div>
     );
   }

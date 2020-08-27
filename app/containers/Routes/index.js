@@ -23,6 +23,7 @@ import Results from 'containers/Results';
 import Photos from 'containers/Photos';
 import Track from 'containers/Track';
 import Tracks from 'containers/Tracks';
+import TrackAll from 'containers/TrackAll';
 import Privacy from 'containers/Privacy';
 import Extra from 'containers/Extra';
 
@@ -51,6 +52,7 @@ const Routes = () => (
     <PublicRoute exect path="/events" component={Event} />
     <PublicRoute exect path="/results" component={Results} />
     <PublicRoute exect path="/photos" component={Photos} />
+    <PrivateRoute exect path="/tracks/:id/all" component={TrackAll} />
     <PrivateRoute exect path="/tracks/:id" component={Track} />
     <PrivateRoute exect path="/tracks" component={Tracks} />
     <PrivateRoute exect path="/panel" component={UserPanel} />

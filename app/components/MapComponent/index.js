@@ -20,7 +20,7 @@ export default class MapComponent extends React.PureComponent {
 
     const accomodation = startingPoint || [50.38938, 16.358968];
     const accomodationMarkerSize = 13;
-    const trackMarkerSize = 5;
+    const trackMarkerSize = 3;
     const challengeMarkerSize = 10;
 
     const location =
@@ -66,7 +66,9 @@ export default class MapComponent extends React.PureComponent {
               color={gpxPoint.color}
               radius={trackMarkerSize}
             >
-              <Popup className={styles.popup}>{gpxPoint.counter}</Popup>
+              <Popup className={styles.popup}>
+                {gpxPoint.lat}/{gpxPoint.lon}
+              </Popup>
             </CircleMarker>
           ))}
 
