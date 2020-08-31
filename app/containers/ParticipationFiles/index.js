@@ -33,7 +33,7 @@ export class ParticipationFiles extends React.PureComponent {
 
     return (
       <div className={styles.trackManagement}>
-        {false && <FileUpload dispatch={dispatch} />}
+        <FileUpload dispatch={dispatch} />
         <TracksPresentation files={files.payload} />
         {false && files && files.payload.length > 0 && <FileList files={files.payload} />}
       </div>

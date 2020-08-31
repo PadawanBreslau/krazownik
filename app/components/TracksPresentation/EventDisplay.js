@@ -10,7 +10,7 @@ export default class EventDisplay extends React.PureComponent {
 
     return (
       <div className={styles.eventDisplayRow}>
-        <Link to={`tracks/${year}/all`}>
+        <Link to={`/tracks/${year}/all`}>
           <div className={styles.eventYear}>{year}</div>
         </Link>
         <div className={styles.eventMaps}>

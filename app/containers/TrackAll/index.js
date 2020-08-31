@@ -18,7 +18,7 @@ import GpxPointsMap from 'components/GpxPointsMap';
 export class TrackAll extends React.PureComponent {
   render() {
     const { data } = this.props;
-    return <GpxPointsMap tracks={data.payload?.gpxPoints} />;
+    return <GpxPointsMap tracks={data.payload} multitrack />;
   }
 }
 
