@@ -5,6 +5,7 @@ import withAuthentication from 'hoc/authHOC';
 import styles from './styles.scss';
 import ExtraBox from './ExtraBox';
 import PanelIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/hiker.svg';
+import TrackIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/hiking2.svg';
 import TeamIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/group.svg';
 import RiddleIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/question2.svg';
 import PhotoIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/picture.svg';
@@ -26,7 +27,7 @@ export default class Extra extends React.PureComponent {
     return (
       <div className={styles.extraContainer}>
         {isLoggedIn() && <ExtraBox name="Panel" icon={<PanelIcon />} url="panel" main />}
-        {isLoggedIn() && <ExtraBox name="Moje trasy" icon={<FileIcon />} url="tracks" main />}
+        {isLoggedIn() && <ExtraBox name="Trasy" icon={<TrackIcon />} url="tracks" main />}
         <ExtraBox name="Informacje" icon={<InfoIcon />} url="events" />
         <ExtraBox name="Mapa" icon={<MapIcon />} url="bonus_points" />
         <ExtraBox name="Wyzwania" icon={<ChallengeIcon />} url="challenges" />

@@ -23,8 +23,6 @@ function CandidateSignupDropzonePlaceholder({ uploadState }) {
     <div className={styles.wrapper}>
       {DROPZONES_STATES[uploadState].icon}
       <h3 className={headingClass}>{DROPZONES_STATES[uploadState].heading}</h3>
-      <span className={styles.helper}>{DROPZONES_STATES[uploadState].helper}</span>
-      <span className={infoClass}>{DROPZONES_STATES[uploadState].info}</span>
     </div>
   );
 }

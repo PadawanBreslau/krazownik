@@ -1,5 +1,5 @@
 @import '../../styles/shared/colors';
-$_avatar-size: 8.125rem;
+$_avatar-size: 6.125rem;
 
 .avatar-wrapper {
   position: relative;
@@ -19,9 +19,14 @@ $_avatar-size: 8.125rem;
   border-radius: 4px;
 }
 
-.avatar-dropzone {
+.dropzone {
+  display: none;
   width: $_avatar-size;
   height: $_avatar-size;
   border: 1px solid $form-border-color;
   border-radius: 4px;
+}
+
+.fileUpload{
+  height: 4rem;
 }

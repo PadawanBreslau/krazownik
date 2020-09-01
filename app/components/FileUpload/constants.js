@@ -7,7 +7,7 @@ import Loader from '-!babel-loader!svg-react-loader?name=ExitIcon!./loader.svg';
 export const DROPZONES_STATES = {
   default: {
     icon: <DropIcon />,
-    heading: 'Kliknij lub przeciągnij',
+    heading: 'Kliknij lub przeciągnij by dodać trasę',
     helper: <span>dodaj trasę GPX</span>,
     info: <span>Limit pliku: 12mb.</span>,
   },

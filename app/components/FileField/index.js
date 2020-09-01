@@ -1,9 +1,3 @@
-/**
- *
- * FileField
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
@@ -37,11 +31,11 @@ class FileField extends React.Component {
       accept,
       multiple,
       onDrop: this.handleDropOrClick,
-      className: styles['avatar-dropzone'],
+      className: styles['dropzone'],
     };
 
     return (
-      <div className={styles['avatar-wrapper']}>
+      <div className={styles.fileUpload}>
         <input type="hidden" disabled {...input} />
         {selectedFile && (
           <div className={styles.avatar}>
