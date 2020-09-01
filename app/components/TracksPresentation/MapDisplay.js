@@ -12,7 +12,7 @@ export default class MapDisplay extends React.PureComponent {
       <div className={styles.mapComponent}>
         <div className={styles.mapHeader}>
           <Link to={`/tracks/${file.id}`}>
-            <span className={styles.headerText}>{file.filename}</span>
+            <span className={styles.headerText}>{file.customName || file.filename}</span>
             <span className={styles.headerText}>{file.metadata?.distance} km</span>
           </Link>
         </div>

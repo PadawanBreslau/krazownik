@@ -1,0 +1,16 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  min-width: 90%;
+}
+
+.title{
+  flex: 1;
+  font-size: larger;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.map{
+  flex: 2;
+}

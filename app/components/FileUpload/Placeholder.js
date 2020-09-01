@@ -13,12 +13,6 @@ function CandidateSignupDropzonePlaceholder({ uploadState }) {
     headingSuccess: uploadState === 'success',
   });
 
-  const infoClass = cx({
-    info: true,
-    link: uploadState === 'error' || uploadState === 'success',
-    infoLoading: uploadState === 'loading',
-  });
-
   return (
     <div className={styles.wrapper}>
       {DROPZONES_STATES[uploadState].icon}

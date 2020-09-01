@@ -31,7 +31,7 @@ class FileField extends React.Component {
       accept,
       multiple,
       onDrop: this.handleDropOrClick,
-      className: styles['dropzone'],
+      className: styles.dropzone,
     };
 
     return (

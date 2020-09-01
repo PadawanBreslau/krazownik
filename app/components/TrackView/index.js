@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MapComponent from 'components/MapComponent';
+import UpdateTrackForm from './UpdateTrackForm';
 import styles from './styles.scss';
 
 export default class TrackView extends React.PureComponent {
   render() {
-    const { data, gpxPoints } = this.props;
+    const { data, gpxPoints, handleSubmit } = this.props;
 
     return (
       <div className={styles.container}>
@@ -21,7 +22,7 @@ export default class TrackView extends React.PureComponent {
 
         <div className={styles.content}>
           <p className={styles.header}>
-            {data.filename} ({data.filesize}) {data.metadata?.startDate}{' '}
+            {data.customName || data.filename} ({data.filesize}) {data.metadata?.startDate}{' '}
           </p>
           <p className={styles.value}>Autor: {data.username}</p>
           <p className={styles.value}>Rok: {data.year}</p>
@@ -41,6 +42,8 @@ export default class TrackView extends React.PureComponent {
             <p className={styles.value}>Łączny czas: {data.metadata.startTime}</p>
           )}
 
+          <UpdateTrackForm handleSubmit={handleSubmit} />
+
           <Link to="/tracks">
             <p className={styles.return}>Powrót do listy tras</p>
           </Link>
@@ -53,4 +56,5 @@ export default class TrackView extends React.PureComponent {
 TrackView.propTypes = {
   data: PropTypes.object,
   gpxPoints: PropTypes.array,
+  handleSubmit: PropTypes.func,
 };

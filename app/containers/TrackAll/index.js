@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import GpxPointsMap from 'components/GpxPointsMap';
+import AllTracks from 'components/AllTracks';
 
 @withAuthentication()
 @withApiRead({
@@ -18,7 +18,10 @@ import GpxPointsMap from 'components/GpxPointsMap';
 export class TrackAll extends React.PureComponent {
   render() {
     const { data } = this.props;
-    return <GpxPointsMap tracks={data.payload} multitrack />;
+    if (data.payload !== undefined && data.payload.length !== 0) {
+      return <AllTracks tracks={data.payload} />;
+    }
+    return null;
   }
 }
 

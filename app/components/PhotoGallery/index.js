@@ -6,7 +6,6 @@ import './image-gallery.scss';
 
 const PhotoGallery = ({ photos }) => {
   const backendUrl = config.api.url;
-  console.log(photos);
   if (photos === undefined) {
     return <h3>Brak zdjęć</h3>;
   }
