@@ -48,8 +48,8 @@
   font-size: x-large;
 }
 
-.update{
-  margin-top: 5rem;
+.delete{
+  margin-bottom: 5rem;
 }
 
 .button {
@@ -63,4 +63,43 @@
   min-width: 4.25rem;
   cursor: pointer;
   width: 16.625rem;
+}
+
+.deleteButton {
+  background-color: #ff6767;
+  border-radius:8px;
+  color: #222;
+  font-size: 1.2375rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: .225rem;
+  min-width: 4.25rem;
+  cursor: pointer;
+  width: 16.625rem;
+}
+
+.dataSection{
+  display: flex;
+  flex-direction: row;
+}
+
+.data{
+  flex: 5;
+}
+
+.points{
+  flex: 2;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.pointCount{
+  position: relative;
+  top: 25%;
+  left: 27%;
+
+  @media (max-width: 500px) {
+    top: 55px;
+    left: 22px;
+  }
 }

@@ -4,6 +4,7 @@ import ParticipationList from 'components/ParticipationList';
 import InspirationalBullshit from 'components/InspirationalBullshit';
 import JoinForm from './JoinForm';
 import EditForm from './EditForm';
+import AvatarForm from './AvatarForm';
 import styles from './styles.scss';
 
 export default class Panel extends React.PureComponent {
@@ -21,6 +22,7 @@ export default class Panel extends React.PureComponent {
         <div className={styles.boxes}>
           <div className={styles.data}>
             <h2>Twoje dane</h2>
+            <AvatarForm avatar={payload.avatar} userId={payload.id} />
             {payload.id && <EditForm userId={payload.id} />}
           </div>
           <div className={styles.data}>
