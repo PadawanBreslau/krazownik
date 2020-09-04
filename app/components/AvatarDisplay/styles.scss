@@ -1,0 +1,14 @@
+.avatarRow{
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.avatar{
+    margin-top: 1rem;
+
+  margin-right: .5rem;
+}

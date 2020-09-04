@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
+import Avatar from 'components/Avatar';
 import styles from './styles.scss';
 
 class FileField extends React.Component {
@@ -40,7 +41,7 @@ class FileField extends React.Component {
       <div className={styles.wrapper}>
         <input type="hidden" disabled {...input} />
         <Dropzone {...dropzoneProps}>
-          <img src={avatar} alt="User avatar" />
+          <Avatar imgSrc={avatar} />
         </Dropzone>
       </div>
     );

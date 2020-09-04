@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import AvatarDisplay from 'components/AvatarDisplay';
+import styles from './styles.scss';
 
 const CompletionList = ({ data }) => (
   <div>
-    <h3>Wyzwanie ukończyli:</h3>
-    {data.map((item) => (
-      <p>{item.name}</p>
-    ))}
+    <span className={styles.finishers}>Wyzwanie ukończyli:</span>
+    <AvatarDisplay data={data} />
   </div>
 );
 

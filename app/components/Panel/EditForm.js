@@ -45,6 +45,7 @@ class EditForm extends React.PureComponent {
       <form>
         <FormField type="text" fieldName="name" placeholder="Nazwa użytkownika" />
         <FormField type="text" fieldName="phoneNumber" placeholder="Numer telefonu" />
+        <FormField type="textarea" fieldName="aboutMe" placeholder="Więcej info o Tobie" />
         <CheckboxField fieldName="sendMessages" className="form-field">
           Chcę dostawać informacje SMSem
           <span className={styles.label}>
@@ -93,6 +94,7 @@ export default connect((state) => ({
   initialValues: fromJS({
     name: state.toJS().userPanel.data?.attributes?.name,
     phoneNumber: state.toJS().userPanel.data?.attributes?.phoneNumber,
+    aboutMe: state.toJS().userPanel.data?.attributes?.aboutMe,
     sendMessages: state.toJS().userPanel.data?.attributes?.sendMessages,
     sendRiddles: state.toJS().userPanel.data?.attributes?.sendRiddles,
     teamReady: state.toJS().userPanel.data?.attributes?.teamReady,
