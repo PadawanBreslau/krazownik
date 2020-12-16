@@ -21,7 +21,7 @@ const ChallengeView = ({ data, fullView }) => (
       )}
 
       <div className={styles.finish}>
-        {isLoggedIn() && <ToggleChallengeForm challengeId={data.id} completed={data.completed} />}
+        {isLoggedIn() && <ToggleChallengeForm challengeId={data.id} completed={data.completed} fullView={fullView} />}
       </div>
     </div>
   </div>

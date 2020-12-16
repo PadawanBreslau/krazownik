@@ -31,7 +31,7 @@ class FileField extends React.Component {
   };
 
   render() {
-    const { accept, input, uploading, uiMessage } = this.props;
+    const { accept, input, uploading, uiMessage, label } = this.props;
     const dropzoneProps = {
       accept,
       multiple: false,
@@ -47,7 +47,7 @@ class FileField extends React.Component {
         <input type="hidden" disabled {...input} />
         <Dropzone {...dropzoneProps}>
           {({ acceptedFiles, rejectedFiles }) => (
-            <Placeholder
+            <Placeholder label={label}
               uploadState={getDropzoneState(acceptedFiles, rejectedFiles, uploading, uiMessage)}
             />
           )}

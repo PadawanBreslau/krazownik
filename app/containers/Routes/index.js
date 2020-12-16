@@ -23,6 +23,7 @@ import Results from 'containers/Results';
 import Photos from 'containers/Photos';
 import Track from 'containers/Track';
 import Tracks from 'containers/Tracks';
+import MyMedia from 'containers/MyMedia';
 import TrackAll from 'containers/TrackAll';
 import Privacy from 'containers/Privacy';
 import Extra from 'containers/Extra';
@@ -39,7 +40,6 @@ const Routes = () => (
     <PublicRoute exact path="/login" component={Login} />
     <PublicRoute exect path="/challenges/:id" component={Challenge} />
     <PublicRoute exect path="/challenges" component={Challenges} />
-    <PublicRoute exect path="/wyzwania" component={Challenges} />
     <PublicRoute exect path="/riddles/:id" component={Riddle} />
     <PublicRoute exect path="/riddles" component={Riddles} />
     <PublicRoute exect path="/teams/:id" component={Team} />
@@ -47,14 +47,14 @@ const Routes = () => (
     <PublicRoute exect path="/contact" component={Contact} />
     <PublicRoute exect path="/bonus_points/:id" component={BonusPoint} />
     <PublicRoute exect path="/bonus_points" component={BonusPoints} />
-    <PublicRoute exect path="/punkty" component={BonusPoints} />
     <PublicRoute exect path="/gpx_points" component={GpxPoints} />
     <PublicRoute exect path="/events" component={Event} />
     <PublicRoute exect path="/results" component={Results} />
     <PublicRoute exect path="/photos" component={Photos} />
     <PrivateRoute exect path="/tracks/:id/all" component={TrackAll} />
-    <PrivateRoute exect path="/tracks/:id" component={Track} />
+    <PublicRoute exect path="/tracks/:id" component={Track} />
     <PrivateRoute exect path="/tracks" component={Tracks} />
+    <PrivateRoute exect path="/my_media" component={MyMedia} />
     <PrivateRoute exect path="/panel" component={UserPanel} />
     <PublicRoute exect path="/privacy" component={Privacy} />
     <PublicRoute exect path="/extra" component={Extra} />

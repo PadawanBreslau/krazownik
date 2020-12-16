@@ -18,8 +18,15 @@ class FileUpload extends React.Component {
 
   onFileUpload = (file, successCallback) => {
     if (!file) return;
-    const { dispatch } = this.props;
-    const uploadConfig = {
+    const { dispatch, photo } = this.props;
+
+    const uploadConfig = photo ? 
+    {
+      endpoint: '/media/upload',
+      storeName: 'mediaFiles',
+      uploadAttributeName: 'file',
+    }
+    : {
       endpoint: '/tracks/upload',
       storeName: 'participationFiles',
       uploadAttributeName: 'file',
@@ -40,7 +47,6 @@ class FileUpload extends React.Component {
           },
         },
       };
-
       const successCallbackAction = [showUiSuccess('Plik wgrany!')];
       successCallbackAction.push(successCallback);
       dispatch(uploadFileRequest(formattedEndpoint, payload, successCallbackAction));
@@ -55,7 +61,7 @@ class FileUpload extends React.Component {
   };
 
   render() {
-    const { acceptedFormats, fieldName, message } = this.props;
+    const { acceptedFormats, fieldName, message, label } = this.props;
     return (
       <div className={styles.uploadBox}>
         <Field
@@ -65,6 +71,7 @@ class FileUpload extends React.Component {
           onFileUpload={this.onFileUpload}
           uploading={this.state.uploading}
           uiMessage={message}
+          label={label}
         />
       </div>
     );
@@ -76,6 +83,7 @@ FileUpload.propTypes = {
   message: PropTypes.object,
   acceptedFormats: PropTypes.string,
   fieldName: PropTypes.string,
+  label: PropTypes.string,
 };
 
 export default FileUpload;
