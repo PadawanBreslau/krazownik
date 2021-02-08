@@ -20,17 +20,17 @@ class FileUpload extends React.Component {
     if (!file) return;
     const { dispatch, photo } = this.props;
 
-    const uploadConfig = photo ? 
-    {
-      endpoint: '/media/upload',
-      storeName: 'mediaFiles',
-      uploadAttributeName: 'file',
-    }
-    : {
-      endpoint: '/tracks/upload',
-      storeName: 'participationFiles',
-      uploadAttributeName: 'file',
-    };
+    const uploadConfig = photo
+      ? {
+          endpoint: '/media/upload',
+          storeName: 'mediaFiles',
+          uploadAttributeName: 'file',
+        }
+      : {
+          endpoint: '/tracks/upload',
+          storeName: 'participationFiles',
+          uploadAttributeName: 'file',
+        };
     const { uploadFileRequest } = generateActions(uploadConfig.storeName);
     const formattedEndpoint = prepareEndpoint(uploadConfig.endpoint, this.props);
     const reader = new FileReader();

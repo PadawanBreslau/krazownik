@@ -45,6 +45,7 @@ class EditForm extends React.PureComponent {
       <form>
         <FormField type="text" fieldName="name" placeholder="Nazwa użytkownika" />
         <FormField type="text" fieldName="phoneNumber" placeholder="Numer telefonu" />
+        <FormField type="text" fieldName="birthyear" placeholder="Rok urodzenia" />
         <FormField type="textarea" fieldName="aboutMe" placeholder="Więcej info o Tobie" />
         <CheckboxField fieldName="sendMessages" className="form-field">
           Chcę dostawać informacje SMSem
