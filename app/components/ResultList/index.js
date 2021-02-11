@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Result from './Result';
 import styles from './styles.scss';
-export default class ResultList extends React.PureComponent {
-  render() {
-    const { data } = this.props;
-    return (
+
+const ResultList = ({ data }) => {
+  const [detailsVisible, setDetailsVisible] = useState(false);
+  const label = 'Pokaż pozostałe klasyfikacje';
+
+  return (
+    <div>
+      <div className={styles.detailsSwitch} onClick={() => setDetailsVisible(!detailsVisible)}>
+        <input type="checkbox" checked={detailsVisible} />
+        <span className={styles.detailsSwitchLabel}>{label}</span>
+      </div>
+
       <table className={styles.table}>
         <tr className={styles.header}>
-          <th className={styles.cell}>Uczestnik</th>
-          <th className={styles.cell}>Kilometry</th>
-          <th className={styles.cell}>Podjścia</th>
-          <th className={styles.cell}>Wyzwania</th>
-          <th className={styles.cell}>Miejsca Bonusowe</th>
-          <th className={styles.cell}>Dodatkowe</th>
-          <th className={styles.cell}>Suma</th>
+          <th className={styles.cellHighligted}>Uczestnik</th>
+          {!detailsVisible && <th className={styles.cell}>Kilometry</th>}
+          {!detailsVisible && <th className={styles.cell}>Podjścia</th>}
+          {!detailsVisible && <th className={styles.cell}>Wyzwania</th>}
+          {detailsVisible && <th className={styles.cell}>Miejsca Bonusowe</th>}
+          {detailsVisible && <th className={styles.cell}>Dodatkowe</th>}
+          <th className={styles.cellHighligted}>Suma</th>
         </tr>
         {data.map((score) => (
-          <Result result={score} />
+          <Result result={score} detailsVisible={detailsVisible} />
         ))}
       </table>
-    );
-  }
-}
+    </div>
+  );
+};
 
 ResultList.propTypes = {
   data: PropTypes.array,
 };
+
+export default ResultList;
