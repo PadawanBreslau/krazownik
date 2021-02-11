@@ -18,12 +18,11 @@ const FullChallengeView = ({ challengeConditions, challengeCompletions, location
           </ul>
         </>
       )}
-
     {locations && (
       <MapComponent
         challengePoints={locations}
         zoom={11}
-        customStyle={{ height: '300px', width: '100%' }}
+        customStyle={{ height: '500px', width: '100%' }}
       />
     )}
     {challengeCompletions &&

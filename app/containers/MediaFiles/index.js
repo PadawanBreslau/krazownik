@@ -5,7 +5,7 @@ import { showUiSuccess } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import FileUpload from 'components/FileUpload';
-import PhotoList from 'components/PhotoList'
+import PhotoList from 'components/PhotoList';
 import styles from './styles.scss';
 
 @withApiWrite({
@@ -30,7 +30,7 @@ export class MediaFiles extends React.PureComponent {
   render() {
     const { dispatch, media } = this.props;
 
-    console.log("F", media);
+    console.log('F', media);
     return (
       <div className={styles.trackManagement}>
         <FileUpload dispatch={dispatch} label="Przeciągnij lub upuść zdjęcia" photo />

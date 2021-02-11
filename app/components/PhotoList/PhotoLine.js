@@ -5,7 +5,7 @@ import styles from './styles.scss';
 
 const PhotoLine = ({ photo }) => (
   <div className={styles.photo}>
-     <img src={config.api.url + photo.thumb} />
+    <img src={config.api.url + photo.thumb} />
   </div>
 );
 

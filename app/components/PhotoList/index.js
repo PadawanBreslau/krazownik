@@ -5,12 +5,12 @@ import styles from './styles.scss';
 
 const PhotoList = ({ media }) => (
   <>
-  <h1>Photo</h1>
-  <div className={styles.photos}>
-    {media.map((photo) => (
+    <h1>Photo</h1>
+    <div className={styles.photos}>
+      {media.map((photo) => (
         <PhotoLine photo={photo} />
-    ))}
-  </div>
+      ))}
+    </div>
   </>
 );
 
