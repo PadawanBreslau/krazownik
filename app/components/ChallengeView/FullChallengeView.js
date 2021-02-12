@@ -5,7 +5,7 @@ import MapComponent from '../MapComponent';
 import styles from './styles.scss';
 
 const FullChallengeView = ({ challengeConditions, challengeCompletions, locations }) => (
-  <>
+  <div>
     {challengeConditions !== undefined &&
       challengeConditions.length > 0 && (
         <>
@@ -29,7 +29,7 @@ const FullChallengeView = ({ challengeConditions, challengeCompletions, location
       challengeCompletions.filter((cc) => cc.completed).length > 0 && (
         <CompletionList data={challengeCompletions} />
       )}
-  </>
+  </div>
 );
 
 FullChallengeView.propTypes = {
