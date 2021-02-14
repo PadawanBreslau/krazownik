@@ -71,6 +71,14 @@ class EditForm extends React.PureComponent {
             </Tooltip>
           </span>
         </CheckboxField>
+        <CheckboxField fieldName="viewable" className="form-field">
+          Zazwalam innych na wzgląd w trasy
+          <span className={styles.label}>
+            <Tooltip title="Czy można wyświetlać innym moje trasy" position="right" delay={250}>
+              <InfoIcon />
+            </Tooltip>
+          </span>
+        </CheckboxField>
         <CheckboxField fieldName="privacyPolicyAccepted" validate={validateTerms}>
           Zapoznałem się z{' '}
           <Link to="/privacy" target="_blank">
@@ -95,10 +103,12 @@ export default connect((state) => ({
   initialValues: fromJS({
     name: state.toJS().userPanel.data?.attributes?.name,
     phoneNumber: state.toJS().userPanel.data?.attributes?.phoneNumber,
+    birthyear: state.toJS().userPanel.data?.attributes?.birthyear,
     aboutMe: state.toJS().userPanel.data?.attributes?.aboutMe,
     sendMessages: state.toJS().userPanel.data?.attributes?.sendMessages,
     sendRiddles: state.toJS().userPanel.data?.attributes?.sendRiddles,
     teamReady: state.toJS().userPanel.data?.attributes?.teamReady,
+    viewable: state.toJS().userPanel.data?.attributes?.viewable,
     privacyPolicyAccepted: state.toJS().userPanel.data?.attributes?.privacyPolicyAccepted,
   }),
 }))(EditForm);

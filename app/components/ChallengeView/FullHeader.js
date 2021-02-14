@@ -5,7 +5,7 @@ import styles from './styles.scss';
 const FullHeader = ({ data }) => (
   <div className={styles.fullHeader}>
     <div className={styles.titleFull}>
-      {data.title} ({data.points} pkt)
+      {data.title} ({data.points}&nbsp;pkt)
     </div>
     <div className={styles.descriptionFull}>{data.description}</div>
   </div>

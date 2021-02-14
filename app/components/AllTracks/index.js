@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GpxPointsMap from 'components/GpxPointsMap';
+import EveryonesTracks from 'containers/AllTracks';
 import styles from './styles.scss';
+import MapWidget from './MapWidget';
 
 export class AllTracks extends React.PureComponent {
   render() {
     const { tracks } = this.props;
     return (
-      <div className={styles.content}>
-        <div className={styles.title}>Twoje trasy: rok {tracks[0].year}</div>
-        <div className={styles.map}>
-          <GpxPointsMap tracks={tracks} multitrack />
-        </div>
+      <div className={styles.mapSplit}>
+        <MapWidget tracks={tracks} title="Twoje trasy"/>
+        <EveryonesTracks />
       </div>
     );
   }
