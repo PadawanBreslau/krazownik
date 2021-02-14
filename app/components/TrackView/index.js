@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { isLoggedIn, currentUser } from 'helpers/User';
 import MapComponent from 'components/MapComponent';
 import UpdateTrackForm from './UpdateTrackForm';
-import DeleteTrackForm from './DeleteTrackForm';
+import DeleteTrack from 'containers/Track/DeleteTrack';
 import Bookmark from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/bookmark.svg';
 import styles from './styles.scss';
 
@@ -57,7 +57,7 @@ export default class TrackView extends React.PureComponent {
             currentUser(data.username) && (
               <>
                 <UpdateTrackForm handleSubmit={handleSubmit} />
-                <DeleteTrackForm />
+                <DeleteTrack id={data.id}/>
                 <Link to="/tracks">
                   <p className={styles.return}>Powrót do listy tras</p>
                 </Link>

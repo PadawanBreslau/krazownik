@@ -5,7 +5,12 @@ import moment from 'moment';
 
 const Counter = ({ title, till }) => (
   <>
-    <h4>{title} {moment(till, 'YYYYMMDDHHmm').locale('pl').fromNow()}</h4>
+    <h4>
+      {title}{' '}
+      {moment(till, 'YYYYMMDDHHmm')
+        .locale('pl')
+        .fromNow()}
+    </h4>
   </>
 );
 

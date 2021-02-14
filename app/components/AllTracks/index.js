@@ -10,7 +10,7 @@ export class AllTracks extends React.PureComponent {
     const { tracks } = this.props;
     return (
       <div className={styles.mapSplit}>
-        <MapWidget tracks={tracks} title="Twoje trasy"/>
+        <MapWidget tracks={tracks} title="Twoje trasy" />
         <EveryonesTracks />
       </div>
     );

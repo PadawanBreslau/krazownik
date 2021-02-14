@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Counter from 'components/Utils/Counter'
+import Counter from 'components/Utils/Counter';
 
 import styles from './styles.scss';
 
@@ -17,9 +17,14 @@ const RiddleView = ({ data }) => (
 
     {data.sponsor && <p className={styles.sponsor}>Sponsor nagordy: {data.sponsor} </p>}
     {data.content && <p className={styles.riddleContent}>{data.content}</p>}
-    {!data.content && <p className={styles.riddleCounter}>
-      <Counter title="Zagadka zostanie wyświetlona&nbsp;" till={data.visibleFrom || '202105291200'} />
-      </p>}
+    {!data.content && (
+      <p className={styles.riddleCounter}>
+        <Counter
+          title="Zagadka zostanie wyświetlona&nbsp;"
+          till={data.visibleFrom || '202105291200'}
+        />
+      </p>
+    )}
     {data.answer && (
       <>
         <p className={styles.label}>Odpowiedź:</p>
