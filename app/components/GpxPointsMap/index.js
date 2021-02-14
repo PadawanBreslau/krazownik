@@ -6,7 +6,7 @@ import styles from './styles.scss';
 export default class GpxPointsMap extends React.PureComponent {
   render() {
     const { data, tracks, multitrack } = this.props;
-    const allGpx = tracks.map((track) => track.gpxPoints).flat();
+    const allGpx = tracks?.map((track) => track.gpxPoints).flat();
 
     return (
       <>

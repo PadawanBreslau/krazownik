@@ -28,15 +28,15 @@ export default class Extra extends React.PureComponent {
       <div className={styles.extraContainer}>
         {isLoggedIn() && <ExtraBox name="Panel" icon={<PanelIcon />} url="panel" main />}
         {isLoggedIn() && <ExtraBox name="Trasy" icon={<TrackIcon />} url="tracks" main />}
-        {isLoggedIn() && <ExtraBox name="Dodaj Zdjęcia" icon={<FileIcon />} url="my_media" main />}
+        {false && isLoggedIn() && <ExtraBox name="Dodaj Zdjęcia" icon={<FileIcon />} url="my_media" main />}
         <ExtraBox name="Informacje" icon={<InfoIcon />} url="events" />
         <ExtraBox name="Mapa" icon={<MapIcon />} url="bonus_points" />
         <ExtraBox name="Wyzwania" icon={<ChallengeIcon />} url="challenges" />
         <ExtraBox name="Zagadki" icon={<RiddleIcon />} url="riddles" />
         <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
-        <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" />
-        <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />
-        <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" />
+        {isLoggedIn() && <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" /> }
+        {isLoggedIn() && <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" /> }
+        { false && <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" /> }
         <ExtraBox name="Wyniki" icon={<ResultIcon />} url="results" />
         <ExtraBox name="Heatmapa" icon={<HeatmapIcon />} url="gpx_points" />
       </div>

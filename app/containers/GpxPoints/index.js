@@ -17,7 +17,9 @@ export default class GpxPoints extends React.PureComponent {
   render() {
     const { data } = this.props;
 
-    if (data.payload !== undefined) {
+    console.log('?', data.payload);
+
+    if (data.payload !== undefined && data.payload !== []) {
       return <GpxPointsMap data={data.payload} />;
     }
     return null;
