@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventDisplay from './EventDisplay';
+import styles from "./styles.scss";
 
 export default class TracksPresentation extends React.PureComponent {
   render() {
@@ -10,7 +11,7 @@ export default class TracksPresentation extends React.PureComponent {
     return (
       <div>
         {yearsAvailable.map((year) => (
-          <div>
+          <div className={styles.event}>
             <EventDisplay year={year} files={files.filter((file) => file.year === year)} />
           </div>
         ))}

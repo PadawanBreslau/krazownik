@@ -28,7 +28,7 @@ class FileUpload extends React.Component {
         }
       : {
           endpoint: '/tracks/upload',
-          storeName: 'participationFiles',
+          storeName: 'participationTracks',
           uploadAttributeName: 'file',
         };
     const { uploadFileRequest } = generateActions(uploadConfig.storeName);

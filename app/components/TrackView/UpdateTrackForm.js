@@ -11,7 +11,7 @@ export default class UpdateTrackForm extends React.PureComponent {
 
     return (
       <div className={styles.update}>
-        <h3>Edytuj dane trasy</h3>
+        <h2>Edytuj dane trasy</h2>
         <form>
           <FormField type="text" fieldName="customName" placeholder="Nazwa trasy" />
           <Field

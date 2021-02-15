@@ -5,19 +5,18 @@ import { showUiSuccess } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiWrite } from 'hoc/apiHOC';
 import FileUpload from 'components/FileUpload';
-import FileList from 'components/FileList';
 import TracksPresentation from 'components/TracksPresentation';
 import styles from './styles.scss';
 
 @withApiWrite({
-  storeName: 'participationFiles',
-  formName: 'participationFilesForm',
+  storeName: 'participationTracks',
+  formName: 'participationTracksForm',
   api: {
     post: '/upload',
   },
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {
-      const { submitPageData } = generateActions('participationFiles');
+      const { submitPageData } = generateActions('participationTracks');
       const { loadPageData } = generateActions('Files');
       const formattedPayload = payload.toJS();
       const formattedEndpoint = prepareEndpoint(`/tracks/upload`, props);
@@ -27,23 +26,27 @@ import styles from './styles.scss';
     },
   },
 })
-export class ParticipationFiles extends React.PureComponent {
+export class ParticipationTracks extends React.PureComponent {
   render() {
     const { dispatch, files } = this.props;
 
     return (
       <div className={styles.trackManagement}>
-        <FileUpload dispatch={dispatch} label="Przeciągnij lub upuść pliki GPX" />
-        <TracksPresentation files={files.payload} />
-        {false && files && files.payload.length > 0 && <FileList files={files.payload} />}
+        <div class={styles.upload}>
+          <FileUpload dispatch={dispatch} label="Przeciągnij lub upuść pliki GPX" />
+          <div className={styles.info}>Proszę odświeżyć stronę po dodaniu</div>
+        </div>
+        <div class={styles.files}>
+          <TracksPresentation files={files.payload} />
+        </div>
       </div>
     );
   }
 }
 
-ParticipationFiles.propTypes = {
+ParticipationTracks.propTypes = {
   files: PropTypes.object,
   dispatch: PropTypes.func,
 };
 
-export default ParticipationFiles;
+export default ParticipationTracks;

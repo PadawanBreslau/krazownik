@@ -1,0 +1,25 @@
+.trackManagement{
+  text-align: left;
+  width: 80%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.info{
+  float: right;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.upload{
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+
+  @media (max-width: 500px) {
+    margin-bottom: 3rem;
+  }
+}

@@ -45,7 +45,8 @@
 }
 
 .return {
-  font-size: x-large;
+  font-size: 1.5rem;
+  text-decoration: underline;
 }
 
 .delete{
@@ -53,29 +54,35 @@
 }
 
 .button {
-  background-color: rgb(3, 170, 3);
+  background-color: rgb(88, 233, 88);
   border-radius:8px;
+  border: 1px solid;
   color: #222;
   font-size: 1.2375rem;
   text-align: center;
-  margin-top: 1rem;
   padding: .225rem;
-  min-width: 4.25rem;
+  min-width: 6.25rem;
+  margin-top: 5rem;
   cursor: pointer;
-  width: 16.625rem;
+  width: 100%;
+  
+  @media (max-width: 500px) {
+    margin-top: 1rem;
+  }
 }
 
 .deleteButton {
   background-color: #ff6767;
   border-radius:8px;
+  border: 1px solid;
   color: #222;
   font-size: 1.2375rem;
   text-align: center;
   margin-top: 1rem;
   padding: .225rem;
-  min-width: 4.25rem;
+  min-width: 6.25rem;
   cursor: pointer;
-  width: 16.625rem;
+  width: 100%;
 }
 
 .dataSection{

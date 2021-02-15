@@ -72,7 +72,7 @@ class EditForm extends React.PureComponent {
           </span>
         </CheckboxField>
         <CheckboxField fieldName="viewable" className="form-field">
-          Zazwalam innych na wzgląd w trasy
+          Zazwalam innych na wgląd w trasy
           <span className={styles.label}>
             <Tooltip title="Czy można wyświetlać innym moje trasy" position="right" delay={250}>
               <InfoIcon />

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GpxPointsMap from 'components/GpxPointsMap';
 import EveryonesTracks from 'containers/AllTracks';
 import styles from './styles.scss';
 import MapWidget from './MapWidget';

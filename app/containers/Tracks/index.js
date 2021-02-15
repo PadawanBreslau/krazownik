@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
-import ParticipationFiles from 'containers/ParticipationFiles';
+import ParticipationTracks from 'containers/ParticipationTracks';
 
 @withAuthentication()
 @withApiRead({
@@ -18,7 +18,7 @@ import ParticipationFiles from 'containers/ParticipationFiles';
 export class Tracks extends React.PureComponent {
   render() {
     const { data } = this.props;
-    return <ParticipationFiles files={data} />;
+    return <ParticipationTracks files={data} />;
   }
 }
 
