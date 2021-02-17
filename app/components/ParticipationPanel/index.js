@@ -83,7 +83,8 @@ function ParticipationPanel({ data, handleSubmit }) {
           </div>
         )}
 
-        {shouldBeAbleToDraw && <DrawNewChallengeForm handleSubmit={handleSubmit} />}
+
+        {false && shouldBeAbleToDraw && <DrawNewChallengeForm handleSubmit={handleSubmit} />}
         {!shouldBeAbleToDraw && (
           <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
         )}

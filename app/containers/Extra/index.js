@@ -3,6 +3,7 @@ import { isLoggedIn } from 'helpers/User';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
 import styles from './styles.scss';
+import CookieConsent from 'react-cookie-consent';
 import ExtraBox from './ExtraBox';
 import PanelIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/hiker.svg';
 import TrackIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/icons/hiking2.svg';
@@ -25,21 +26,36 @@ import FileIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/i
 export default class Extra extends React.PureComponent {
   render() {
     return (
-      <div className={styles.extraContainer}>
-        {isLoggedIn() && <ExtraBox name="Panel" icon={<PanelIcon />} url="panel" main />}
-        {isLoggedIn() && <ExtraBox name="Trasy" icon={<TrackIcon />} url="tracks" main />}
-        {false && isLoggedIn() && <ExtraBox name="Dodaj Zdjęcia" icon={<FileIcon />} url="my_media" main />}
-        <ExtraBox name="Informacje" icon={<InfoIcon />} url="events" />
-        <ExtraBox name="Mapa" icon={<MapIcon />} url="bonus_points" />
-        <ExtraBox name="Wyzwania" icon={<ChallengeIcon />} url="challenges" />
-        <ExtraBox name="Zagadki" icon={<RiddleIcon />} url="riddles" />
-        <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
-        {isLoggedIn() && <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" /> }
-        {isLoggedIn() && <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" /> }
-        { false && <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" /> }
-        <ExtraBox name="Wyniki" icon={<ResultIcon />} url="results" />
-        <ExtraBox name="Heatmapa" icon={<HeatmapIcon />} url="gpx_points" />
-      </div>
+      <>
+        <div className={styles.extraContainer}>
+          {isLoggedIn() && <ExtraBox name="Panel" icon={<PanelIcon />} url="panel" main />}
+          {isLoggedIn() && <ExtraBox name="Trasy" icon={<TrackIcon />} url="tracks" main />}
+          {false &&
+            isLoggedIn() && (
+              <ExtraBox name="Dodaj Zdjęcia" icon={<FileIcon />} url="my_media" main />
+            )}
+          <ExtraBox name="Informacje" icon={<InfoIcon />} url="events" />
+          <ExtraBox name="Mapa" icon={<MapIcon />} url="bonus_points" />
+          <ExtraBox name="Wyzwania" icon={<ChallengeIcon />} url="challenges" />
+          <ExtraBox name="Zagadki" icon={<RiddleIcon />} url="riddles" />
+          <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
+          {isLoggedIn() && <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" />}
+          {isLoggedIn() && <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />}
+          {false && <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" />}
+          <ExtraBox name="Wyniki" icon={<ResultIcon />} url="results" />
+          <ExtraBox name="Heatmapa" icon={<HeatmapIcon />} url="gpx_points" />
+        </div>
+        <CookieConsent
+          location="bottom"
+          buttonText="Tak"
+          cookieName="krazownik-cookie"
+          style={{ background: '#2B373B' }}
+          buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
+          expires={150}
+        >
+          Kliknij tu, że zgadzasz się na wykorzystywanie ciasteczek.{' '}
+        </CookieConsent>
+      </>
     );
   }
 }

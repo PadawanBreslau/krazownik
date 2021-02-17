@@ -26,7 +26,8 @@ import Tracks from 'containers/Tracks';
 import MyMedia from 'containers/MyMedia';
 import TrackAll from 'containers/TrackAll';
 import Privacy from 'containers/Privacy';
-import Extra from 'containers/Extra';
+import Extra from 'containers/Extra';``
+import UserProfile from 'containers/UserProfile';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -59,6 +60,8 @@ const Routes = () => (
     <PublicRoute exect path="/privacy" component={Privacy} />
     <PublicRoute exect path="/extra" component={Extra} />
     <PrivateRoute exect path="/participations/:id" component={Participation} />
+    <PrivateRoute exect path="/users/:id" component={UserProfile} />
+
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );

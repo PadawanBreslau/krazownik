@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import withLayout from 'hoc/layoutHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import EventView from 'components/EventView';
+import OtherParticipants from 'containers/OtherParticipants';
+
 
 @withApiRead({
   storeName: 'Event',
@@ -18,7 +20,12 @@ export default class Event extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload.length !== []) {
-      return <EventView data={data.payload} />;
+      return(
+        <div>
+      <EventView data={data.payload} />
+      <OtherParticipants />
+      </div> 
+      );
     }
     return null;
   }

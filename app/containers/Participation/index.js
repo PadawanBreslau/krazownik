@@ -1,9 +1,3 @@
-/**
- *
- * UserPanel
- *
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import generateActions from 'redux/api/actions';
