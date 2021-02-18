@@ -15,7 +15,7 @@ $_button-box-shadow: 0 5px 10px 0 rgba(150, 181, 253, 0.5);
 .header {
   margin-left: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   @media (max-width: 500px) {
     flex-direction: column;
     text-align: center;
