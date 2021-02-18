@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from 'components/Avatar';
+import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tippy';
 import styles from './styles.scss';
 
-function AvatarDisplay({ data }) {
-  return (
-    <div className={styles.avatarRow}>
-      {data.map((d) => (
+const AvatarDisplay = ({ data }) => (
+  <div className={styles.avatarRow}>
+    {data.map((d) => (
+      <Link to={`/users/${d.userId}`}>
         <div className={styles.avatar}>
           <Tooltip
             title={d.name}
@@ -19,10 +20,10 @@ function AvatarDisplay({ data }) {
             <Avatar imgSrc={d.avatar} />
           </Tooltip>
         </div>
-      ))}
-    </div>
-  );
-}
+      </Link>
+    ))}
+  </div>
+);
 
 AvatarDisplay.propTypes = {
   data: PropTypes.object,

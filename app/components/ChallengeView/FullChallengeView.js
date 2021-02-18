@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CompletionList from '../CompletionList';
+import CompletionList from './CompletionList';
 import MapComponent from '../MapComponent';
 import styles from './styles.scss';
 
