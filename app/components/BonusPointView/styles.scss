@@ -9,3 +9,24 @@
   font-size: x-large;
   font-weight: 600;
 }
+
+.mapsAndCheck{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 500px){
+    flex-direction: column-reverse;
+  }
+}
+
+.maps{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  @media (max-width: 500px){
+    flex-direction: column;
+  }
+}
