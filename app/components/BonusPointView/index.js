@@ -34,7 +34,7 @@ export default class BonusPointView extends React.PureComponent {
               <Logo image={MTLogo} alt="Mapa Turystyczna" />
             </a>
             <a
-              href={`https://en.mapy.cz/zakladni?x=${bonusPoint.lon}&y=${
+              href={`https://en.mapy.cz/turisticka?x=${bonusPoint.lon}&y=${
                 bonusPoint.lat
               }&z=13&source=coor&id=${bonusPoint.lon}%2C${bonusPoint.lat}`}
               target="_blank"

@@ -4,7 +4,7 @@
   margin-left: .425rem;
 }
 
-.boxes { 
+.boxes {
   flex: 2;
   display: flex;
   flex-direction: row;
@@ -19,35 +19,21 @@
 .data {
   margin: 1rem;
   padding: 1rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #e2e2e2;
   text-align: center;
   align-items: left;
-  min-width: 30%;
+  min-width: 23rem;
+  @media (max-width: 500px) {
+    min-width: 20rem;
+  }
 }
 
 .label {
   margin-left: .225rem;
   text-align: center;
-}
-
-.button {
-  background-color: rgb(3, 170, 3);
-  border-radius:4px;
-  color: #222;
-  font-size: 1.2375rem;
-  text-align: center;
-  padding: .425rem;
-  cursor: pointer;
-  width: 12.625rem;
-
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: .5;
-  }
 }
 
 .info{

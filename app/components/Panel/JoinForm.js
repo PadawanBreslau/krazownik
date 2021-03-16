@@ -5,6 +5,7 @@ import { withApiWrite } from 'hoc/apiHOC';
 import withAuthentication from 'hoc/authHOC';
 import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
+import Button from 'components/Button';
 
 import styles from './styles.scss';
 
@@ -40,9 +41,11 @@ export default class JoinForm extends React.PureComponent {
 
     return (
       <form>
-        <button type="submit" onClick={handleSubmit} className={styles.button}>
-          Zapisz sie na najbliższego Krążownika
-        </button>
+        <Button>
+          <button type="submit" onClick={handleSubmit} className={styles.button}>
+            Zapisz sie na najbliższego Krążownika
+          </button>
+        </Button>
       </form>
     );
   }

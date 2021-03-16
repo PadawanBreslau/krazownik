@@ -26,7 +26,6 @@ export default class Panel extends React.PureComponent {
             {payload.id && <EditForm userId={payload.id} />}
           </div>
           <div className={styles.data}>
-            <h2>Twoje występy</h2>
             {payload.participations && <ParticipationList data={payload.participations} />}
             {availableToJoin && <JoinForm />}
           </div>

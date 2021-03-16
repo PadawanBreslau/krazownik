@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import styles from './styles.scss';
 
 const SimpleHeader = ({ data }) => (
-  <>
-    <div className={styles.title}>
-      <Link to={`/challenges/${data.id}`}>
+  <div>
+    <Link to={`/challenges/${data.id}`}>
+      <div className={styles.title}>
         {data.title} ({data.points} pkt)
-      </Link>
-    </div>
-    <div className={styles.icon}>
-      <img src={data.icon} alt={data.name} />
-    </div>
-    <span className={styles.description}>{data.description}</span>
-  </>
+      </div>
+      <div className={styles.icon}>
+        <img src={data.icon} alt={data.name} />
+      </div>
+      <div className={styles.description}>{data.description}</div>
+    </Link>
+  </div>
 );
 
 SimpleHeader.propTypes = {

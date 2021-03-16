@@ -4,6 +4,7 @@ import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiReadWrite } from 'hoc/apiHOC';
+import Button from 'components/Button'
 import styles from './styles.scss';
 
 @withApiReadWrite({
@@ -37,9 +38,11 @@ export default class ToggleChallengeForm extends React.PureComponent {
     const style = completed ? styles.buttonBack : styles.button;
     return (
       <form>
-        <button type="button" onClick={handleSubmit} className={style}>
-          {label}
-        </button>
+        <Button>
+          <button type="button" onClick={handleSubmit} className={style}>
+            {label}
+          </button>
+        </Button>
       </form>
     );
   }

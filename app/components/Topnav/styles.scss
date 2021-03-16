@@ -35,14 +35,14 @@ $_border-color: #48506b;
 }
 
 .menuLabel {
-  margin-left: 1.525rem;
-  font-size: larger;
-  margin-top: 1.225rem;
+  margin-left: .525rem;
+  font-size: x-large;
+  margin-top: .825rem;
   font-weight: 800;
 
   @media (max-width: 500px) {
-    font-size: smaller;
-    margin-top: 1.725rem;
+    font-size: larger;
+    margin-top: 1.325rem;
   }
 }
 

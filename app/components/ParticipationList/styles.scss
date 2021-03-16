@@ -1,11 +1,15 @@
 .participationDiv {
-  background-color:rgb(64, 65, 80);
+  background-color:rgb(120, 82, 180);
+  box-shadow: 2px 2px #aca7f5;
   color: white;
   margin: .825rem;
-  padding: 1.825rem;
-  max-width: 500px;
+  padding: 1.225rem;
+  width: 9rem;
+  height: 9rem;
   font-size: x-large;
+  font-weight: 600;
   display: inline-block;
+  border-radius: 4px;
 }
 
 .description {

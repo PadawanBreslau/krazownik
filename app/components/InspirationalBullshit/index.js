@@ -19,6 +19,9 @@ const bullshitExamples = [
   'Zamierzam żyć wiecznie. Jak na razie idzie mi całkiem nieźle.',
   'Moim ulubionym urządzeniem na siłowni jest automat z przekąskami.',
   'Cokolwiek robisz, nie warto',
+  'Nic nie budzi lepiej niż porządna lepa na ryj',
+  'Nikt nie chodzi do kina z własnym barszczem w słoiku',
+  'Trudu nie ma, zimy nie ma i śmierci z niedożywienia też nie ma. Ale halucynacje zostały.',
 ];
 
 const InspirationalBullshit = () => (

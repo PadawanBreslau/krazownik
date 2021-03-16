@@ -15,7 +15,7 @@ $_button-box-shadow-hover: 0 2px 12px 0 rgba(32, 96, 245, 0.4);
   button,
   a {
     background: #06d37e;
-    width: 100%;
+    width: 21rem;
     display: block;
     box-shadow: $_button-box-shadow;
     border-radius: .5rem;
@@ -32,6 +32,9 @@ $_button-box-shadow-hover: 0 2px 12px 0 rgba(32, 96, 245, 0.4);
   }
   button[disabled] {
     opacity: .5;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 10rem;
   }
 }
 
