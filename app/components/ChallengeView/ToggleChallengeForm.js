@@ -35,11 +35,11 @@ export default class ToggleChallengeForm extends React.PureComponent {
     const { completed, handleSubmit } = this.props;
 
     const label = completed ? 'Cofnij' : 'Ukończ';
-    const style = completed ? styles.buttonBack : styles.button;
+    const style = completed ? styles.checkedButton : styles.button;
     return (
       <form>
-        <Button>
-          <button type="button" onClick={handleSubmit} className={style}>
+        <Button isChecked={completed}>
+          <button type="button" onClick={handleSubmit}>
             {label}
           </button>
         </Button>

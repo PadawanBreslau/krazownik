@@ -4,6 +4,7 @@ import generateActions from 'redux/api/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { showUiSuccess } from 'redux/UI/actions';
 import { withApiWrite } from 'hoc/apiHOC';
+import Button from 'components/Button';
 
 import styles from './styles.scss';
 
@@ -35,13 +36,11 @@ export default class BonusPointCompletionForm extends React.PureComponent {
 
     return (
       <form>
-        <button
-          type="submit"
-          onClick={handleSubmit}
-          className={isChecked ? styles.buttonRed : styles.buttonGreen}
-        >
-          {label}
-        </button>
+        <Button small isChecked={isChecked}>
+          <button type="submit" onClick={handleSubmit}>
+            {label}
+          </button>
+        </Button>
       </form>
     );
   }

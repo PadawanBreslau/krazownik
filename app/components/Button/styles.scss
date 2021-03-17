@@ -4,7 +4,6 @@ $_button-box-shadow: 0 2px 2px 0 rgba(72, 128, 255, .2);
 $_button-box-shadow-hover: 0 2px 12px 0 rgba(32, 96, 245, 0.4);
 
 .button {
-  min-width: 13.75rem;
   max-width: 13.75rem;
 
   @media (max-width: $breakpoint-sm) {
@@ -37,6 +36,109 @@ $_button-box-shadow-hover: 0 2px 12px 0 rgba(32, 96, 245, 0.4);
     width: 10rem;
   }
 }
+
+.checkedButton {
+  max-width: 13.75rem;
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  button,
+  a {
+    background: #d30606;
+    width: 21rem;
+    display: block;
+    box-shadow: $_button-box-shadow;
+    border-radius: .5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.275rem;
+    letter-spacing: .25rem;
+    padding: .5375rem;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+  }
+  button[disabled] {
+    opacity: .5;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 10rem;
+  }
+}
+
+
+.smallButton {
+  max-width: 10.75rem;
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  button,
+  a {
+    background: #06d37e ;
+    display: block;
+    box-shadow: $_button-box-shadow;
+    border-radius: .5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    padding: .375rem;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+  }
+  button[disabled] {
+    opacity: .5;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 10rem;
+  }
+}
+
+
+.smallCheckedButton {
+  max-width: 10.75rem;
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  button,
+  a {
+    background: #d30606;
+    display: block;
+    box-shadow: $_button-box-shadow;
+    border-radius: .5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    padding: .375rem;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer;
+  }
+  button[disabled] {
+    opacity: .5;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 10rem;
+  }
+}
+
+
+
 
 .button--icon {
   display: inline-flex;
