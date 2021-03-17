@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withLayout from 'hoc/layoutHOC';
-import withAuthentication from 'hoc/authHOC';
 import { withApiRead } from 'hoc/apiHOC';
 import Results from 'components/CryptoPanel/Results';
 

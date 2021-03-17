@@ -5,7 +5,7 @@ import styles from './styles.scss';
 
 const Results = ({ data }) => (
   <div className={styles.cryptoResults}>
-    <h3>Wyniki</h3>
+    <div className={styles.title}>Wyniki</div>
     {data.map((result)=>(<Result data={result} />))}
   </div>
 );

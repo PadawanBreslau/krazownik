@@ -5,6 +5,7 @@ import { prepareEndpoint } from 'helpers/Url';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
 import { withApiWrite } from 'hoc/apiHOC';
+import { showUiSuccess } from 'redux/UI/actions';
 import CryptoPanel from 'components/CryptoPanel';
 
 @withLayout({ type: 'simplified' })
@@ -14,12 +15,20 @@ import CryptoPanel from 'components/CryptoPanel';
   formName: 'CryptoResultsForm',
   customFormOptions: {
     onSubmit: (payload, dispatch, props) => {                                      
-      const { submitPageData } = generateActions('CryptoResultsForm');                         
+      const { submitPageData } = generateActions('CryptoResultsForm');
+      const { loadPageData } = generateActions('CryptoResults');                       
         
       const formattedPayload = payload.toJS();
       const formattedEndpoint = prepareEndpoint('/crypto/riddle_solutions', props);
+
+      const reloadCallback = loadPageData('/crypto/participations');
+      const successCallbackActions = [
+        reloadCallback,
+        showUiSuccess('Odpowiedź została wysłana'),
+      ];
+
           
-      dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload));        
+      dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackActions));        
     },  
   },
 })

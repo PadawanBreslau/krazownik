@@ -1,3 +1,53 @@
+.crypto{
+  display: flex;
+  flex-direction: column;  
+  width: 60%;
+  margin-top: 2rem;
+
+  @media (max-width: 500px) {
+    margin-top: .5rem;      
+  }
+}
+
+.cryptoPanel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
+.cryptoForm{
+  width: 21rem;
+}
+
+.cryptoResults{
+  margin-top: 3rem;
+  text-align: center;
+
+  @media (max-width: 500px) {
+    margin-top: .5rem;      
+  }
+}
+
+.title{
+  font-size: xx-large;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.count{
+  font-size: larger;
+}
+
+.winner{
+  font-size: larger;
+  font-weight: 600;
+  color: green;
+}
+
 .button{
   padding: 1rem;
   background-color: chartreuse;
@@ -7,14 +57,38 @@
   font-weight: 600;
 }
 
+.mySolutions{
+  padding: 2rem;
+  background-color: #e6f1e1;
+  border-radius: 12px;
+  min-width: 20rem;
+  max-width: 30rem;
+  font-size: larger;
+  font-weight: 550;
+
+  @media (max-width: 500px) {
+    margin-top: .5rem;
+    max-width: 20rem;
+
+    padding: .5rem;      
+  }
+}
+
 .cryptoGoodSolutions{
   margin-top: 1rem;
   color: green;
+
+  @media (max-width: 500px) {
+    margin-top: .1rem;      
+  }
 }
 
 .cryptoBadSolutions{
   margin-top: 1rem;
   color: red;
+  @media (max-width: 500px) {
+    margin-top: .1rem;      
+  }
 }
 
 .solution{

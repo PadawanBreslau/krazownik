@@ -4,7 +4,7 @@ import generateActions from 'redux/api/actions';
 import { showUiSuccess } from 'redux/UI/actions';
 import { prepareEndpoint } from 'helpers/Url';
 import { withApiReadWrite } from 'hoc/apiHOC';
-import Button from 'components/Button'
+import Button from 'components/Button';
 import styles from './styles.scss';
 
 @withApiReadWrite({
