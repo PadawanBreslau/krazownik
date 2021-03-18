@@ -14,22 +14,19 @@ import CryptoPanel from 'components/CryptoPanel';
   storeName: 'CryptoResultsForm',
   formName: 'CryptoResultsForm',
   customFormOptions: {
-    onSubmit: (payload, dispatch, props) => {                                      
+    onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('CryptoResultsForm');
-      const { loadPageData } = generateActions('CryptoResults');                       
-        
+      const { loadPageData } = generateActions('CryptoOwnResult');
+
       const formattedPayload = payload.toJS();
       const formattedEndpoint = prepareEndpoint('/crypto/riddle_solutions', props);
 
-      const reloadCallback = loadPageData('/crypto/participations');
-      const successCallbackActions = [
-        reloadCallback,
-        showUiSuccess('Odpowiedź została wysłana'),
-      ];
+      const reloadCallback = loadPageData('/crypto/participations/own');
 
-          
-      dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackActions));        
-    },  
+      const successCallbackActions = [reloadCallback, showUiSuccess('Odpowiedź została wysłana')];
+
+      dispatch(submitPageData(formattedEndpoint, 'post', formattedPayload, successCallbackActions));
+    },
   },
 })
 export default class Crypto extends React.PureComponent {
