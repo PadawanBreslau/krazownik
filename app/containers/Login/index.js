@@ -47,6 +47,7 @@ export default class Login extends React.PureComponent {
 
     if (prevPayload.name !== nextPayload.name) {
       setToStorage('name', nextPayload.name);
+      setToStorage('participation', nextPayload.lastParticipationYear);
 
       this.props.dispatch(push('/panel'));
     }

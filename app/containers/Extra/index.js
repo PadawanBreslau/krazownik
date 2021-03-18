@@ -2,6 +2,7 @@ import React from 'react';
 import { isLoggedIn } from 'helpers/User';
 import withLayout from 'hoc/layoutHOC';
 import withAuthentication from 'hoc/authHOC';
+import { getFromStorage } from 'helpers/Headers';
 import styles from './styles.scss';
 import CookieConsent from 'react-cookie-consent';
 import ExtraBox from './ExtraBox';
@@ -24,6 +25,10 @@ import FileIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/i
   type: 'simplified',
 })
 export default class Extra extends React.PureComponent {
+  hasParticipation(){
+    return new Date().getFullYear() == getFromStorage('participation');
+  };
+
   render() {
     return (
       <>
@@ -40,7 +45,7 @@ export default class Extra extends React.PureComponent {
           <ExtraBox name="Zagadki" icon={<RiddleIcon />} url="riddles" />
           <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
           {isLoggedIn() && <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" />}
-          {isLoggedIn() && <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />}
+          {isLoggedIn() && this.hasParticipation() && <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />}
           {false && <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" />}
           <ExtraBox name="Wyniki" icon={<ResultIcon />} url="results" />
           <ExtraBox name="Heatmapa" icon={<HeatmapIcon />} url="gpx_points" />
