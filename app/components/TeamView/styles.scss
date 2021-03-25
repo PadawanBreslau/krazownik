@@ -66,6 +66,9 @@
 
 // PANEL
 
+.teamPanelPage{
+  width: 80%;
+}
 
 .panelHeader{
   text-align: center;
@@ -76,3 +79,34 @@
     font-size: 1rem;
   }
 }
+
+.teamTasks{
+  margin-top: 1rem;
+  font-size: large;
+}
+
+.teamTask{
+  margin-top: .5rem;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: rgb(188, 238, 238);
+}
+
+.rowWithContent{
+  display: flex;
+  flex-direction: column;
+}
+
+.photoContent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.teamTaskPhoto{
+  flex: 1;
+  height: 10rem;
+  max-width: 10rem;
+  border: 1px solid black;
+}
+
