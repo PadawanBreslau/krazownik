@@ -62,3 +62,17 @@
     font-size: smaller;
   }
 }
+
+
+// PANEL
+
+
+.panelHeader{
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
+}

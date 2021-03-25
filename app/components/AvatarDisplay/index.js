@@ -11,7 +11,7 @@ const AvatarDisplay = ({ data }) => (
       <Link to={`/users/${d.userId}`}>
         <div className={styles.avatar}>
           <Tooltip
-            title={d.name}
+            title={d.name || d.user}
             position="bottom"
             arrow="true"
             theme="light"

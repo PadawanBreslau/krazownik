@@ -14,6 +14,7 @@ import UserPanel from 'containers/UserPanel';
 import Participation from 'containers/Participation';
 import Teams from 'containers/Teams';
 import Team from 'containers/Team';
+import TeamPanel from 'containers/TeamPanel';
 import BonusPoints from 'containers/BonusPoints';
 import GpxPoints from 'containers/GpxPoints';
 import BonusPoint from 'containers/BonusPoint';
@@ -54,6 +55,7 @@ const Routes = () => (
     <PublicRoute exect path="/riddles" component={Riddles} />
     <PrivateRoute exect path="/crypto" component={Crypto} />
     
+    <PublicRoute exect path="/teams/panel" component={TeamPanel} />
     <PublicRoute exect path="/teams/:id" component={Team} />
     <PublicRoute exect path="/teams" component={Teams} />
     

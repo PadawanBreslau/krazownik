@@ -66,7 +66,7 @@ class EditForm extends React.PureComponent {
         <CheckboxField fieldName="teamReady" className="form-field">
           Chcę brać udział w drużynówce
           <span className={styles.label}>
-            <Tooltip title="Czy rozpatrywać Cię przy rozdziale drużyn" position="right" delay={250}>
+            <Tooltip title="Czy rozpatrywać Cię przy rozdziale drużyn. Inne osoby z drużyny dostaną informacje o Twoim mailu/telefonie" position="right" delay={250}>
               <InfoIcon />
             </Tooltip>
           </span>

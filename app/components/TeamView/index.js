@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PhotoGallery from 'components/PhotoGallery';
+import { Link } from 'react-router-dom';
+import Button from 'components/Button';
 import styles from './styles.scss';
 
 export default class TeamView extends React.PureComponent {
@@ -24,10 +25,8 @@ export default class TeamView extends React.PureComponent {
             </ul>
           )}
 
-          {!team.participations && <span>Nikt nie został dołączony do tego zespołu</span>}
+          { team.own && <Link to='/teams/panel'><Button><button>Panel Drużyny</button></Button></Link>}
         </div>
-
-        {extended && team.photos && team.photos.length > 0 && <PhotoGallery photos={team.photos} />}
       </div>
     );
   }

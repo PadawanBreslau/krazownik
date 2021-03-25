@@ -8,14 +8,20 @@ const User = ({ data }) => (
     <span className={styles.username}>{data.name}</span>
     {data.viewable && (
       <div className={styles.info}>
-        <span className={styles.data}>{data.aboutMe}</span> 
+        <span className={styles.data}>{data.aboutMe}</span>
         <span className={styles.data}>Rok ur: {data.birthyear}</span>
+        {data.email && <span className={styles.data}>Email: {data.email}</span>}
+        {data.phoneNumber && <span className={styles.data}>Telefon: {data.phoneNumber}</span>}
       </div>
     )}
 
-    {data.avatar && <div className={styles.image}><img src={data.avatar} /></div>}
+    {data.avatar && (
+      <div className={styles.image}>
+        <img src={data.avatar} />
+      </div>
+    )}
 
-    { data.viewable && <UserParticipations data={data.participations}/>}
+    {data.viewable && <UserParticipations data={data.participations} />}
   </div>
 );
 

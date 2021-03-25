@@ -9,8 +9,6 @@ const UserParticipation = ({ item }) => {
   const label = `Pokaż występ za rok ${item.year}`;
   const completedChallenges = item.challenges.filter((ch) => ch.completed);
 
-  console.log(completedChallenges);
-
   return (
     <div className={styles.participationWithSwitch}>
       <div className={styles.detailsSwitch} onClick={() => setDetailsVisible(!detailsVisible)}>
