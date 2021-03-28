@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 import styles from './styles.scss';
 
-export default class DeleteTrackForm extends React.PureComponent {
+export default class DeletePhotoForm extends React.PureComponent {
   render() {
     const { handleSubmit } = this.props;
 
@@ -12,7 +12,7 @@ export default class DeleteTrackForm extends React.PureComponent {
         <form>
           <Button isChecked={true}>
             <button type="submit" className={styles.deleteButton} onClick={handleSubmit}>
-              Usuń trasę
+              Usuń zdjęcie
             </button>
           </Button>
         </form>
@@ -21,6 +21,6 @@ export default class DeleteTrackForm extends React.PureComponent {
   }
 }
 
-DeleteTrackForm.propTypes = {
+DeletePhotoForm.propTypes = {
   handleSubmit: PropTypes.func,
 };

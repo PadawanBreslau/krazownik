@@ -21,10 +21,10 @@ export default class PhotoForm extends React.PureComponent {
 
   onFileUpload = (file, successCallback) => {
     if (!file) return;
-    const { dispatch, taskId } = this.props;
+    const { dispatch, taskId, teamId } = this.props;
 
     const uploadConfig = {
-      endpoint: `/teams/tasks/${taskId}/photo`,
+      endpoint: `/teams/${teamId}/team_tasks/${taskId}/photo`,
       storeName: 'postPhotoForm',
       uploadAttributeName: 'file',
     };

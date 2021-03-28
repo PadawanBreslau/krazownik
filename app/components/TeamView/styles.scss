@@ -80,6 +80,12 @@
   }
 }
 
+.taskContent{
+  margin-bottom: .5rem;
+  font-size: x-large;
+  font-weight: 600;
+}
+
 .teamTasks{
   margin-top: 1rem;
   font-size: large;
@@ -89,12 +95,13 @@
   margin-top: .5rem;
   border-radius: 4px;
   padding: 1rem;
-  background-color: rgb(188, 238, 238);
 }
 
 .rowWithContent{
   display: flex;
   flex-direction: column;
+  text-align: center;
+  font-size: larger;
 }
 
 .photoContent{
@@ -108,5 +115,54 @@
   height: 10rem;
   max-width: 10rem;
   border: 1px solid black;
+  padding: 2px;
 }
 
+.dropzone{
+  height: 9.5rem;
+  width: 9.5rem;
+  padding: .5rem;
+  border: 1px black dashed ;
+}
+
+.teamTaskPhotoDetails{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: larger;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
+.taskName{
+  font-size: x-large;
+  font-weight: 600;
+  text-align: center;
+}
+
+.photoView{
+  margin: 1rem;
+
+  @media (min-width: 500px) {
+
+    margin-right: 10rem;
+  }
+}
+
+.metadata{
+  text-align: center;
+}
+
+.info{
+  font-weight: 600;
+}
+
+.update{
+  margin-top: 1rem;
+}
+
+.delete{
+  margin-top: 1rem;
+}

@@ -16,7 +16,7 @@ export default class TeamPanelView extends React.PureComponent {
         {team.teamTasks && (
           <div className={styles.teamTasks}>
             {team.teamTasks.map((tt) => (
-              <TeamTask task={tt} />
+              <TeamTask task={tt} teamId={team.id} />
             ))}
           </div>
         )}

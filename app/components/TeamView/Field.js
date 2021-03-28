@@ -40,9 +40,7 @@ class FileField extends React.Component {
     return (
       <div className={styles.wrapper}>
         <input type="hidden" disabled {...input} />
-        <Dropzone {...dropzoneProps}>
-          <Avatar imgSrc={avatar} />
-        </Dropzone>
+        <Dropzone {...dropzoneProps} />
       </div>
     );
   }
