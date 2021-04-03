@@ -65,6 +65,8 @@
   "dependencies": {
     "@babel/plugin-syntax-optional-chaining": "^7.8.3",
     "@babel/polyfill": "7.0.0",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@storybook/react": "^3.4.1",
     "aws-sdk": "^2.288.0",
     "basic-auth": "^2.0.0",
