@@ -99,6 +99,7 @@
 
 .rowWithContent{
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   text-align: center;
   font-size: larger;
@@ -107,7 +108,7 @@
 .photoContent{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .teamTaskPhoto{
