@@ -25,7 +25,7 @@ const PhotoDetails = ({ data, handleSubmit }) => (
       </div>
       { data.leader &&
         <div className={styles.actions}>
-          <UpdatePhotoForm handleSubmit={handleSubmit} accepted={data.approvedByLeader} />
+          <UpdatePhotoForm handleSubmit={handleSubmit} accepted={data.accepted} />
           <DeletePhoto id={data.id} />
         </div>
       }

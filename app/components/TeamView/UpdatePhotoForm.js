@@ -6,8 +6,6 @@ import styles from './styles.scss';
 export default class UpdatePhotoForm extends React.PureComponent {
   render() {
     const { accepted, handleSubmit } = this.props;
-
-    console.log(accepted);
     const label = accepted ? 'Cofnij akceptację' : 'Zaakceptuj zdjęcie'
 
     return (

@@ -5,14 +5,15 @@ import styles from './styles.scss';
 
 export default class AcceptPhotoForm extends React.PureComponent {
   render() {
-    const { handleSubmit } = this.props;
+    const { accepted, handleSubmit } = this.props;
+    const label = accepted ? 'Cofnij akceptację' : 'Zaakceptuj zdjęcie'
 
     return (
       <div className={styles.delete}>
         <form>
           <Button isChecked={false}>
             <button type="submit" className={styles.deleteButton} onClick={handleSubmit}>
-              Zaakceptuj zdjęcie
+              {label}
             </button>
           </Button>
         </form>
@@ -22,5 +23,6 @@ export default class AcceptPhotoForm extends React.PureComponent {
 }
 
 AcceptPhotoForm.propTypes = {
+  accepted: PropTypes.bool,
   handleSubmit: PropTypes.func,
 };
