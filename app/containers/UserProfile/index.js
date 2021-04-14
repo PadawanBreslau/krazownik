@@ -21,7 +21,7 @@ export default class UserProfile extends React.PureComponent {
     if (data.payload === undefined) {
       return null;
     }
-    return <User data={data.payload}/>;
+    return <User data={data.payload} />;
   }
 }
 

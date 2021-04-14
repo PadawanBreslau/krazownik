@@ -5,7 +5,6 @@ import { withApiRead } from 'hoc/apiHOC';
 import EventView from 'components/EventView';
 import OtherParticipants from 'containers/OtherParticipants';
 
-
 @withApiRead({
   storeName: 'Event',
   api: {
@@ -20,11 +19,11 @@ export default class Event extends React.PureComponent {
     const { data } = this.props;
 
     if (data.payload.length !== []) {
-      return(
+      return (
         <div>
-      <EventView data={data.payload} />
-      <OtherParticipants />
-      </div> 
+          <EventView data={data.payload} />
+          <OtherParticipants />
+        </div>
       );
     }
     return null;

@@ -26,7 +26,7 @@ import FileIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/i
 })
 export default class Extra extends React.PureComponent {
   hasParticipation() {
-    return new Date().getFullYear() == getFromStorage('participation');
+    return new Date().getFullYear()=== getFromStorage('participation');
   }
 
   render() {

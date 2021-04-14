@@ -32,11 +32,11 @@ export class ParticipationTracks extends React.PureComponent {
 
     return (
       <div className={styles.trackManagement}>
-        <div class={styles.upload}>
+        <div className={styles.upload}>
           <FileUpload dispatch={dispatch} label="Przeciągnij lub upuść pliki GPX" />
           <div className={styles.info}>Proszę odświeżyć stronę po dodaniu</div>
         </div>
-        <div class={styles.files}>
+        <div className={styles.files}>
           <TracksPresentation files={files.payload} />
         </div>
       </div>

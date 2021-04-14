@@ -27,12 +27,13 @@ import Tracks from 'containers/Tracks';
 import MyMedia from 'containers/MyMedia';
 import TrackAll from 'containers/TrackAll';
 import Privacy from 'containers/Privacy';
-import Extra from 'containers/Extra';``
+import Extra from 'containers/Extra';
 import UserProfile from 'containers/UserProfile';
 import Crypto from 'containers/Crypto';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
+``;
 
 const Routes = () => (
   <Switch>
@@ -47,21 +48,20 @@ const Routes = () => (
     <PrivateRoute exect path="/participations/:id" component={Participation} />
     <PublicRoute exect path="/events" component={Event} />
     <PublicRoute exect path="/results" component={Results} />
-    
+
     <PublicRoute exect path="/challenges/:id" component={Challenge} />
     <PublicRoute exect path="/challenges" component={Challenges} />
-    
+
     <PublicRoute exect path="/riddles/:id" component={Riddle} />
     <PublicRoute exect path="/riddles" component={Riddles} />
     <PublicRoute exect path="/riddles" component={Riddles} />
     <PrivateRoute exect path="/crypto" component={Crypto} />
-    
+
     <PublicRoute exect path="/teams/panel" component={TeamPanel} />
     <PublicRoute exect path="/teams/:id" component={Team} />
     <PublicRoute exect path="/teams" component={Teams} />
     <PrivateRoute exect path="/team_photos/:id" component={TeamPhoto} />
 
-    
     <PublicRoute exect path="/bonus_points/:id" component={BonusPoint} />
     <PublicRoute exect path="/bonus_points" component={BonusPoints} />
 
@@ -69,14 +69,13 @@ const Routes = () => (
 
     <PrivateRoute exect path="/my_media" component={MyMedia} />
     <PublicRoute exect path="/photos" component={Photos} />
-    
+
     <PrivateRoute exect path="/tracks/:id/all" component={TrackAll} />
     <PublicRoute exect path="/tracks/:id" component={Track} />
     <PrivateRoute exect path="/tracks" component={Tracks} />
-  
+
     <PublicRoute component={NotFoundPage} />
   </Switch>
 );
-
 
 export default Routes;

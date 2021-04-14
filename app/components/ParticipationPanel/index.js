@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MapComponent from 'components/MapComponent';
-import ChallengeCompletion from './ChallengeCompletion';
 import Button from 'components/Button';
+import ChallengeCompletion from './ChallengeCompletion';
 import Result from './Result';
 import DrawNewChallengeForm from './DrawNewChallengeForm';
 import styles from './styles.scss';
@@ -62,18 +62,18 @@ function ParticipationPanel({ data, handleSubmit }) {
     <div className={styles.container}>
       <div className={styles.panelRight}>
         {data.team && (
-          <Link to={'/teams/panel'}>
+          <Link to="/teams/panel">
             <Button>
               <div className={styles.button}> Menu drużyny</div>{' '}
             </Button>
           </Link>
         )}
 
-          <Link to={'/tracks'}>
-            <Button>
-              <div className={styles.button}> Twoje trasy</div>{' '}
-            </Button>
-          </Link>
+        <Link to="/tracks">
+          <Button>
+            <div className={styles.button}> Twoje trasy</div>{' '}
+          </Button>
+        </Link>
 
         {completionChallenges && (
           <div className={styles.challenges}>

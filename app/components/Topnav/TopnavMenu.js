@@ -11,8 +11,8 @@ const TopnavMenu = () => (
         <Home />
       </Link>
     </div>
-      <Link to="/" className={styles.logo}>
-    <div className={styles.menuLabel}>Krążownik</div>
+    <Link to="/" className={styles.logo}>
+      <div className={styles.menuLabel}>Krążownik</div>
     </Link>
   </div>
 );

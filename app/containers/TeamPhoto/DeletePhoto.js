@@ -1,7 +1,7 @@
 import React from 'react';
 import { withApiWrite } from 'hoc/apiHOC';
 import { showUiSuccess } from 'redux/UI/actions';
-import DeletePhotoForm from 'components/TeamView/DeletePhotoForm'
+import DeletePhotoForm from 'components/TeamView/DeletePhotoForm';
 
 @withApiWrite({
   storeName: 'DeletePhoto',
@@ -10,15 +10,13 @@ import DeletePhotoForm from 'components/TeamView/DeletePhotoForm'
     delete: '/team_task_photos/:id',
   },
   successRedirectUrl: '/teams/panel',
-  successCallbackActions: [showUiSuccess('Zdjęcie zostało usunięta')]
+  successCallbackActions: [showUiSuccess('Zdjęcie zostało usunięta')],
 })
 export class DeletePhoto extends React.PureComponent {
   render() {
     const { handleSubmit } = this.props;
 
-    return (
-      <DeletePhotoForm handleSubmit={handleSubmit}/>
-    );
+    return <DeletePhotoForm handleSubmit={handleSubmit} />;
   }
 }
 

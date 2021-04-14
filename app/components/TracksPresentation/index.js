@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventDisplay from './EventDisplay';
-import styles from "./styles.scss";
+import styles from './styles.scss';
 
 export default class TracksPresentation extends React.PureComponent {
   render() {
