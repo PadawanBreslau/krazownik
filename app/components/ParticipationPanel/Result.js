@@ -62,50 +62,36 @@ function Result({ data, challenges, bonusPoints, extraPoints }) {
         <tr>
           <th>Dziedzina</th>
           <th className={styles.pointsColumn}>Punkty</th>
-          <th>Rozpiska</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Punkty za dystans</td>
           <td className={styles.pointsColumn}>{data.totalDistancePoints}</td>
-          <td />
         </tr>
         <tr>
           <td>Punkty za wysokości</td>
           <td className={styles.pointsColumn}>{data.totalAscentPoints}</td>
-          <td />
         </tr>
         <tr>
           <td>Wyzwania wspólne</td>
           <td className={styles.pointsColumn}>{commonChallengesPoints}</td>
-          <td>
-            <DataList data={commonChallenges} />
-          </td>
         </tr>
         <tr>
           <td>Wyzwania prywatne</td>
           <td className={styles.pointsColumn}>{ownChallengesPoints}</td>
-          <td>
-            <DataList data={ownChallenges} />
-          </td>
         </tr>
         <tr>
           <td>Punkty Bonusowe</td>
           <td className={styles.pointsColumn}>{finishedBonusPoints}</td>
-          <td>
-            <DataList data={bonusPoints} />
-          </td>
         </tr>
         <tr>
           <td>Zdjęcia</td>
           <td className={styles.pointsColumn}>{extraPoints}</td>
-          <td />
         </tr>
         <tr>
           <td>Suma</td>
           <td className={styles.pointsColumn}>{pointsTogether}</td>
-          <td>{feedback(pointsTogether)}</td>
         </tr>
       </tbody>
     </table>

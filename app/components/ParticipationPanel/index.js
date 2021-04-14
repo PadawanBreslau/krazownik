@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MapComponent from 'components/MapComponent';
 import ChallengeCompletion from './ChallengeCompletion';
+import Button from 'components/Button';
 import Result from './Result';
 import DrawNewChallengeForm from './DrawNewChallengeForm';
 import styles from './styles.scss';
@@ -59,21 +60,20 @@ function ParticipationPanel({ data, handleSubmit }) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.ownMap}>
-        <MapComponent
-          zoom={12}
-          data={enhancedPoints}
-          gpxPoints={data.gpxPoints}
-          bonusPoints
-          tracks
-        />
-      </div>
       <div className={styles.panelRight}>
         {data.team && (
-          <Link to={`/teams/${data.team.id}`}>
-            <div className={styles.button}> Menu drużyny</div>{' '}
+          <Link to={'/teams/panel'}>
+            <Button>
+              <div className={styles.button}> Menu drużyny</div>{' '}
+            </Button>
           </Link>
         )}
+
+          <Link to={'/tracks'}>
+            <Button>
+              <div className={styles.button}> Twoje trasy</div>{' '}
+            </Button>
+          </Link>
 
         {completionChallenges && (
           <div className={styles.challenges}>
@@ -83,19 +83,23 @@ function ParticipationPanel({ data, handleSubmit }) {
           </div>
         )}
 
-
         {false && shouldBeAbleToDraw && <DrawNewChallengeForm handleSubmit={handleSubmit} />}
-        {!shouldBeAbleToDraw && (
-          <span className={styles.info}>Wylosowałeś juz wszystkie możliwe wyzwania</span>
-        )}
-
-        <Result
-          data={data}
-          challenges={finishedChallenges}
-          bonusPoints={finishedPoints}
-          extraPoints={extraPoints}
+      </div>
+      <div className={styles.ownMap}>
+        <MapComponent
+          zoom={12}
+          data={enhancedPoints}
+          gpxPoints={data.gpxPoints}
+          bonusPoints
+          tracks
         />
       </div>
+      <Result
+        data={data}
+        challenges={finishedChallenges}
+        bonusPoints={finishedPoints}
+        extraPoints={extraPoints}
+      />
     </div>
   );
 }
