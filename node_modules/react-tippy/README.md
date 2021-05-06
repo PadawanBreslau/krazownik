@@ -1,5 +1,7 @@
 ## React Tippy
 
+[![React Version](https://img.shields.io/badge/react-16.x-blue)](https://reactjs.org/)
+
 A lightweight tooltip for React. Demo at [Demo page here...](https://tvkhoa.github.io/testlib)
 
 Based on `tippy.js` and powered by `Popper.js`
@@ -9,9 +11,9 @@ Based on `tippy.js` and powered by `Popper.js`
 
 ## Why you should use it?
 
-It is designed to work friendly with React, it provides `<Tooltip>` element or a higher-order component
+It is designed to work friendly with React, it provides `<Tooltip>` element or a higher-order component.
 
-It uses `React DOM` to render tooltip content. Therefore, you can fully use it in your React project without doubt
+It uses `React DOM` to render tooltip content. Therefore, you can fully use it in your React project without doubt.
 
 It is an enhancement of Tippy.js for using in React.
 
@@ -71,7 +73,7 @@ const Header = () => (
   <h2>Header here</h2>
 );
 
-const HeaderWithTootip = withTooltip(Header, {
+const HeaderWithTooltip = withTooltip(Header, {
   title: 'Welcome to React with tooltip',
 });
 
@@ -112,6 +114,7 @@ const HeaderWithTootip = withTooltip(Header, {
 |size|`regular`|`small` `regular` `big`|Specifies how big the tooltip is.|
 |sticky|`false`|`true` `false`|Specifies whether the tooltip should stick to its element reference when it's showing (for example, if the element is animated/moves).|
 |stickyDuration|200|Any number (milliseconds)|Specifies the 'smoothing' transition when the popper's position updates as its element moves.|
+|tag|`div`|A HTML element tag name e.g. `span`|Specifies the HTML element used to wrap the content that triggers the tooltip. When using a tooltip inline, `span` is more likely to be valid markup. When using a higher-order component with a block-level element, a `div` or `a` is more likely to be valid markup.|
 |touchHold|false|`true` `false`|Changes the trigger behavior on touch devices. It will change it from a tap to show and tap off to hide, to a tap and hold to show, and a release to hide.|
 |onShow|noop|function|Callback when the tooltip has been triggered and has started to transition in|
 |onShown|noop|function|Callback when the tooltip has fully transitioned in and is showing|
@@ -186,7 +189,7 @@ You can use `interactive` prop and `html` for your interactive tooltip
 
 Tippy gracefully degrades on older browsers (and with JavaScript disabled) by using the browser's default title tooltip.
 
-If you want to support older browsers, please add `polyfill` by yourself
+If you want to support older browsers, please add `polyfill` by yourself.
 
 ### Supported browsers
 
@@ -221,7 +224,7 @@ react-tippy provides `useContext` for Tooltip component. It can allow you to use
 
 ## Could I change tooltip style (width, height, ...)?
 
-You can change css to have your tooltip width. If you use `html` props, you can do like this
+You can change css to have your tooltip width. If you use `html` props, you can do like this:
 
 ```javascript
 html={(
