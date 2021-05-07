@@ -87,7 +87,7 @@
     "jsona": "^1.1.10",
     "leaflet": "^1.6.0",
     "loadable-components": "2.2.3",
-    "lodash": "4.17.11",
+    "lodash": "4.17.21",
     "minimist": "1.2.0",
     "moment": "^2.22.2",
     "prop-types": "15.6.2",
