@@ -17,7 +17,7 @@ const PhotoDetails = ({ data, handleSubmit }) => (
         </p>
       </div>
       <div className={styles.accepted}>
-        {data.acceptedByLeader ? (
+        {data.accepted ? (
           <span>Zaakceptowane przez szefa drużyny</span>
         ) : (
           <span>Czeka na akceptcję szefa drużyny</span>

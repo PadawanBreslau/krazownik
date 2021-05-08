@@ -19,7 +19,7 @@ import PhotoDetails from 'components/TeamView/PhotoDetails';
     onSubmit: (payload, dispatch, props) => {
       const { submitPageData } = generateActions('TeamPhoto');
       const formattedPayload = payload.toJS();
-      const leaderApproval = !formattedPayload.approvedByLeader;
+      const leaderApproval = !formattedPayload.accepted;
       const label = leaderApproval ? 'Zdjęcie zostało zaakceptowane' : 'Akceptacja cofnięta';
       const formattedEndpoint = prepareEndpoint(`/team_task_photos/${formattedPayload.id}`, props);
       const successCallback = [showUiSuccess(label)];
@@ -28,7 +28,7 @@ import PhotoDetails from 'components/TeamView/PhotoDetails';
         submitPageData(
           formattedEndpoint,
           'put',
-          { approvedByLeader: leaderApproval },
+          { accepted: leaderApproval },
           successCallback,
         ),
       );
