@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import DeletePhoto from 'containers/TeamPhoto/DeletePhoto';
 import UpdatePhotoForm from './UpdatePhotoForm';
 import styles from './styles.scss';
+import { Link } from 'react-router-dom';
 
 const PhotoDetails = ({ data, handleSubmit }) => (
   <div className={styles.teamTaskPhotoDetails}>
@@ -29,6 +30,9 @@ const PhotoDetails = ({ data, handleSubmit }) => (
           <DeletePhoto id={data.id} />
         </div>
       }
+      <div className={styles.return}>
+        <Link to={'/teams/panel'}> Return to panel</Link>
+      </div>
     </div>
   </div>
 );
