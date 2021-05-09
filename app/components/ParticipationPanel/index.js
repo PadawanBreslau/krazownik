@@ -46,7 +46,7 @@ function enhanceBonusPointsCompletion(bonusPoints, bonusPointCompletions) {
 
 function ParticipationPanel({ data, handleSubmit }) {
   const shouldBeAbleToDraw =
-    !data.eventStarted && data.challengeCompletions && data.challengeCompletions.length < 2;
+    !data.eventStarted && data.challengeCompletions && data.challengeCompletions.filter((cc)=>(!cc.open)).length < 2;
   const completionChallenges = combineChallengesWithCompletions(
     data.challengeCompletions,
     data.challenges,
