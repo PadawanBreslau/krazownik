@@ -83,7 +83,7 @@ function ParticipationPanel({ data, handleSubmit }) {
           </div>
         )}
 
-        {false && shouldBeAbleToDraw && <DrawNewChallengeForm handleSubmit={handleSubmit} />}
+        {shouldBeAbleToDraw && <DrawNewChallengeForm handleSubmit={handleSubmit} />}
       </div>
       <div className={styles.ownMap}>
         <MapComponent

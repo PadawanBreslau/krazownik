@@ -26,7 +26,8 @@ import FileIcon from '-!babel-loader!svg-react-loader?name=RegisterIcon!images/i
 })
 export default class Extra extends React.PureComponent {
   hasParticipation() {
-    return new Date().getFullYear()=== getFromStorage('participation');
+    console.log("Participation", getFromStorage('participation'));
+    return new Date().getFullYear() === getFromStorage('participation');
   }
 
   render() {
@@ -45,8 +46,7 @@ export default class Extra extends React.PureComponent {
           <ExtraBox name="Zagadki" icon={<RiddleIcon />} url="riddles" />
           <ExtraBox name="Drużynówka" icon={<TeamIcon />} url="teams" />
           {isLoggedIn() && <ExtraBox name="Konkurs foto" icon={<PhotoIcon />} url="photos" />}
-          {isLoggedIn() &&
-            this.hasParticipation() && (
+          {isLoggedIn() && this.hasParticipation() && (
               <ExtraBox name="Kryptozagadka" icon={<CryptoIcon />} url="crypto" />
             )}
           {false && <ExtraBox name="Galerie" icon={<MediaIcon />} url="photos" />}

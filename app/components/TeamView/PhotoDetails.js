@@ -31,7 +31,7 @@ const PhotoDetails = ({ data, handleSubmit }) => (
         </div>
       }
       <div className={styles.return}>
-        <Link to={'/teams/panel'}> Return to panel</Link>
+        <Link to={'/teams/panel'}> Powrót do panelu</Link>
       </div>
     </div>
   </div>
